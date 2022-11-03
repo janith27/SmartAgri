@@ -4,7 +4,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-class NewArival extends Component {
+
+import ph1 from '../../assest/images/supply/urea.jpg'
+
+class Supply extends Component {
 
   constructor(props){
     super(props);
@@ -64,7 +67,7 @@ class NewArival extends Component {
       <Fragment>
         <Container className="text-center" fluid={true}>
          <div className="section-title text-center mb-55">
-            <h2>New Arival &nbsp;
+            <h2>Supply &nbsp;
               <a className="btn btn-sm ml-2 site-btn" onClick={this.previous}>
                 <i className="fa fa-angle-left"></i>
               </a>
@@ -73,16 +76,17 @@ class NewArival extends Component {
                 <i className="fa fa-angle-right"></i>
               </a>
             </h2>
-            <p>some of our exclusive collection, you may like</p>
+            <p>some of our exclusive supply from suppliers.</p>
          </div>
             <Row>
             <Slider ref={c=>(this.slider=c)} {...settings}>
                 <div>
                     <Card className="image-box">
-                     <img className="center" src=""/>
+                     <img className="center" src={ph1}/>
                         <Card.Body>
-                            <p className="product-name-on-card">janith maduranga</p>
-                            <p className="product-price-on-card">Price</p> 
+                            <p className="product-name-on-card">Urea</p>
+                            <p className="product-weight-on-card">50kg</p>
+                            <p className="product-price-on-card">Price:</p> 
                         </Card.Body>
                     </Card>
                 </div>
@@ -90,16 +94,24 @@ class NewArival extends Component {
                     <Card className="image-box">
                      <img className="center" src=""/>
                         <Card.Body>
-                            <p className="product-name-on-card">janith maduranga</p>
-                            <p className="product-price-on-card">Price</p> 
+                            <p className="product-name-on-card">Eppawala Rock Pospate</p>
+                            <p className="product-weight-on-card">50kg</p>
+                            <p className="product-price-on-card">Rs.3500.00</p> 
                         </Card.Body>
                     </Card>
                 </div>
+                <div>
+                  <Card className="image-box">
+                    <img className="center" src=""/>
+                      <Card.Body>
+                        <p className="product-name-on-card">Dolamite</p>
+                        <p className="product-weight-on-card">50kg</p>
+                        <p className="product-price-on-card">Rs.1000.00</p> 
+                      </Card.Body>
+                  </Card>
+                </div>
           <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
+            <h6>4</h6>
           </div>
           <div>
             <h3>5</h3>
@@ -121,4 +133,4 @@ class NewArival extends Component {
   }
 }
 
-export default NewArival
+export default Supply

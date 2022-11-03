@@ -8,7 +8,7 @@ class FeatureProducts extends Component {
       <Fragment>
         <Container className="text-center" fluid={true}>
           <div className="section-title text-center mb-55">
-            <h2>Jurnels</h2>
+            <h2>feature</h2>
             <p>some of our exclusive Jurnels when published by Instructors</p>
          </div>  
             <Row>

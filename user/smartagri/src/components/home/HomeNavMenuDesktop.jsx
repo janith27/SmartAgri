@@ -19,7 +19,7 @@ class HomeNavMenuDesktop extends Component {
                 
               </Col>
 
-              {/* <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
+              <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
                 <div className="input-group w-100">
                   <input type="text" className="form-control" />
                   <Button type="button" className="btn site-btn">
@@ -27,13 +27,13 @@ class HomeNavMenuDesktop extends Component {
 
                   </Button>
                 </div>
-              </Col> */}
+              </Col>
 
               <Col className="p-1 mt-1 inverse" lg={4} md={4} sm={12} xs={12}>
                 
-                <Link to="/" className="h4 btn">About</Link>
-                <Link to="/" className="h4 btn"><Button><FaUserPlus /> Sign up</Button></Link>
-                <Link to="/" className="h4 btn"><Button><FaUserCircle /> Login</Button></Link>
+                <Link to="/" className="h4 btn"><Button variant="link">About</Button></Link>
+                <Link to="/" className="h4 btn"><Button variant="success"><FaUserPlus /> Sign up</Button></Link>
+                <Link to="/" className="h4 btn"><Button variant="outline-success"><FaUserCircle /> Login</Button></Link>
                 
               </Col>
 

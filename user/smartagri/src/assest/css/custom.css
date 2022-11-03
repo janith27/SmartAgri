@@ -10,5 +10,7 @@
 @import "typo.css";
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(247, 247, 247);
+    background: radial-gradient(50% 50% at 50% 50%, #BEFB81 0%, rgba(217, 217, 217, 0) 100%);
+    
 }

@@ -17,7 +17,7 @@ class Categories extends Component {
                         <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
                             <Card className="h-100 w-100 text-center">
                                 <Card.Body>
-                                    <img className="center" src=""/>
+                                    <img className="center" src="" alt=""/>
                                     <h5 className="category-name">MOBILE</h5>
                      
                                 </Card.Body>

@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import FeatureProducts from '../components/home/FeatureProducts'
-import Categories from '../components/home/Categories'
-import Collection from '../components/home/Collection'
-import NewArival from '../components/home/NewArival'
+// import FeatureProducts from '../components/home/FeatureProducts'
+// import Categories from '../components/home/Categories'
+
+import Supply from '../components/home/Supply'
 //import HomeTop from '../components/home/HomeTop'
 import HomeNavMenuDesktop from '../components/home/HomeNavMenuDesktop'
 import HomeSlider from '../components/home/HomeSlider'
+// import DrawerAppBar from '../components/home/DrawerAppBar'
+import ReJurnels from '../components/home/ReJurnels'
+import About from '../components/home/About'
+import FooterDesktop from '../components/common/FooterDesktop'
 // import NevMobile from '../components/home/NevMobile'
 
 export class HomePage extends Component {
@@ -15,11 +19,18 @@ export class HomePage extends Component {
         <HomeSlider />
         {/* <NevMobile /> */}
         <HomeNavMenuDesktop />
+       
+        {/* <DrawerAppBar/> */}
         {/* <HomeTop /> */}
-        <FeatureProducts />
-        <NewArival />
-        <Collection />
-        <Categories />
+        <ReJurnels />
+        {/* <Collection /> */}
+        {/* <FeatureProducts /> */}
+        <Supply />
+        <About />
+       
+        {/* <Categories /> */}
+        <FooterDesktop />
+        
       </Fragment>
     )
   }

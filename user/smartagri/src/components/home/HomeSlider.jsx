@@ -2,6 +2,7 @@ import React, { Component} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+
 import S1 from '../../assest/images/1.jpg';
 import S2 from '../../assest/images/2.jpg';
 import S3 from '../../assest/images/3.jpg';
@@ -50,8 +51,8 @@ class HomeSlider extends Component {
     return (
       <div className="top">
 
-
-<Slider {...settings}>
+      <Slider {...settings}>
+      
           <div>
            <img className="slider-img" src={S1} />
           </div>
