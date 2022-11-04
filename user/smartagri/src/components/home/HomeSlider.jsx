@@ -51,25 +51,22 @@ class HomeSlider extends Component {
     return (
       <div className="top">
 
-      <Slider {...settings}>
-      
+        <Slider {...settings}>
+        
           <div>
-           <img className="slider-img" src={S1} />
+            <img className="slider-img" src={S1} />
           </div>
           <div>
-          <img className="slider-img" src={S2} />
+            <img className="slider-img" src={S2} />
           </div>
           <div>
-          <img className="slider-img" src={S3} />
+            <img className="slider-img" src={S3} />
           </div>
 
         </Slider>
 
 
-
-
-
-             </div>
+      </div>
     )
   }
 }

@@ -2,8 +2,41 @@ import React, { Component, Fragment } from 'react'
 import { Container,Navbar, Row , Col, Button } from 'react-bootstrap'
 import Logo from '../../assest/images/easyshop.png'
 import {Link} from "react-router-dom"
+import MegaMenuMobile from './MegaMenuMobile';
 
 class HomeNevMobile extends Component {
+ 
+  constructor(){
+    super();
+    this.state={
+         SideNavState: "sideNavClose",
+         ContentOverState: "ContentOverlayClose"
+    }
+}
+
+
+MenuBarClickHandler=()=>{
+    this.SideNavOpenClose();
+}
+
+ContentOverlayClickHandler=()=>{
+    this.SideNavOpenClose();
+}
+
+
+SideNavOpenClose=()=>{
+    let SideNavState = this.state.SideNavState;
+    let ContentOverState = this.state.ContentOverState;
+    if(SideNavState==="sideNavOpen"){
+         this.setState({SideNavState:"sideNavClose",ContentOverState:"ContentOverlayClose"})
+
+    }
+    else{
+         this.setState({SideNavState:"sideNavOpen",ContentOverState:"ContentOverlayOpen"})
+    }
+}
+ 
+ 
   render() {
     return (
       <Fragment>
@@ -12,23 +45,18 @@ class HomeNevMobile extends Component {
           <Container fluid={"true"} className="fixed-top shadow-sm p-2 mb-0 bg-white">
             <Row>
               <Col lg={4} md={4} sm={12} xs={12}>
-              <Button className="cart-btn"><i className="fa fa-bars"></i></Button>
+                <Button onClick={this.MenuBarClickHandler} className="bar-btn"><i className="fa fa-bars"></i></Button>
                 <Link to="/"><img className="nav-logo" src={Logo}/></Link>
-                <Button className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items</Button>
+                
               </Col>
 
             </Row>
           </Container>
-          <div className="sideNavOpen">
-            <hr className="w-80" />
-            <div className="list-group">
-              <a className="list-group-item nav-font nav-itemmenu list-group-item-action" >
-                <i className="fa mr-2 fa-home"></i>Home
-              </a>
-            </div>
+          <div className={this.state.SideNavState}>
+           <MegaMenuMobile />
           </div>
 
-          <div className="ContentOverlayOpen">
+          <div onClick={this.ContentOverlayClickHandler} className={this.state.ContentOverState}>
 
           </div>
 
