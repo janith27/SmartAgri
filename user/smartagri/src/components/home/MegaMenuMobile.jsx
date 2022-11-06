@@ -1,4 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import {Link} from "react-router-dom"
+
 
 class MegaMenuMobile extends Component {
 
@@ -32,40 +34,15 @@ class MegaMenuMobile extends Component {
 
   render() {
     return (
-        <div className="accordionMenuDivMobile">
-        <div className="accordionMenuDivInsideMobile">
+          <div className="accordionMenuDivMobile">
+               <div className="accordionMenuDivInsideMobile">
+                    <Link to="/" ><button className="accordion">About</button></Link>
+                    <Link to="/" ><button className="accordion">Sign up</button></Link>
+                    <Link to="/" ><button className="accordion">Login</button></Link>
+                    
+               </div>
 
-
-<button className="accordionMobile">
-      <img className="accordionMenuIconMobile" src="https://image.flaticon.com/icons/png/128/739/739249.png" />&nbsp; Men's Clothing 
-             </button>
-<div className="panelMobile">
-<ul>
-<li><a href="#" className="accordionItemMobile" > Mans Tshirt 1</a></li>
-<li><a href="#" className="accordionItemMobile" > Mans Tshirt 2</a></li>
-</ul>
-</div>
-
-
-<button className="accordionMobile">
-      <img className="accordionMenuIconMobile" src="https://image.flaticon.com/icons/png/128/739/739249.png" />&nbsp; Men's Clothing 
-             </button>
-<div className="panelMobile">
-<ul>
-<li><a href="#" className="accordionItemMobile" > Mans Tshirt 1</a></li>
-<li><a href="#" className="accordionItemMobile" > Mans Tshirt 2</a></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-        </div>
-
-   </div>
+          </div>
     )
   }
 }

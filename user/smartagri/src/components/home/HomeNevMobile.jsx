@@ -45,8 +45,11 @@ SideNavOpenClose=()=>{
           <Container fluid={"true"} className="fixed-top shadow-sm p-2 mb-0 bg-white">
             <Row>
               <Col lg={4} md={4} sm={12} xs={12}>
-                <Button onClick={this.MenuBarClickHandler} className="bar-btn"><i className="fa fa-bars"></i></Button>
-                <Link to="/"><img className="nav-logo" src={Logo}/></Link>
+                <div class="d-flex justify-content-between">
+                  <Link to="/"><img className="nav-logo" src={Logo}/></Link>
+                
+                  <Button onClick={this.MenuBarClickHandler} className="bar-btn justify-content-end"><i className="fa fa-bars"></i></Button>
+                </div>
                 
               </Col>
 
@@ -60,8 +63,6 @@ SideNavOpenClose=()=>{
 
           </div>
 
-
-        
         </div>
       </Fragment>
     )
