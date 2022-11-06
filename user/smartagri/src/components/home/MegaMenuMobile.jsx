@@ -38,7 +38,7 @@ class MegaMenuMobile extends Component {
                <div className="accordionMenuDivInsideMobile">
                     <Link to="/" ><button className="accordion">About</button></Link>
                     <Link to="/" ><button className="accordion">Sign up</button></Link>
-                    <Link to="/" ><button className="accordion">Login</button></Link>
+                    <Link to="/login" ><button className="accordion">Login</button></Link>
                     
                </div>
 

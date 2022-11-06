@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from 'react'
-import {Router,Route,Switch} from "react-router";
-import HomePage from '../pages/HomePage';
+import { Routes, Route } from "react-router-dom";
+import HomePage from '../pages/HomePage'
+import UserLoginPage from '../pages/UserLoginPage'
 
 class AppRoute extends Component {
   render() {
     return (
       <Fragment>
-        <Switch>
-          <Route exact to="/" component={HomePage} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/login" element={<UserLoginPage />} />
+        </Routes>
       </Fragment>
     )
   }

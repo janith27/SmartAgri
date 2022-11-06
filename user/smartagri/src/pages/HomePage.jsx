@@ -1,7 +1,4 @@
 import React, { Component, Fragment } from 'react'
-// import FeatureProducts from '../components/home/FeatureProducts'
-// import Categories from '../components/home/Categories'
-
 import Supply from '../components/home/Supply'
 import HomeNavMenuDesktop from '../components/home/HomeNavMenuDesktop'
 import HomeSlider from '../components/home/HomeSlider'
@@ -15,7 +12,7 @@ export class HomePage extends Component {
   render() {
     return (
       <Fragment>
-        {/* <HomeTop /> */}
+        
         <div className="Desktop">
           <HomeNavMenuDesktop />
           
@@ -26,14 +23,10 @@ export class HomePage extends Component {
         </div>
 
         <HomeSlider />
-
-        
-        
         <ReJurnels />
-        {/* <Collection /> */}
-        {/* <FeatureProducts /> */}
         <Supply />
         <About />
+
         <div className="Desktop">
           <FooterDesktop />
           
@@ -42,7 +35,6 @@ export class HomePage extends Component {
         <div className="Mobile">
           <FooterMobile />
         </div>
-        {/* <Categories /> */}
         
         
       </Fragment>
