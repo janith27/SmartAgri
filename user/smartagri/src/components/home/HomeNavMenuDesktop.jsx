@@ -4,6 +4,7 @@ import Logo from '../../assest/images/easyshop.png'
 import {Link} from "react-router-dom"
 import { FaUserPlus, FaUserCircle } from "react-icons/fa";
 
+
 class HomeNavMenuDesktop extends Component {
   render() {
     return (
@@ -20,7 +21,7 @@ class HomeNavMenuDesktop extends Component {
                 
                 <div>
                   <Link to="/" className="h4 btn"><Button variant="link">About</Button></Link>
-                  <Link to="/" className="h4 btn"><Button variant="success"><FaUserPlus /> Sign up</Button></Link>
+                  <Link to="/registrationchose" className="h4 btn"><Button variant="success"><FaUserPlus /> Sign up</Button></Link>
                   <Link to="/login" className="h4 btn"><Button variant="outline-success"><FaUserCircle /> Login</Button></Link>
                 </div>
               </div>
