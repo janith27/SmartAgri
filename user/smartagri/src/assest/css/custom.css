@@ -10,9 +10,11 @@
 @import "typo.css";
 @import "megaMenuMobile.css";
 @import "responsive.css";
+@import "onboard.css";
+@import "common.css"
 
-body{
+/* body{
     background-color: rgb(247, 247, 247);
     background: radial-gradient(50% 50% at 50% 50%, #BEFB81 0%, rgba(217, 217, 217, 0) 100%);
     
-}
+} */

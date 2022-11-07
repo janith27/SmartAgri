@@ -1,8 +1,9 @@
 import React, { Component,Fragment } from 'react'
-import HomeNavMenuDesktop from '../components/home/HomeNavMenuDesktop'
+
 import FooterDesktop from '../components/common/FooterDesktop'
-import HomeNevMobile from '../components/home/HomeNevMobile'
+
 import FooterMobile from '../components/common/FooterMobile'
+import ComNev from '../components/common/ComNev'
 import UserLogin from '../components/common/UserLogin'
 
 class UserLoginPage extends Component {
@@ -11,12 +12,12 @@ class UserLoginPage extends Component {
         <Fragment>
         
             <div className="Desktop">
-                <HomeNavMenuDesktop />
+                <ComNev />
           
             </div>
 
             <div className="Mobile">
-                <HomeNevMobile />
+                <ComNev />
             </div>
 
             <UserLogin />
