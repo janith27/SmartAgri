@@ -3,6 +3,7 @@ import { Container, Button, Col, Row, Card } from 'react-bootstrap'
 import Farmerimg from '../../assest/images/farmer.jpg'
 import Instructorimg from '../../assest/images/instructor.jpg'
 import Supplierimg from '../../assest/images/supplier.jpg'
+import {Link} from "react-router-dom"
 
 class RegisterChose extends Component {
   render() {
@@ -10,7 +11,7 @@ class RegisterChose extends Component {
       <Fragment>
         <Container>
           <Row className="p-2">
-            <Col className="shadow-sm mt-2" md={12} lg={12} sm={12} xs={12}>
+            <Col className="mt-2" md={12} lg={12} sm={12} xs={12}>
               <Row className="text-center">
 
                 <Col className="d-flex justify-content-center" md={4} lg={4} sm={12} xs={12}>
@@ -23,7 +24,8 @@ class RegisterChose extends Component {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button>
+                            
+                            <Link to="/farmerreg"><Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button></Link>
                         </Card.Body>
                     </Card>
 
@@ -39,7 +41,7 @@ class RegisterChose extends Component {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Button className="btn btn-block m-2 site-btn-userselect">Instructor</Button>
+                            <Link to="/instructorreg"><Button className="btn btn-block m-2 site-btn-userselect">Instructor</Button></Link>
                         </Card.Body>
                     </Card>
 
@@ -55,7 +57,7 @@ class RegisterChose extends Component {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Button className="btn btn-block m-2 site-btn-userselect">Supplier</Button>
+                            <Link to="/supplierreg"><Button className="btn btn-block m-2 site-btn-userselect">Supplier</Button></Link>
                         </Card.Body>
                     </Card>
 

@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import Apple from '../../assest/images/apple.png'
-import Google from '../../assest/images/google.png'
+import { Container,Row,Col, Form,Button } from 'react-bootstrap'
+
 
 export class FooterDesktop extends Component {
      render() {
@@ -10,38 +8,39 @@ export class FooterDesktop extends Component {
                <Fragment>
                     <div className="footerback m-0 mt-5 pt-3 shadow-sm"> 
                          <Container>
-                              <Row className="px-0 my-5">
-                                   <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-                                        <h5 className="footer-menu-title">ADDRESS</h5>
-                                        <p>Matara, Sri Lanka <br></br>
-                                              Email: smartagricsp@gmail.com
-                                        </p>
-                                        <h5 className="footer-menu-title">SOCIAL LINK</h5>
-                                        <a href=""><i className="fab m-1 h4 fa-facebook"></i></a>
-                                        <a href=""><i className="fab m-1 h4 fa-instagram"></i></a>
-                                        <a href=""><i className="fab m-1 h4 fa-twitter"></i></a>
-                                   </Col>
+                              <Row className="p-2">
+                                   <Col className="shadow-sm bg-white mt-2" md={12} lg={12} sm={12} xs={12}>
 
-                                   <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-                                        <h5 className="footer-menu-title">THE COMPANY</h5>
-                                        <Link to="/" className="footer-link"> About Us</Link><br></br>
-                                        <Link to="/" className="footer-link"> Company Profile</Link><br></br>
-                                        <Link to="/" className="footer-link"> Contact Us</Link><br></br>
-                                   </Col>
+                                        <Row className="text-center">
+                                             <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
+                                                  <Form className="onboardForm">
+                                                       <h4 className="section-title-login">CONTACT WITH US </h4>
+                                                       <h6 className="section-sub-title">Please Contact With Us </h6>
+                                                       <input className="form-control m-2" type="text" placeholder="Enter Mobile Number" />
 
-                                   <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-                                        <h5 className="footer-menu-title">MORE INFO</h5>
-                                        <Link to="/" className="footer-link">How To Purchase</Link><br></br>
-                                        <Link to="/" className="footer-link"> Privacy Policy</Link><br></br>
-                                        <Link to="/" className="footer-link"> Refund Policy </Link><br></br>
-                                   </Col>
+                                                       <input className="form-control m-2" type="email" placeholder="Enter Email" />
 
-                                   <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-                                        <h5 className="footer-menu-title">DOWNLOAD APPS</h5>
-                                        <a><img src={Google}  /></a><br></br>
-                                        <a><img className="mt-2" src={Apple}  /></a><br></br>
-                                   </Col>
+                                                       <input className="form-control m-2" type="text" placeholder="Enter Your Message" />
+                                                       <Button className="btn btn-block m-2 site-btn-login"> Send </Button>
 
+                                                  </Form>
+
+
+                                             </Col>
+
+                                             <Col className="p-0 Desktop m-0" md={6} lg={6} sm={6} xs={6}>
+                                                  <br></br><br></br>
+                                                  <p className="section-title-contact">
+                                                       Matara, Sri Lanka.
+                                                       Email: smartagricsp@gmail.com
+                                                  </p>
+
+                                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d162771.1102477064!2d-74.10054944459704!3d40.70681480276415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1627241390779!5m2!1sen!2sbd" width="600" height="450" styles="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                                             </Col>
+                                        </Row>
+
+                                   </Col>
                               </Row>
                          </Container>
 

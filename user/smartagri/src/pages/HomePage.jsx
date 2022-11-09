@@ -7,8 +7,16 @@ import About from '../components/home/About'
 import FooterDesktop from '../components/common/FooterDesktop'
 import HomeNevMobile from '../components/home/HomeNevMobile'
 import FooterMobile from '../components/common/FooterMobile'
+import axios from 'axios'
+import AppURL from '../api/AppURL'
 
 export class HomePage extends Component {
+
+  GetVisitorDetails =()=>{
+    axios.get(AppURL.VisitorDetails).then().catch()
+  }
+
+
   render() {
     return (
       <Fragment>
