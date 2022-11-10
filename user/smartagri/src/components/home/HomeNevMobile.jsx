@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Navbar, Row , Col, Button } from 'react-bootstrap'
-import Logo from '../../assest/images/easyshop.png'
+import Logo from '../../assest/images/smartagrilogo.png'
 import {Link} from "react-router-dom"
 import MegaMenuMobile from './MegaMenuMobile';
 
