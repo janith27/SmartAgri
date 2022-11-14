@@ -54,7 +54,7 @@ class HomeSlider extends Component {
         <Slider {...settings}>
         
           <div>
-            <img className="slider-img" src={S1} />
+            <img className="slider-img" src={S1}/>
           </div>
           <div>
             <img className="slider-img" src={S2} />
