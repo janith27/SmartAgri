@@ -5,6 +5,11 @@ import FarmerNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
 import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
 
 class FarmerHomePage extends Component {
+
+  componentDidMount(){
+    window.scroll(0,0)
+  }
+
   render() {
     return (
         <Fragment>

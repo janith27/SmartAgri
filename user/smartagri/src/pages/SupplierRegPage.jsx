@@ -4,10 +4,9 @@ import FooterDesktop from '../components/common/FooterDesktop'
 
 import FooterMobile from '../components/common/FooterMobile'
 import ComNev from '../components/common/ComNev'
-import RegisterChose from '../components/common/RegisterChose'
+import SupplierReg from '../components/supplier/SupplierReg'
 
-
-export class RegistrationChosepage extends Component {
+class SupplierRegPage extends Component {
 
     componentDidMount(){
         window.scroll(0,0)
@@ -19,27 +18,27 @@ export class RegistrationChosepage extends Component {
         
         <div className="Desktop">
             <ComNev />
-      
+  
         </div>
 
         <div className="Mobile">
             <ComNev />
         </div>
 
-        <RegisterChose />
+        <SupplierReg />
 
         <div className="Desktop">
             <FooterDesktop />
-      
+    
         </div>
 
         <div className="Mobile">
             <FooterMobile />
         </div>
-    
-    </Fragment>
+
+     </Fragment>
     )
   }
 }
 
-export default RegistrationChosepage
+export default SupplierRegPage

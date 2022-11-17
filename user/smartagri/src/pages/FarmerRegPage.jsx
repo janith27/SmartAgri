@@ -4,10 +4,10 @@ import FooterDesktop from '../components/common/FooterDesktop'
 
 import FooterMobile from '../components/common/FooterMobile'
 import ComNev from '../components/common/ComNev'
-import UserLogin from '../components/common/UserLogin'
+import FarmerReg from '../components/farmer/FarmerReg'
 
 
-class UserLoginPage extends Component {
+export class FarmerRegPage extends Component {
 
     componentDidMount(){
         window.scroll(0,0)
@@ -19,27 +19,27 @@ class UserLoginPage extends Component {
         
             <div className="Desktop">
                 <ComNev />
-          
+      
             </div>
 
             <div className="Mobile">
                 <ComNev />
             </div>
 
-            <UserLogin />
+            <FarmerReg />
 
             <div className="Desktop">
                 <FooterDesktop />
-          
+        
             </div>
 
             <div className="Mobile">
                 <FooterMobile />
             </div>
-        
-        </Fragment>
+    
+         </Fragment>
     )
   }
 }
 
-export default UserLoginPage
+export default FarmerRegPage

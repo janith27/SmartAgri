@@ -16,11 +16,12 @@ class UserLogin extends Component {
                   <Form className="onboardForm">
                     <h4 className="section-title-login">User Sign in</h4>
                     <h6 className="section-sub-title">Please Enter Your Mobile Number</h6>
-                    <input className="form-control m-2" type="text" placeholder="Enter Mobile Number" />
-                    <Button className="btn btn-block m-2 site-btn-login">Next</Button>
+                    <input className="form-control m-2" type="text" placeholder="Enter Email Address/NIC" />
+                    <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
+                    <Button className="btn btn-block m-2 site-btn-login">Login</Button>
                     <div class="font-weight-light">
                       <h6 className="section-sub-title">If you not have an account :
-                        <Link to="/" className="h6 btn"><Button variant="link">Create an account</Button></Link>
+                        <Link to="/registrationchose" className="h6 btn"><Button variant="link">Create an account</Button></Link>
                       </h6>
                     </div>
                     

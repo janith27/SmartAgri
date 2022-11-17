@@ -25,7 +25,7 @@ class RegisterChose extends Component {
                                 bulk of the card's content.
                             </Card.Text>
                             
-                            <Link to="/farmerreg"><Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button></Link>
+                            <Link to="/farmerregpage"><Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button></Link>
                         </Card.Body>
                     </Card>
 
@@ -41,7 +41,7 @@ class RegisterChose extends Component {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Link to="/instructorreg"><Button className="btn btn-block m-2 site-btn-userselect">Instructor</Button></Link>
+                            <Link to="/instructorregpage"><Button className="btn btn-block m-2 site-btn-userselect">Instructor</Button></Link>
                         </Card.Body>
                     </Card>
 
@@ -57,7 +57,7 @@ class RegisterChose extends Component {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Link to="/supplierreg"><Button className="btn btn-block m-2 site-btn-userselect">Supplier</Button></Link>
+                            <Link to="/supplierregpage"><Button className="btn btn-block m-2 site-btn-userselect">Supplier</Button></Link>
                         </Card.Body>
                     </Card>
 
