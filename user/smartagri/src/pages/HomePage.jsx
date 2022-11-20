@@ -13,7 +13,8 @@ import AppURL from '../api/AppURL'
 export class HomePage extends Component {
 
   componentDidMount(){
-    window.scroll(0,0)
+    window.scroll(0,0);
+    this.GetVisitorDetails();
   }
 
   GetVisitorDetails =()=>{
