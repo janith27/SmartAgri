@@ -14,17 +14,7 @@ export class FooterDesktop extends Component {
 
                                         <Row className="text-center">
                                              <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
-                                                  {/* <Form className="onboardForm">
-                                                       <h4 className="section-title-login">CONTACT WITH US </h4>
-                                                       <h6 className="section-sub-title">Please Contact With Us </h6>
-                                                       <input className="form-control m-2" type="text" placeholder="Enter Mobile Number" />
-
-                                                       <input className="form-control m-2" type="email" placeholder="Enter Email" />
-
-                                                       <input className="form-control m-2" type="text" placeholder="Enter Your Message" />
-                                                       <Button className="btn btn-block m-2 site-btn-login"> Send </Button>
-
-                                                  </Form> */}
+                                                  
                                                   <AnyUserMsgform />
 
 
@@ -54,7 +44,7 @@ export class FooterDesktop extends Component {
                                    </Row>
                               </Container>
                          </Container> 
-
+                         
                     </div>
 
                </Fragment>
