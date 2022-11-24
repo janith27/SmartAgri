@@ -6,6 +6,9 @@ import UserLoginPage from '../pages/UserLoginPage'
 import FarmerRegPage from '../pages/FarmerRegPage';
 import InstructorRegPage from '../pages/InstructorRegPage';
 import SupplierRegPage from '../pages/SupplierRegPage';
+import ForgetPasswordPage from '../pages/ForgetPasswordPage';
+import ResetPasswordPage from '../pages/ResetPasswordPage';
+
 class AppRoute extends Component {
   render() {
     return (
@@ -17,6 +20,8 @@ class AppRoute extends Component {
           <Route exact path="/farmerregpage" element={<FarmerRegPage />} />
           <Route exact path="/instructorregpage" element={<InstructorRegPage />} />
           <Route exact path="/supplierregpage" element={<SupplierRegPage />} />
+          <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
+          <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
         </Routes>
       </Fragment>
     )

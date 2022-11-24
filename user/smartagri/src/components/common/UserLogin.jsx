@@ -2,8 +2,37 @@ import React, { Component, Fragment } from 'react'
 import { Container,Navbar, Row , Col, Button, Form } from 'react-bootstrap'
 import Login from '../../assest/images/login.png'
 import {Link} from "react-router-dom"
+import axios from 'axios'
+import AppURL from '../../api/AppURL';
 
 class UserLogin extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      email:'',
+      password:'',
+      message:''
+    }
+  }
+
+//Login Form Submit Method
+formSubmit = (e)=>{
+  e.preventDefault();
+  const data ={
+    email:this.state.email,
+    password:this.state.password
+  }
+
+  axios.post(AppURL.UserLogin,data).then(response =>{ 
+
+
+  }).catch(error=>{
+
+  }); 
+
+}
+
   render() {
     return (
       <Fragment>
@@ -13,16 +42,23 @@ class UserLogin extends Component {
               <Row className="text-center">
                 <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
 
-                  <Form className="onboardForm">
+                  <Form className="onboardForm" onSubmit={this.formSubmit}>
                     <h4 className="section-title-login">User Sign in</h4>
                     <h6 className="section-sub-title">Please Enter Your Mobile Number</h6>
-                    <input className="form-control m-2" type="text" placeholder="Enter Email Address/NIC" />
-                    <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
-                    <Button className="btn btn-block m-2 site-btn-login">Login</Button>
+
+                    <input className="form-control m-2" type="text" placeholder="Enter Email Address" onChange={(e)=>{this.setState({email:e.target.value})}} />
+                    <input className="form-control m-2" type="password" placeholder="Enter Your Password" onChange={(e)=>{this.setState({password:e.target.value})}} />
+
+                    <Button type="submit" className="btn btn-block m-2 site-btn-login">Login</Button>
                     <div class="font-weight-light">
-                      <h6 className="section-sub-title">If you not have an account :
+                      <hr/>
+                      <p className="section-sub-title">Forget My Password? :
+                        <Link to="/forgetpassword" className="h6 btn"><Button variant="link">Forget Password</Button></Link>
+                      </p>
+                      <p className="section-sub-title">If you not have an account :
                         <Link to="/registrationchose" className="h6 btn"><Button variant="link">Create an account</Button></Link>
-                      </h6>
+                      </p>
+                      
                     </div>
                     
                   </Form>
