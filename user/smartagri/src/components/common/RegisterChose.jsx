@@ -14,7 +14,7 @@ class RegisterChose extends Component {
             <Col className="mt-2" md={12} lg={12} sm={12} xs={12}>
               <Row className="text-center">
 
-                <Col className="d-flex justify-content-center" md={4} lg={4} sm={12} xs={12}>
+                <Col className="d-flex justify-content-center" md={12} lg={4} sm={12} xs={12}>
 
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" className='ocupationimg' src={Farmerimg} />
@@ -31,7 +31,7 @@ class RegisterChose extends Component {
 
                 </Col>
 
-                <Col className="d-flex justify-content-center" md={4} lg={4} sm={12} xs={12}>
+                <Col className="d-flex justify-content-center" md={12} lg={4} sm={12} xs={12}>
 
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" className='ocupationimg' src={Instructorimg} />
@@ -47,7 +47,7 @@ class RegisterChose extends Component {
 
                 </Col>
 
-                <Col className="d-flex justify-content-center" md={4} lg={4} sm={12} xs={12}>
+                <Col className="d-flex justify-content-center" md={12} lg={4} sm={12} xs={12}>
 
                     <Card style={{ width: '18rem'}}>
                         <Card.Img variant="top" className='ocupationimg' src={Supplierimg} />

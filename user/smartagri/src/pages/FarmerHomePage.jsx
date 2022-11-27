@@ -22,7 +22,10 @@ class FarmerHomePage extends Component {
         <div className="Mobile">
           <FarmerNavMobile />
         </div>
-
+        <div>
+          <h1>farmer dashboard</h1>
+        </div>
+        
         
 
         <div className="Desktop">

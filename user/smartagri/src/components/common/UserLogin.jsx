@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import { Container,Navbar, Row , Col, Button, Form } from 'react-bootstrap'
+import { Container, Row , Col, Button, Form } from 'react-bootstrap'
 import Login from '../../assest/images/login.png'
-import {Link} from "react-router-dom"
+import {Link, Navigate} from "react-router-dom"
 import axios from 'axios'
 import AppURL from '../../api/AppURL';
 
@@ -12,7 +12,8 @@ class UserLogin extends Component {
     this.state={
       email:'',
       password:'',
-      message:''
+      message:'',
+      loggedIn:false
     }
   }
 
@@ -26,6 +27,8 @@ formSubmit = (e)=>{
 
   axios.post(AppURL.UserLogin,data).then(response =>{ 
 
+      localStorage.setItem('token',response.data.token);
+      this.setState({loggedIn:true})
 
   }).catch(error=>{
 
@@ -34,6 +37,15 @@ formSubmit = (e)=>{
 }
 
   render() {
+
+    // After loging redirect to loging page //
+
+    if(this.state.loggedIn){
+
+      return <Navigate to ='/farmerdashboard' />
+        
+    }
+
     return (
       <Fragment>
         <Container>
@@ -57,6 +69,10 @@ formSubmit = (e)=>{
                       </p>
                       <p className="section-sub-title">If you not have an account :
                         <Link to="/registrationchose" className="h6 btn"><Button variant="link">Create an account</Button></Link>
+                      </p>
+
+                      <p className="section-sub-title">test :
+                        <Link to="/farmerdashboard" className="h6 btn"><Button variant="link">test</Button></Link>
                       </p>
                       
                     </div>
