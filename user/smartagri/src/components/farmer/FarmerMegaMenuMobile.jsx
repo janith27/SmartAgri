@@ -36,9 +36,10 @@ class FarmerMegaMenuMobile extends Component {
     return (
         <div className="accordionMenuDivMobile">
             <div className="accordionMenuDivInsideMobile">
-                <Link to="/" ><button className="accordion">About</button></Link>
-                <Link to="/" ><button className="accordion">Sign up</button></Link>
-                <Link to="/login" ><button className="accordion">Login</button></Link>
+                <Link to="/" ><button className="accordion">Chat</button></Link>
+                <Link to="/" ><button className="accordion">Cart</button></Link>
+                <Link to="/" ><button className="accordion">Notification</button></Link>
+                <Link to="/" onClick={this.logout}><button className="accordion">Logout</button></Link>
                 
             </div>
 

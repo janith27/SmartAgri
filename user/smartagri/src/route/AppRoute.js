@@ -9,11 +9,36 @@ import SupplierRegPage from '../pages/SupplierRegPage';
 import ForgetPasswordPage from '../pages/ForgetPasswordPage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
 import FarmerHomePage from '../pages/FarmerHomePage';
+import axios from 'axios' 
+import AppURL from '../api/AppURL';
+
 
 class AppRoute extends Component {
+
+  constructor(){
+    super();
+    this.state={
+         user:{}
+    }
+  }
+
+  componentDidMount(){
+    axios.get(AppURL.UserData).then(response =>{ 
+         this.setUser(response.data)
+    }).catch(error=>{
+
+    });
+  }
+
+  setUser = (user) => {
+    this.setState({user:user})
+  }
+
+
   render() {
     return (
       <Fragment>
+        
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/registrationchose" element={<RegistrationChosepage /> } />
@@ -24,6 +49,7 @@ class AppRoute extends Component {
           <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage />} />
+          
         </Routes>
       </Fragment>
     )

@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\AnyUserMsgController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
-
+use App\Http\Controllers\User\ResetController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
@@ -23,6 +23,9 @@ use App\Http\Controllers\User\UserController;
 
  // Forget Password Routes
  Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
+
+  // Reset Password Routes
+  Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
 
  // Current User Route
  Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');

@@ -49,7 +49,7 @@ class AnyUserMsgform extends Component {
     else if(name.length==0){
       toast.error("Please write your name");
     }
-    else if(name.length==0){
+    else if(email.length==0){
       toast.error("Please write your email");
     }
 

@@ -6,6 +6,8 @@ class AppURL {
     static VisitorDetails = this.BaseURL+"/getvisitor"
     static PostAnyUserMsg = this.BaseURL+"/postanyusermsg"
     static UserLogin = this.BaseURL+"/login"
+    static UserData = this.BaseURL+"/user"
+    static UserForgetPassword = this.BaseURL+"/forgetpassword"
 }
 
 export default AppURL

@@ -1,11 +1,23 @@
 import React, { Component, Fragment } from 'react'
-import { Container,Navbar, Row , Col, Button } from 'react-bootstrap'
+import { Container,Navbar, Row, Button } from 'react-bootstrap'
 import Logo from '../../assest/images/smartagrilogo.png'
 import {Link} from "react-router-dom"
 import { FaUserPlus, FaUserCircle } from "react-icons/fa";
 
 class FarmerNavMenuDesktop extends Component {
+
+    logout=()=>{
+        localStorage.clear();
+    }
+
+    
   render() {
+
+    let name;
+    if(this.props.user){
+        name = this.props.user.name;
+    }
+
     return (
         <Fragment>
             <div className="TopSectionDown">
@@ -17,11 +29,12 @@ class FarmerNavMenuDesktop extends Component {
                                 <Link to="/">
                                     <img className="nav-logo" src={Logo}/>
                                 </Link>
-                                
+                                <h1>{name}</h1>
                                 <div>
                                     <Link to="/" className="h4 btn"><Button variant="link">Chat</Button></Link>
                                     <Link to="/registrationchose" className="h4 btn"><Button variant="success"><FaUserPlus />Cart</Button></Link>
                                     <Link to="/login" className="h4 btn"><Button variant="outline-success"><FaUserCircle />Notifiction</Button></Link>
+                                    <Link to="/" onClick={this.logout} className="h4 btn"><Button variant="outline-success">Logout</Button></Link>
                                 </div>
                             </div>
                         

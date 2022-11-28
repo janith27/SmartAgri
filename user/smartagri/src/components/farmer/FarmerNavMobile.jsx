@@ -15,6 +15,9 @@ class FarmerNavMobile extends Component {
         }
     }
     
+    logout=()=>{
+        localStorage.clear();
+    }
     
     MenuBarClickHandler=()=>{
         this.SideNavOpenClose();

@@ -70,10 +70,6 @@ formSubmit = (e)=>{
                       <p className="section-sub-title">If you not have an account :
                         <Link to="/registrationchose" className="h6 btn"><Button variant="link">Create an account</Button></Link>
                       </p>
-
-                      <p className="section-sub-title">test :
-                        <Link to="/farmerdashboard" className="h6 btn"><Button variant="link">test</Button></Link>
-                      </p>
                       
                     </div>
                     
