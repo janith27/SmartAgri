@@ -4,6 +4,8 @@ import Login from '../../assest/images/login.png'
 import {Link, Navigate} from "react-router-dom"
 import axios from 'axios'
 import AppURL from '../../api/AppURL';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class UserLogin extends Component {
 
@@ -31,7 +33,11 @@ formSubmit = (e)=>{
       this.setState({loggedIn:true})
 
   }).catch(error=>{
-
+    console.log(error);
+      this.setState({message:error.response.data.message})
+      toast.error(this.state.message,{
+      position: "top-right"
+    });
   }); 
 
 }
@@ -85,6 +91,7 @@ formSubmit = (e)=>{
             </Col>
           </Row>
         </Container>
+        <ToastContainer />
       </Fragment>
     )
   }

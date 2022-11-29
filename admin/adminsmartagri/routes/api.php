@@ -27,8 +27,9 @@ use App\Http\Controllers\User\ResetController;
   // Reset Password Routes
   Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
 
- // Current User Route
- Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
+  // Current User Route
+  Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
+
 
  /////////////// End User Login API Start ////////////////////////
 
@@ -36,6 +37,7 @@ use App\Http\Controllers\User\ResetController;
 
 //Get visitor
 Route::get('/getvisitor',[VisitorController::class,'GetVisitorDetails']);
+
 //Any user Message Route
 Route::post('/postanyusermsg',[AnyUserMsgController::class,'PostAnyUserMsgDetails']);
 

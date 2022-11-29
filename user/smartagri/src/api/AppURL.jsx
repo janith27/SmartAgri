@@ -8,6 +8,7 @@ class AppURL {
     static UserLogin = this.BaseURL+"/login"
     static UserData = this.BaseURL+"/user"
     static UserForgetPassword = this.BaseURL+"/forgetpassword"
+    static UserResetPassword = this.BaseURL+"/resetpassword"
 }
 
 export default AppURL
