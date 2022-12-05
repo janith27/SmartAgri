@@ -18,7 +18,12 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+// my add
+    public function getFarmer(){
+        return $this -> hasOne(Farmer::class,'user_id','fid');
+    }
 
+// myadd end
     /**
      * The attributes that are mass assignable.
      *
@@ -28,6 +33,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**

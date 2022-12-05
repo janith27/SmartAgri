@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('farmer', function (Blueprint $table) {
-            $table->id('fid');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('farmers', function (Blueprint $table) {
+            $table->string('email')->primary();
             $table->string('title');
             $table->string('fname');
             $table->string('lname');
+            $table->string('street1');
+            $table->string('street2');
             $table->integer('mobileno');
-            $table->string('village');
             $table->string('city');
             $table->string('crop');
             $table->timestamps();
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer');
+        Schema::dropIfExists('farmers');
     }
 };

@@ -4,6 +4,21 @@ import { Link } from 'react-router-dom'
 import Login from '../../assest/images/login.png'
 
 class FarmerReg extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      title:"",
+      fname:"",
+      lname:"",
+      mobileno:"",
+      village:"",
+      city:"",
+      crop:"",
+      message:""
+    }
+  }
+
   render() {
     return (
           <Fragment>
@@ -36,14 +51,20 @@ class FarmerReg extends Component {
 
                                 <Row>
                                   <Col>
-                                  <input className="form-control m-2" type="text" placeholder="Village" />
+                                  <input className="form-control m-2" type="text" placeholder="Street 1" />
                                   </Col>
 
                                   <Col>
-                                  <input className="form-control m-2" type="text" placeholder="City" />
+                                  <input className="form-control m-2" type="text" placeholder="Street 2" />
                                   </Col>
                                 </Row>
                                 
+                                <Form.Select aria-label="Default select example " className="form-control m-2">
+                                  <option value="mr">Giriulla</option>
+                                  <option value="miss">Kurunegalla</option>
+                                  <option value="mrs">Matara</option>
+                                </Form.Select>
+
                                 <div className="form-control m-2">
                                 <Row>
                                   <Col><label className="m-2">Crops:</label></Col>
@@ -65,7 +86,7 @@ class FarmerReg extends Component {
                                 
                                 <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
 
-                                <input className="form-control m-2" type="text" placeholder="Enter NIC Number" />
+                                {/* <input className="form-control m-2" type="text" placeholder="Enter NIC Number" /> */}
 
                                 <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
 

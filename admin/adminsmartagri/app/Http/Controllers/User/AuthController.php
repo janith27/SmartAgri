@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
 
+use App\Models\Farmer;
+
 use App\Http\Requests\RegisterRequest;
 use DB;
 use Illuminate\Support\Facades\Hash;
@@ -40,21 +42,67 @@ class AuthController extends Controller
 
     } // end method
 
-    public function Register(RegisterRequest $request){
+    // public function Register(RegisterRequest $request){
+
+    //     try{
+
+    //         $user = User::create([
+    //             'name' => $request->name,
+    //             'email' => $request->email,
+    //             'password' => Hash::make($request->password),
+    //             'role' => $request->role
+    //         ]);
+    //         $token = $user->createToken('app')->accessToken;
+
+    //         return response([
+    //             'message' => "Registration Successfull",
+    //             'token' => $token,
+    //             'user' => $user
+    //         ],200);
+
+    //         }catch(Exception $exception){
+    //             return response([
+    //                 'message' => $exception->getMessage()
+    //             ],400);
+    //         }
+
+    // } // end mehtod
+
+    public function FarmerRegister(RegisterRequest $request){
 
         try{
 
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+
             ]);
+
+
+            $farmer = Farmer::create([
+
+                'title' => $request->title,
+                'email' => $request->email,
+                'fname' => $request->fname,
+                'lname' => $request->lname,
+                'street1' => $request->street1,
+                'street2' => $request->street2,
+                'mobileno' => $request->mobileno,
+                'city' => $request->city,
+                'crop' => $request->crop
+
+            ]);
+
             $token = $user->createToken('app')->accessToken;
 
             return response([
                 'message' => "Registration Successfull",
                 'token' => $token,
-                'user' => $user
+                'user' => $user,
+
+
             ],200);
 
             }catch(Exception $exception){
@@ -62,6 +110,51 @@ class AuthController extends Controller
                     'message' => $exception->getMessage()
                 ],400);
             }
+    } // end mehtod
 
+
+
+    public function SupplierRegister(RegisterRequest $request){
+
+        try{
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+
+            ]);
+
+
+            // $farmer = Farmer::create([
+
+            //     'title' => $request->title,
+            //     'email' => $request->email,
+            //     'fname' => $request->fname,
+            //     'lname' => $request->lname,
+            //     'street1' => $request->street1,
+            //     'street2' => $request->street2,
+            //     'mobileno' => $request->mobileno,
+            //     'city' => $request->city,
+            //     'crop' => $request->crop
+
+            // ]);
+
+            $token = $user->createToken('app')->accessToken;
+
+            return response([
+                'message' => "Registration Successfull",
+                'token' => $token,
+                'user' => $user,
+
+
+            ],200);
+
+            }catch(Exception $exception){
+                return response([
+                    'message' => $exception->getMessage()
+                ],400);
+            }
     } // end mehtod
 }

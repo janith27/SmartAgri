@@ -6,7 +6,8 @@
 <body>
 HI <br>
 
- Change Your Password <a href="http://localhost:3000/resetpassword/{{ $data }}">Click Here</a>
+ {{-- Change Your Password <a href="http://localhost:3000/resetpassword/{{ $data }}">Click Here</a> --}}
+ Change Your Password <a href="http://localhost:3000/resetpassword">Click Here</a>
  <br>
  Pincode : {{ $data }}
 

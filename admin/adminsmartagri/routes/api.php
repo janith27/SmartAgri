@@ -19,7 +19,13 @@ use App\Http\Controllers\User\ResetController;
  Route::post('/login',[AuthController::class, 'Login']);
 
  // Register Routes
- Route::post('/register',[AuthController::class, 'Register']);
+ //Route::post('/register',[AuthController::class, 'Register']);
+
+ // farmer Register Routes
+ Route::post('/fregister',[AuthController::class, 'FarmerRegister']);
+
+ // farmer Register Routes
+ Route::post('/sregister',[AuthController::class, 'SupplierRegister']);
 
  // Forget Password Routes
  Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
@@ -29,6 +35,7 @@ use App\Http\Controllers\User\ResetController;
 
   // Current User Route
   Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
+
 
 
  /////////////// End User Login API Start ////////////////////////

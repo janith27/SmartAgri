@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import {Link, Navigate} from "react-router-dom"
 import Forget from '../../assest/images/forget.jpg'
 import AppURL from '../../api/AppURL';
 import axios from 'axios'
@@ -16,7 +16,8 @@ class ResetPassword extends Component {
                email:'',
                password:'',
                password_confirmation:'',
-               message:'' 
+               message:'',
+               
 
           }
      }
@@ -50,6 +51,8 @@ class ResetPassword extends Component {
      }
 
   render() {
+
+
     return (
         <Fragment>
         <Container>
@@ -71,6 +74,11 @@ class ResetPassword extends Component {
 
 
              <Button type="submit" className="btn btn-block m-2 site-btn-login"> Reset Password </Button> 
+
+             <hr/>
+               <p className="section-sub-title">Login with new password :
+                    <Link to="/login" className="h6 btn"><Button variant="link">Login</Button></Link>
+               </p>
 
         </Form>
 

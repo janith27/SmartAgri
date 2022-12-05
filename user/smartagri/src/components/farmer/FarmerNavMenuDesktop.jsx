@@ -32,8 +32,9 @@ class FarmerNavMenuDesktop extends Component {
                                 <h1>{name}</h1>
                                 <div>
                                     <Link to="/" className="h4 btn"><Button variant="link">Chat</Button></Link>
-                                    <Link to="/registrationchose" className="h4 btn"><Button variant="success"><FaUserPlus />Cart</Button></Link>
-                                    <Link to="/login" className="h4 btn"><Button variant="outline-success"><FaUserCircle />Notifiction</Button></Link>
+                                    <Link to="/" className="h4 btn"><Button variant="success"><FaUserPlus />Shop</Button></Link>
+                                    <Link to="/" className="h4 btn"><Button variant="success"><FaUserPlus />Cart</Button></Link>
+                                    <Link to="/" className="h4 btn"><Button variant="outline-success"><FaUserCircle />Notifiction</Button></Link>
                                     <Link to="/" onClick={this.logout} className="h4 btn"><Button variant="outline-success">Logout</Button></Link>
                                 </div>
                             </div>

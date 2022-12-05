@@ -37,6 +37,7 @@ class FarmerMegaMenuMobile extends Component {
         <div className="accordionMenuDivMobile">
             <div className="accordionMenuDivInsideMobile">
                 <Link to="/" ><button className="accordion">Chat</button></Link>
+                <Link to="/" ><button className="accordion">Shop</button></Link>
                 <Link to="/" ><button className="accordion">Cart</button></Link>
                 <Link to="/" ><button className="accordion">Notification</button></Link>
                 <Link to="/" onClick={this.logout}><button className="accordion">Logout</button></Link>
