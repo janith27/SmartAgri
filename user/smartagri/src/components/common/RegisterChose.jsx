@@ -25,7 +25,7 @@ class RegisterChose extends Component {
                                 bulk of the card's content.
                             </Card.Text>
                             
-                            <Link to="/farmerregpage"><Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button></Link>
+                            <Link to="/fregister"><Button className="btn btn-block m-2 site-btn-userselect">Farmer</Button></Link>
                         </Card.Body>
                     </Card>
 

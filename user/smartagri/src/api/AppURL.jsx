@@ -9,6 +9,7 @@ class AppURL {
     static UserData = this.BaseURL+"/user"
     static UserForgetPassword = this.BaseURL+"/forgetpassword"
     static UserResetPassword = this.BaseURL+"/resetpassword"
+    static FarmerRegister = this.BaseURL+"/fregister"
 }
 
 export default AppURL

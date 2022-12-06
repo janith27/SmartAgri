@@ -43,7 +43,7 @@ class AppRoute extends Component {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/registrationchose" element={<RegistrationChosepage /> } />
           <Route exact path="/login" element={<UserLoginPage />} />
-          <Route exact path="/farmerregpage" element={<FarmerRegPage />} />
+          <Route exact path="/fregister" element={<FarmerRegPage />} />
           <Route exact path="/instructorregpage" element={<InstructorRegPage />} />
           <Route exact path="/supplierregpage" element={<SupplierRegPage />} />
           <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
