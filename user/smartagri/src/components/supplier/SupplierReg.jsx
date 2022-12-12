@@ -2,8 +2,73 @@ import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Login from '../../assest/images/login.png'
+import axios from 'axios'
+import AppURL from '../../api/AppURL';
+import Citylist from '../../components/dropdownlist/Citylist.json';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class SupplierReg extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      name:'',
+      email:'',
+      password:'',
+      password_confirmation:'',
+      message:'',
+      role:'1',
+      loggedIn:false,
+      title:"",
+      fname:"",
+      lname:"",
+      street1:"",
+      street2:"",
+      city:"",
+      mobileno:"",
+      crop:""
+    }
+  }
+
+  // Farmer Register Form Submit Method 
+  formSubmit = (e) => {
+    e.preventDefault();
+    const data={
+         name:this.state.fname,
+         email:this.state.email,
+         password:this.state.password,
+         password_confirmation:this.state.password_confirmation,
+         role:this.state.role,
+         title:this.state.title,
+         fname:this.state.fname,
+         lname:this.state.lname,
+         street1:this.state.street1,
+         street2:this.state.street2,
+         city:this.state.city,
+         mobileno:this.state.mobileno,
+         crop:this.state.crop
+    }
+
+    axios.post(AppURL.FarmerRegister,data).then(response =>{ 
+
+         this.setState({message:response.data.message})
+
+         toast.success(this.state.message,{
+              position: "top-right"
+         });
+        //  document.getElementById("fromreset").reset();
+
+    }).catch(error=>{
+         this.setState({message:error.response.data.message})
+         toast.error(this.state.message,{
+              position: "top-right"
+         });
+    }); 
+
+}
+
+
   render() {
     return (
       <Fragment>
@@ -13,7 +78,7 @@ class SupplierReg extends Component {
 
               <Row className="text-center">
                 <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
-                  <Form className="onboardForm">
+                  {/* <Form className="onboardForm">
                     <h4 className="section-title-login"> SUPPLIER REGISTER </h4>
                       
                       <Form.Select aria-label="Default select example " className="form-control m-2">
@@ -74,7 +139,7 @@ class SupplierReg extends Component {
                       
                       <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
 
-                      {/* <input className="form-control m-2" type="text" placeholder="Enter NIC Number" /> */}
+                      {/* <input className="form-control m-2" type="text" placeholder="Enter NIC Number" /> 
 
                       <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
 
@@ -89,7 +154,7 @@ class SupplierReg extends Component {
 
                     <p> <b> Already Have An Account ? </b><Link to="/login"><b> Login </b> </Link> </p>
 
-                  </Form>
+                  </Form> */}
 
 
                 </Col>

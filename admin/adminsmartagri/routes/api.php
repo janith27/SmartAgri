@@ -41,7 +41,6 @@ use App\Http\Controllers\User\ResetController;
  /////////////// End User Login API Start ////////////////////////
 
 
-
 //Get visitor
 Route::get('/getvisitor',[VisitorController::class,'GetVisitorDetails']);
 
