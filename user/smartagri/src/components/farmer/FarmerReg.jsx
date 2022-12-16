@@ -81,7 +81,7 @@ class FarmerReg extends Component {
                           <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
 
                           <Form className="onboardForm" onSubmit={this.formSubmit} id="fromreset" >
-                          <h4 className="section-title-login"> FARMER REGISTER </h4>
+             <h4 className="section-title-login"> FARMER REGISTER </h4>
 
              {/* <Form.Select aria-label="Default select example " onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
                                   <option value="mr">Mr</option>
@@ -107,6 +107,8 @@ class FarmerReg extends Component {
 
              {/* <input className="form-control m-2" type="text" placeholder="Enter last name" onChange={(e)=>{this.setState({lname:e.target.value})}} /> */}
 
+             <input className="form-control m-2" type="text" placeholder="Enter mobile no" onChange={(e)=>{this.setState({mobileno:e.target.value})}} />
+
              <Row>
                 <Col>
                   <input className="form-control m-2" type="text" placeholder="Enter street1 name" onChange={(e)=>{this.setState({street1:e.target.value})}} />
@@ -123,7 +125,7 @@ class FarmerReg extends Component {
 
              <input className="form-control m-2" type="text" placeholder="Enter city" onChange={(e)=>{this.setState({city:e.target.value})}} />
 
-             <input className="form-control m-2" type="text" placeholder="Enter mobile no" onChange={(e)=>{this.setState({mobileno:e.target.value})}} />
+             
 
              <input className="form-control m-2" type="text" placeholder="Enter crop" onChange={(e)=>{this.setState({crop:e.target.value})}} />
 
@@ -135,7 +137,10 @@ class FarmerReg extends Component {
 
              <Button type="submit" className="btn btn-block m-2 site-btn-login"> Register </Button> 
 
-             
+             <br></br> <br></br>
+                <hr />
+
+                <p> <b> Already Have An Account ? </b><Link to="/login"><b> Login </b> </Link> </p>
 
         </Form>
 

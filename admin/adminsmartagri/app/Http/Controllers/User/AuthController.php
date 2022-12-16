@@ -9,6 +9,8 @@ use Auth;
 use App\Models\User;
 
 use App\Models\Farmer;
+use App\Models\Instructor;
+use App\Models\Supplier;
 
 use App\Http\Requests\RegisterRequest;
 use DB;
@@ -114,6 +116,54 @@ class AuthController extends Controller
 
 
 
+    public function InstructorRegister(RegisterRequest $request){
+
+        try{
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+
+            ]);
+
+
+            $instructor = Instructor::create([
+
+                'title' => $request->title,
+                'email' => $request->email,
+                'fname' => $request->fname,
+                'lname' => $request->lname,
+                'street1' => $request->street1,
+                'street2' => $request->street2,
+                'mobileno' => $request->mobileno,
+                'city' => $request->city,
+                'crop' => $request->crop,
+                'edu' => $request->edu
+
+            ]);
+
+            $token = $user->createToken('app')->accessToken;
+
+            return response([
+                'message' => "Registration Successfull",
+                'token' => $token,
+                'user' => $user,
+
+
+            ],200);
+
+            }catch(Exception $exception){
+                return response([
+                    'message' => $exception->getMessage()
+                ],400);
+            }
+    } // end mehtod
+
+
+
+
     public function SupplierRegister(RegisterRequest $request){
 
         try{
@@ -127,19 +177,20 @@ class AuthController extends Controller
             ]);
 
 
-            // $farmer = Farmer::create([
+            $supplier = Supplier::create([
 
-            //     'title' => $request->title,
-            //     'email' => $request->email,
-            //     'fname' => $request->fname,
-            //     'lname' => $request->lname,
-            //     'street1' => $request->street1,
-            //     'street2' => $request->street2,
-            //     'mobileno' => $request->mobileno,
-            //     'city' => $request->city,
-            //     'crop' => $request->crop
+                'title' => $request->title,
+                'email' => $request->email,
+                'fname' => $request->fname,
+                'lname' => $request->lname,
+                'street1' => $request->street1,
+                'street2' => $request->street2,
+                'mobileno' => $request->mobileno,
+                'city' => $request->city,
+                'items' => $request->items,
+                'bisregnum' => $request->bisregnum,
 
-            // ]);
+            ]);
 
             $token = $user->createToken('app')->accessToken;
 

@@ -24,17 +24,20 @@ use App\Http\Controllers\User\ResetController;
  // farmer Register Routes
  Route::post('/fregister',[AuthController::class, 'FarmerRegister']);
 
+ // instructor Register Routes
+ Route::post('/iregister',[AuthController::class, 'InstructorRegister']);
+
  // farmer Register Routes
  Route::post('/sregister',[AuthController::class, 'SupplierRegister']);
 
  // Forget Password Routes
  Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
 
-  // Reset Password Routes
-  Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
+ // Reset Password Routes
+ Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
 
-  // Current User Route
-  Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
+ // Current User Route
+ Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
 
 
 
