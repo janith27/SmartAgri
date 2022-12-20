@@ -1,0 +1,33 @@
+.instruct{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.instructGlass{
+    display: grid;
+    height: 97%;
+    width: 97%;
+    border-radius: 2rem;
+    background-color: rgb(236, 243, 235);
+    overflow: hidden;
+    grid-template-columns: 11rem auto 20rem;
+}
+
+@media screen and (max-width:1200px){
+
+    .instructGlass{
+        grid-template-columns: 10% 50% auto;
+        overflow-y: scroll;
+    }
+}
+@media screen and (max-width: 768px){
+    .instructGlass{
+        grid-template-columns: 1fr;
+    }
+    .instructGlass::-webkit-scrollbar{
+        display: none;
+    }
+}

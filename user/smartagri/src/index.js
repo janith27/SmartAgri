@@ -7,6 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assest/css/custom.css';
 import '../src/assest/css/fontawesome.css';
 import '../src/assest/css/animate.min.css';
+import '../src/assest/css/InstJournal.css';
+import '../src/assest/css/InstructorAppoinment.css';
+import '../src/assest/css/InstructorDashboard.css';
+import '../src/assest/css/JournalRightSide.css';
+import '../src/assest/css/JournalTable.css';
+import '../src/assest/css/SideNotify.css';
 import axios from 'axios' 
 
 axios.defaults.headers.common['Authorization']='Bearer '+localStorage.getItem('token')

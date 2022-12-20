@@ -11,7 +11,7 @@ class AppURL {
     static UserResetPassword = this.BaseURL+"/resetpassword"
     static FarmerRegister = this.BaseURL+"/fregister"
     static SupplierRegister = this.BaseURL+"/sregister"
-    static InstructorRegister = this.BaseURL+"/iregister"
+    static InstructorRegister = this.BaseURL+"/insregister"
 }
 
 export default AppURL

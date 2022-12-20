@@ -25,7 +25,7 @@ use App\Http\Controllers\User\ResetController;
  Route::post('/fregister',[AuthController::class, 'FarmerRegister']);
 
  // instructor Register Routes
- Route::post('/iregister',[AuthController::class, 'InstructorRegister']);
+ Route::post('/insregister',[AuthController::class, 'InstructorRegister']);
 
  // farmer Register Routes
  Route::post('/sregister',[AuthController::class, 'SupplierRegister']);

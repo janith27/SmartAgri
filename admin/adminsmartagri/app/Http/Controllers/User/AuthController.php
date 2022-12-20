@@ -140,7 +140,7 @@ class AuthController extends Controller
                 'mobileno' => $request->mobileno,
                 'city' => $request->city,
                 'crop' => $request->crop,
-                'edu' => $request->edu
+                'edu' => $request->edu,
 
             ]);
 
