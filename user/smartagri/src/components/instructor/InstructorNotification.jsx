@@ -1,9 +1,9 @@
 import React, { Component,Fragment } from 'react'
-import FooterDesktop from '../components/common/FooterDesktop'
-import FooterMobile from '../components/common/FooterMobile'
-import InstructorNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
-import InstructorDashboard from '../components/instructor/InstructorDashboard'
-import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import FooterDesktop from '../common/FooterDesktop'
+import FooterMobile from '../common/FooterMobile'
+import InstructorNavMenuDesktop from '../farmer/FarmerNavMenuDesktop'
+import InstructorNavMobile from '../instructor/InstructorNavMobile'
+import Notification from '../common/Notification'
 
 
 
@@ -27,7 +27,7 @@ class InstructorHomePage extends Component {
         </div>
         <div>
           
-          <InstructorDashboard />
+          <Notification />
           <div>
            
           </div>

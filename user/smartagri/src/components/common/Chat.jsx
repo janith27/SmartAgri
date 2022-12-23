@@ -1,13 +1,12 @@
 import React, { Component,Fragment } from 'react'
-import FooterDesktop from '../components/common/FooterDesktop'
-import FooterMobile from '../components/common/FooterMobile'
-import InstructorNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
-import InstructorDashboard from '../components/instructor/InstructorDashboard'
-import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import FooterDesktop from '../common/FooterDesktop'
+import FooterMobile from '../common/FooterMobile'
+import InstructorChat from '../instructor/InstructorChat'
+import InstructorNavMenuDesktop from '../farmer/FarmerNavMenuDesktop'
+import InstructorNavMobile from '../instructor/InstructorNavMobile'
 
 
-
-class InstructorHomePage extends Component {
+class Chat extends Component {
     componentDidMount(){
         window.scroll(0,0)
       }
@@ -27,7 +26,7 @@ class InstructorHomePage extends Component {
         </div>
         <div>
           
-          <InstructorDashboard />
+          <InstructorChat />
           <div>
            
           </div>
@@ -51,4 +50,4 @@ class InstructorHomePage extends Component {
   }
 }
 
-export default InstructorHomePage
+export default Chat

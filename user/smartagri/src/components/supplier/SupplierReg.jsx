@@ -84,7 +84,7 @@ class SupplierReg extends Component {
                     <h4 className="section-title-login"> SUPPLIER REGISTER </h4> */}
 
                     <Form className="onboardForm" onSubmit={this.formSubmit} id="fromreset" >
-             <h4 className="section-title-login"> FARMER REGISTER </h4>
+             <h4 className="section-title-login"> SUPPLIER REGISTER </h4>
 
              {/* <Form.Select aria-label="Default select example " onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
                                   <option value="mr">Mr</option>

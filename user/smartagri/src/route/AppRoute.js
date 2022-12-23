@@ -9,6 +9,11 @@ import SupplierRegPage from '../pages/SupplierRegPage';
 import ForgetPasswordPage from '../pages/ForgetPasswordPage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
 import FarmerHomePage from '../pages/FarmerHomePage';
+import InnstructorHomePage from '../pages/InstructorHomePage';
+import Appoinment from '../pages/Appoinment'
+import AddJournal from '../pages/AddJournal';
+import InstructorNotification from '../components/instructor/InstructorNotification';
+import Chat from '../components/common/Chat';
 import axios from 'axios' 
 import AppURL from '../api/AppURL';
 
@@ -49,7 +54,12 @@ class AppRoute extends Component {
           <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage />} />
-          
+          <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
+          <Route exact path="/appoinment" element={< Appoinment />} />
+          <Route exact path="/addjournal" element={< AddJournal />} />
+          <Route exact path="/instructornotification" element={< InstructorNotification />} />
+          <Route exact path="/instructorchat" element={< Chat />} />
+
         </Routes>
       </Fragment>
     )

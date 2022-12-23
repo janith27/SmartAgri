@@ -7,6 +7,7 @@ import AppURL from '../../api/AppURL';
 import Citylist from '../../components/dropdownlist/Citylist.json';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 class InstructorReg extends Component {
 
   constructor(){

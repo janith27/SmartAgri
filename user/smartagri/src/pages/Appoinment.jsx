@@ -4,18 +4,16 @@ import FooterMobile from '../components/common/FooterMobile'
 import InstructorNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
 import InstructorDashboard from '../components/instructor/InstructorDashboard'
 import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import InstructorAppoinment from '../components/instructor/InstructorAppoinment'
 
-
-
-class InstructorHomePage extends Component {
+class Appoinment extends Component {
     componentDidMount(){
         window.scroll(0,0)
       }
-
-  render() {
-    const User = this.props.user;
-    return (
-        <Fragment>
+    render() {
+        const User = this.props.user;
+        return (
+            <Fragment>
         
         <div className="Desktop">
           <InstructorNavMenuDesktop user = {User} />
@@ -27,7 +25,7 @@ class InstructorHomePage extends Component {
         </div>
         <div>
           
-          <InstructorDashboard />
+          <InstructorAppoinment />
           <div>
            
           </div>
@@ -47,8 +45,8 @@ class InstructorHomePage extends Component {
         
         
       </Fragment>
-    )
-  }
+        );
+    }
 }
 
-export default InstructorHomePage
+export default Appoinment;

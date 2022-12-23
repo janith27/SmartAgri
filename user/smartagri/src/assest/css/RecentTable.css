@@ -1,0 +1,35 @@
+.Table{
+    width: 90%;
+    margin-right: 2rem;
+
+
+   
+}
+
+.Table:h3{
+    text-decoration: none;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+}
+@media screen and (max-width: 1200px){
+    .Table{
+        width: 170%;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .Table{
+        
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 18rem;
+    }
+}
+
+
