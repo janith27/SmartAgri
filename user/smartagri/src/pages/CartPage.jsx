@@ -1,34 +1,31 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
+import Cart from '../components/Cart/Cart'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
-import InstructorNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
-import InstructorDashboard from '../components/instructor/InstructorDashboard'
-import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import FarmerNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
+import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
 
+class CartPage extends Component {
 
-
-class InstructorHomePage extends Component {
     componentDidMount(){
         window.scroll(0,0)
       }
 
   render() {
-    const User = this.props.user;
     return (
         <Fragment>
         
         <div className="Desktop">
-          <InstructorNavMenuDesktop user = {User} />
+          <FarmerNavMenuDesktop />
           
         </div>
 
         <div className="Mobile">
-          <InstructorNavMobile />
+          <FarmerNavMobile />
         </div>
         
-          
-          <InstructorDashboard />
-         
+        
+        <Cart />
 
         <div className="Desktop">
           <FooterDesktop />
@@ -45,4 +42,4 @@ class InstructorHomePage extends Component {
   }
 }
 
-export default InstructorHomePage
+export default CartPage

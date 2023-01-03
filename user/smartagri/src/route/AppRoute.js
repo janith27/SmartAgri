@@ -16,6 +16,10 @@ import InstructorNotification from '../components/instructor/InstructorNotificat
 import Chat from '../components/common/Chat';
 import axios from 'axios' 
 import AppURL from '../api/AppURL';
+import NotificationPage from '../pages/NotificationPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
+import CartPage from '../pages/CartPage';
+
 
 
 class AppRoute extends Component {
@@ -59,6 +63,10 @@ class AppRoute extends Component {
           <Route exact path="/addjournal" element={< AddJournal />} />
           <Route exact path="/instructornotification" element={< InstructorNotification />} />
           <Route exact path="/instructorchat" element={< Chat />} />
+          <Route exact path="/notification" element={< NotificationPage />} />
+          <Route exact path="/productdetails" element={< ProductDetailsPage />} />
+          <Route exact path="/cart" element={< CartPage />} />
+
 
         </Routes>
       </Fragment>

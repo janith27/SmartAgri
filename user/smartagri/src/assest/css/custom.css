@@ -11,7 +11,9 @@
 @import "megaMenuMobile.css";
 @import "responsive.css";
 @import "onboard.css";
-@import "common.css"
+@import "common.css";
+@import "productDetails.css";
+@import "cartList.css";
 
 /* body{
     background-color: rgb(247, 247, 247);

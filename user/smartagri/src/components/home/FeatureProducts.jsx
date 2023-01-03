@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row, Card } from 'react-bootstrap'
-
+import { Link } from 'react-router-dom'
 
 class FeatureProducts extends Component {
   render() {
@@ -13,7 +13,7 @@ class FeatureProducts extends Component {
          </div>  
             <Row>
                 <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-
+                
                 <Card className="image-box">
                   <img className="center" src=""/>
                     <Card.Body>
@@ -33,7 +33,7 @@ class FeatureProducts extends Component {
                      <p className="product-price-on-card">Price</p> 
                     </Card.Body>
                 </Card>
-
+                
                 </Col>
 
                 

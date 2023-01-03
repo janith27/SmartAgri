@@ -31,7 +31,7 @@ formSubmit = (e)=>{
   axios.post(AppURL.UserLogin,data).then(response =>{ 
 
       localStorage.setItem('token',response.data.token);
-      localStorage.setItem('role',response.data.user.role);
+      // localStorage.setItem('role',response.data.user.role);
       this.setState({loggedIn:true});
       this.setState({role:response.data.user.role});
       
