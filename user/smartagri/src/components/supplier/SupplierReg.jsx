@@ -20,15 +20,15 @@ class SupplierReg extends Component {
       message:'',
       role:'3',
       loggedIn:false,
-      title:"",
-      fname:"",
-      lname:"",
-      street1:"",
-      street2:"",
-      city:"",
-      mobileno:"",
-      items:"",
-      bisregnum:"",
+      title:'',
+      fname:'',
+      lname:'',
+      street1:'',
+      street2:'',
+      city:'',
+      mobileno:'',
+      items:'',
+      bisregnum:'',
     }
   }
 
@@ -80,19 +80,19 @@ class SupplierReg extends Component {
 
               <Row className="text-center">
                 <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
-                   {/* <Form className="onboardForm">
-                    <h4 className="section-title-login"> SUPPLIER REGISTER </h4> */}
+                   
 
                     <Form className="onboardForm" onSubmit={this.formSubmit} id="fromreset" >
              <h4 className="section-title-login"> SUPPLIER REGISTER </h4>
 
-             {/* <Form.Select aria-label="Default select example " onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
-                                  <option value="mr">Mr</option>
-                                  <option value="miss">Miss</option>
-                                  <option value="mrs">Mrs</option>
-                                </Form.Select> */}
-
-             <input className="form-control m-2" type="text" placeholder="Enter title" onChange={(e)=>{this.setState({title:e.target.value})}} />
+             
+         <select onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
+              <option value="" selected disabled>Title</option>
+              <option value="Mr">Mr</option>
+              <option value="Miss">Miss</option>
+              <option value="Mrs">Mrs</option>              
+          </select>     
+             {/* <input className="form-control m-2" type="text" placeholder="Enter title" onChange={(e)=>{this.setState({title:e.target.value})}} /> */}
 
              
 
@@ -106,9 +106,6 @@ class SupplierReg extends Component {
                 </Col>
              </Row>
 
-             {/* <input className="form-control m-2" type="text" placeholder="Enter first name" onChange={(e)=>{this.setState({fname:e.target.value})}} /> */}
-
-             {/* <input className="form-control m-2" type="text" placeholder="Enter last name" onChange={(e)=>{this.setState({lname:e.target.value})}} /> */}
 
              <input className="form-control m-2" type="text" placeholder="Enter mobile no" onChange={(e)=>{this.setState({mobileno:e.target.value})}} />
 
@@ -122,9 +119,6 @@ class SupplierReg extends Component {
                 </Col>
              </Row>
 
-             {/* <input className="form-control m-2" type="text" placeholder="Enter street1 name" onChange={(e)=>{this.setState({street1:e.target.value})}} /> */}
-
-             {/* <input className="form-control m-2" type="text" placeholder="Enter street2 name" onChange={(e)=>{this.setState({street2:e.target.value})}} /> */}
 
              <input className="form-control m-2" type="text" placeholder="Enter city" onChange={(e)=>{this.setState({city:e.target.value})}} />
 
@@ -146,81 +140,6 @@ class SupplierReg extends Component {
                 <p> <b> Already Have An Account ? </b><Link to="/login"><b> Login </b> </Link> </p>
 
         </Form>
-
-
-                      
-                      {/* <Form.Select aria-label="Default select example " className="form-control m-2">
-                        <option value="mr">Mr.</option>
-                        <option value="miss">Miss.</option>
-                        <option value="mrs">Mrs.</option>
-                      </Form.Select>
-                      
-                      <Row>
-                        <Col>
-                        <input className="form-control m-2" type="text" placeholder="First Name" />
-                        </Col>
-
-                        <Col>
-                        <input className="form-control m-2" type="text" placeholder="Last Name" />
-                        </Col>
-                      </Row>
-          
-                      <input className="form-control m-2" type="number" placeholder="Mobile Phone Number" />
-
-                      <Row>
-                        <Col>
-                          <input className="form-control m-2" type="text" placeholder="Street 1" />
-                        </Col>
-
-                        <Col>
-                          <input className="form-control m-2" type="text" placeholder="Street 2" />
-                        </Col>
-                      </Row>
-                                
-                      <Form.Select aria-label="Default select example " className="form-control m-2">
-                        <option value="mr">Giriulla</option>
-                        <option value="miss">Kurunegalla</option>
-                        <option value="mrs">Matara</option>
-                      </Form.Select>
-
-                      <input className="form-control m-2" type="text" placeholder="Business Number" />
-                      
-                      <div className="form-control m-2">
-                      <Row>
-                        <Col><label className="m-2">Supply:</label></Col>
-                        <Col>
-                          <Form.Group className=" m-2" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Fertilizer" />
-                          </Form.Group>
-                        </Col>
-
-                        <Col>
-                          <Form.Group className="m-2" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="equipment" />
-                          </Form.Group>
-                        </Col>
-                      </Row>
-                      </div>
-                      
-                      
-
-                      
-                      <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
-
-                      <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
-
-                      <input className="form-control m-2" type="password" placeholder="Confirm Your Password" />
-
-
-                      <Button className="btn btn-block m-2 site-btn-login"> Register </Button>
-                      
-                    <br></br> <br></br>
-                    <hr />
-
-                    <p> <b> Already Have An Account ? </b><Link to="/login"><b> Login </b> </Link> </p>
-
-                  </Form>  */}
-
 
                 </Col>
 

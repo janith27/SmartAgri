@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,Navigate } from 'react-router-dom'
 import Login from '../../assest/images/login.png'
 import axios from 'axios'
 import AppURL from '../../api/AppURL';
@@ -54,6 +54,11 @@ class InstructorReg extends Component {
 
     axios.post(AppURL.InstructorRegister,data).then(response =>{ 
 
+      //for direct access to farmer dashboard my new add
+      localStorage.setItem('token',response.data.token);
+      this.setState({loggedIn:true})
+      //end new edit
+
          this.setState({message:response.data.message})
 
          toast.success(this.state.message,{
@@ -74,6 +79,16 @@ class InstructorReg extends Component {
 
 
   render() {
+
+    // new edit for redirect to farmer dashboard
+    if(this.state.loggedIn){
+      
+      return <Navigate to ='/instructordashboard' />
+     
+  }
+  //end new edit 
+
+
     return (
       <Fragment>
         <Container>
@@ -83,97 +98,20 @@ class InstructorReg extends Component {
                 <Row className="text-center">
                   <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
 
-                    {/* <Form className="onboardForm">
-                      <h4 className="section-title-login"> INSTRUCTOR REGISTER </h4>
-                        
-                        <Form.Select aria-label="Default select example " className="form-control m-2">
-                          <option value="mr">Mr.</option>
-                          <option value="miss">Miss.</option>
-                          <option value="mrs">Mrs.</option>
-                        </Form.Select>
-                        
-                        <Row>
-                          <Col>
-                          <input className="form-control m-2" type="text" placeholder="First Name" />
-                          </Col>
-
-                          <Col>
-                          <input className="form-control m-2" type="text" placeholder="Last Name" />
-                          </Col>
-                        </Row>
-            
-                        <input className="form-control m-2" type="number" placeholder="Mobile Phone Number" />
-
-                        <Row>
-                          <Col>
-                            <input className="form-control m-2" type="text" placeholder="Street 1" />
-                          </Col>
-
-                          <Col>
-                            <input className="form-control m-2" type="text" placeholder="Street 2" />
-                          </Col>
-                        </Row>
-                                
-                        <Form.Select aria-label="Default select example " className="form-control m-2">
-                          <option value="mr">Giriulla</option>
-                          <option value="miss">Kurunegalla</option>
-                          <option value="mrs">Matara</option>
-                        </Form.Select>
-                        
-                        <div className="form-control m-2">
-                        <Row>
-                          <Col><label className="m-2">Experties Crops:</label></Col>
-                          <Col>
-                            <Form.Group className=" m-2" controlId="formBasicCheckbox">
-                              <Form.Check type="checkbox" label="Paddy" />
-                            </Form.Group>
-                          </Col>
-
-                          <Col>
-                            <Form.Group className="m-2" controlId="formBasicCheckbox">
-                              <Form.Check type="checkbox" label="Coconut" />
-                            </Form.Group>
-                          </Col>
-                        </Row>
-                        </div>
-                        
-                        <Form.Select aria-label="Default select example " className="form-control m-2">
-                          <option value="dip">Dip.</option>
-                          <option value="bsc">BSc.</option>
-                          <option value="msc">MSc.</option>
-                        </Form.Select>
-
-                        
-                        <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
-
-                        {/* <input className="form-control m-2" type="text" placeholder="Enter NIC Number" /> 
-
-                        <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
-
-                        <input className="form-control m-2" type="password" placeholder="Confirm Your Password" />
-
-
-                        <Button className="btn btn-block m-2 site-btn-login"> Register </Button>
-                        
-                      <br></br> <br></br>
-                      <hr />
-
-                      <p> <b> Already Have An Account ? </b><Link to="/login"><b> Login </b> </Link> </p>
-
-                    </Form> */}
 
 <Form className="onboardForm" onSubmit={this.formSubmit} id="fromreset" >
              <h4 className="section-title-login"> AGRICULTURE INSTRUCTOR REGISTER </h4>
 
-             {/* <Form.Select aria-label="Default select example " onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
-                                  <option value="mr">Mr</option>
-                                  <option value="miss">Miss</option>
-                                  <option value="mrs">Mrs</option>
-                                </Form.Select> */}
-
-             <input className="form-control m-2" type="text" placeholder="Enter title" onChange={(e)=>{this.setState({title:e.target.value})}} />
-
              
+
+             {/* <input className="form-control m-2" type="text" placeholder="Enter title" onChange={(e)=>{this.setState({title:e.target.value})}} /> */}
+
+             <select onChange={(e)=>{this.setState({title:e.target.value})}} className="form-control m-2">
+                <option value="" selected disabled>Title</option>
+                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>              
+             </select> 
 
              <Row>
                 <Col>
@@ -185,11 +123,14 @@ class InstructorReg extends Component {
                 </Col>
              </Row>
             
-
-             <input className="form-control m-2" type="text" placeholder="Enter Education state" onChange={(e)=>{this.setState({edu:e.target.value})}} />
-             {/* <input className="form-control m-2" type="text" placeholder="Enter first name" onChange={(e)=>{this.setState({fname:e.target.value})}} /> */}
-
-             {/* <input className="form-control m-2" type="text" placeholder="Enter last name" onChange={(e)=>{this.setState({lname:e.target.value})}} /> */}
+             <select onChange={(e)=>{this.setState({edu:e.target.value})}} className="form-control m-2">
+                <option value="" selected disabled>Highest Education State</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Degree">Degree</option>
+                <option value="Masters">Masters</option>              
+             </select> 
+             {/* <input className="form-control m-2" type="text" placeholder="Enter Education state" onChange={(e)=>{this.setState({edu:e.target.value})}} /> */}
+             
 
              <input className="form-control m-2" type="text" placeholder="Enter mobile no" onChange={(e)=>{this.setState({mobileno:e.target.value})}} />
 
@@ -203,9 +144,7 @@ class InstructorReg extends Component {
                 </Col>
              </Row>
 
-             {/* <input className="form-control m-2" type="text" placeholder="Enter street1 name" onChange={(e)=>{this.setState({street1:e.target.value})}} /> */}
-
-             {/* <input className="form-control m-2" type="text" placeholder="Enter street2 name" onChange={(e)=>{this.setState({street2:e.target.value})}} /> */}
+             
 
              <input className="form-control m-2" type="text" placeholder="Enter city" onChange={(e)=>{this.setState({city:e.target.value})}} />
 

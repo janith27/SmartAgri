@@ -14,6 +14,7 @@ class UserLogin extends Component {
     this.state={
       email:'',
       password:'',
+      role:'',
       message:'',
       loggedIn:false
     }
@@ -30,7 +31,10 @@ formSubmit = (e)=>{
   axios.post(AppURL.UserLogin,data).then(response =>{ 
 
       localStorage.setItem('token',response.data.token);
-      this.setState({loggedIn:true})
+      localStorage.setItem('role',response.data.user.role);
+      this.setState({loggedIn:true});
+      this.setState({role:response.data.user.role});
+      
 
   }).catch(error=>{
     console.log(error);
@@ -47,8 +51,18 @@ formSubmit = (e)=>{
     // After loging redirect to loging page //
 
     if(this.state.loggedIn){
-
-      return <Navigate to ='/farmerdashboard' />
+      if(this.state.role==1)
+      {
+        return <Navigate to ='/farmerdashboard' />
+      }
+      else if(this.state.role==2)
+      {
+        return <Navigate to ='/instructordashboard' />
+      }
+      else if(this.state.role==1)
+      {
+        return <Navigate to ='/farmerdashboard' />
+      }
         
     }
 

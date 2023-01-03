@@ -29,7 +29,7 @@ class AuthController extends Controller
                 return response([
                     'message' => "Successfully Login",
                     'token' => $token,
-                    'user' => $user
+                    'user' => $user,
                 ],200); // States Code
             }
 
