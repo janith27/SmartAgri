@@ -13,12 +13,14 @@ import InnstructorHomePage from '../pages/InstructorHomePage';
 import Appoinment from '../pages/Appoinment'
 import AddJournal from '../pages/AddJournal';
 import InstructorNotification from '../components/instructor/InstructorNotification';
-import Chat from '../components/common/Chat';
 import axios from 'axios' 
 import AppURL from '../api/AppURL';
-import NotificationPage from '../pages/NotificationPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import CartPage from '../pages/CartPage';
+import FarmerChatPage from '../pages/FarmerChatPage';
+import InstructorChatPage from '../pages/InstructorChatPage';
+import FarmerNotificationPage from '../pages/FarmerNotificationPage';
+import InstructorNotificationPage from '../pages/InstructorNotificationPage';
 
 
 
@@ -61,11 +63,12 @@ class AppRoute extends Component {
           <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />
-          <Route exact path="/instructornotification" element={< InstructorNotification />} />
-          <Route exact path="/instructorchat" element={< Chat />} />
-          <Route exact path="/notification" element={< NotificationPage />} />
+          <Route exact path="/instructornotification" element={< InstructorNotificationPage />} />
+          <Route exact path="/farmernotification" element={< FarmerNotificationPage />} />
           <Route exact path="/productdetails" element={< ProductDetailsPage />} />
           <Route exact path="/cart" element={< CartPage />} />
+          <Route exact path="/farmerchat" element={< FarmerChatPage />} />
+          <Route exact path="/instructorchat" element={< InstructorChatPage />} />
 
 
         </Routes>

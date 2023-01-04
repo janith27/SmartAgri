@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
-import FarmerNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
-import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
-import Notification from '../components/Notification/Notification'
+import InstructorNavMenuDesktop from '../components/instructor/InstructorNavMenuDesktop'
+import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import FarmerWithInstructorChat from '../components/Chat/FarmerWithInstructorChat'
 
-class NotificationPage extends Component {
+class InstructorChatPage extends Component {
 
     componentDidMount(){
         window.scroll(0,0)
@@ -13,19 +13,19 @@ class NotificationPage extends Component {
 
   render() {
     return (
-      <Fragment>
+        <Fragment>
         
         <div className="Desktop">
-          <FarmerNavMenuDesktop />
+        <InstructorNavMenuDesktop />
           
         </div>
 
         <div className="Mobile">
-          <FarmerNavMobile />
+        <InstructorNavMobile />
         </div>
         
         
-        <Notification />
+        <FarmerWithInstructorChat />
 
         <div className="Desktop">
           <FooterDesktop />
@@ -42,4 +42,4 @@ class NotificationPage extends Component {
   }
 }
 
-export default NotificationPage
+export default InstructorChatPage

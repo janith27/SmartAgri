@@ -20,7 +20,7 @@ class HomeNavMenuDesktop extends Component {
                 </Link>
                 
                 <div>
-                  <Link to="/" className="h4 btn"><Button variant="link">About</Button></Link>
+                  <Link to="/" className="h4 btn"><Button variant="outline-success">About</Button></Link>
                   <Link to="/registrationchose" className="h4 btn"><Button variant="success"><FaUserPlus /> Sign up</Button></Link>
                   <Link to="/login" className="h4 btn"><Button variant="outline-success"><FaUserCircle /> Login</Button></Link>
                 </div>

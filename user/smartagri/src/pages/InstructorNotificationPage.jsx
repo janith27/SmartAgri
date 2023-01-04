@@ -1,24 +1,22 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import InstructorNavMenuDesktop from '../components/instructor/InstructorNavMenuDesktop'
-import InstructorDashboard from '../components/instructor/InstructorDashboard'
 import InstructorNavMobile from '../components/instructor/InstructorNavMobile'
+import Notification from '../components/Notification/Notification'
 
+class InstructorNotificationPage extends Component {
 
-
-class InstructorHomePage extends Component {
     componentDidMount(){
         window.scroll(0,0)
       }
 
   render() {
-    const User = this.props.user;
     return (
-        <Fragment>
+      <Fragment>
         
         <div className="Desktop">
-          <InstructorNavMenuDesktop user = {User} />
+          <InstructorNavMenuDesktop />
           
         </div>
 
@@ -26,9 +24,8 @@ class InstructorHomePage extends Component {
           <InstructorNavMobile />
         </div>
         
-          
-          <InstructorDashboard />
-         
+        
+        <Notification />
 
         <div className="Desktop">
           <FooterDesktop />
@@ -45,4 +42,4 @@ class InstructorHomePage extends Component {
   }
 }
 
-export default InstructorHomePage
+export default InstructorNotificationPage

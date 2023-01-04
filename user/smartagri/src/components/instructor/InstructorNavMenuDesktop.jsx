@@ -28,9 +28,9 @@ class InstructorNavMenuDesktop extends Component {
                                 </Link>
                                 <h1>{name}</h1>
                                 <div>
-                                <Link to="/" className="h4 btn"><Button variant="link">Chat</Button></Link>
-                                    <Link to="/registrationchose" className="h4 btn"><Button variant="success"><FaUserPlus />Cart</Button></Link>
-                                    <Link to="/login" className="h4 btn"><Button variant="outline-success">Notifiction</Button></Link>
+                                    <Link to="/instructordashboard" className="h4 btn"><Button variant="outline-success">Dashboard</Button></Link>
+                                    <Link to="/instructorchat" className="h4 btn"><Button variant="outline-success">Chat</Button></Link>
+                                    <Link to="/instructornotification" className="h4 btn"><Button variant="outline-success">Notifiction</Button></Link>
                                     <Link to="/" onClick={this.logout} className="h4 btn"><Button variant="outline-success">Logout</Button></Link>
                                     
                                 </div>
