@@ -8,6 +8,7 @@ use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
+use App\Http\Controllers\Admin\ProductListController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
@@ -50,4 +51,9 @@ Route::get('/getvisitor',[VisitorController::class,'GetVisitorDetails']);
 //Any user Message Route
 Route::post('/postanyusermsg',[AnyUserMsgController::class,'PostAnyUserMsgDetails']);
 
+//product list Route
+Route::get('/productlist',[ProductListController::class,'Productlist']);
 
+Route::get('/productlistbyremark/{remark}',[ProductListController::class,'ProductListByRemark']);
+
+Route::get('/productlistbycategory/{category}',[ProductListController::class,'ProductListByCategory']);

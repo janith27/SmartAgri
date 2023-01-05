@@ -21,6 +21,7 @@ import FarmerChatPage from '../pages/FarmerChatPage';
 import InstructorChatPage from '../pages/InstructorChatPage';
 import FarmerNotificationPage from '../pages/FarmerNotificationPage';
 import InstructorNotificationPage from '../pages/InstructorNotificationPage';
+import FarmerShopPage from '../pages/FarmerShopPage';
 
 
 
@@ -68,6 +69,7 @@ class AppRoute extends Component {
           <Route exact path="/productdetails" element={< ProductDetailsPage />} />
           <Route exact path="/cart" element={< CartPage />} />
           <Route exact path="/farmerchat" element={< FarmerChatPage />} />
+          <Route exact path="/farmershop" element={< FarmerShopPage />} />
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
 
 

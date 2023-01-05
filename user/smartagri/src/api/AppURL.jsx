@@ -12,6 +12,7 @@ class AppURL {
     static FarmerRegister = this.BaseURL+"/fregister"
     static SupplierRegister = this.BaseURL+"/sregister"
     static InstructorRegister = this.BaseURL+"/insregister"
+    static ProductData = this.BaseURL+"/productlist"
 }
 
 export default AppURL

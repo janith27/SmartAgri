@@ -120,8 +120,19 @@ class SupplierReg extends Component {
              </Row>
 
 
-             <input className="form-control m-2" type="text" placeholder="Enter city" onChange={(e)=>{this.setState({city:e.target.value})}} />
-
+             {/* <input className="form-control m-2" type="text" placeholder="Enter city" onChange={(e)=>{this.setState({city:e.target.value})}} /> */}
+              {/* new add */}
+             <select onChange={(e)=>{this.setState({city:e.target.value})}} className="form-control m-2">
+                              <option value="" selected disabled>Select City</option>
+                              {
+                                Citylist.map((getcity)=>(
+                                  <option value={getcity.value}>{getcity.cname}</option>
+                                ))
+                              }
+                              
+                                          
+                            </select> 
+             {/* end new add */}
              <input className="form-control m-2" type="text" placeholder="Enter business Register Number" onChange={(e)=>{this.setState({bisregnum:e.target.value})}} />
 
              <input className="form-control m-2" type="text" placeholder="Enter items" onChange={(e)=>{this.setState({items:e.target.value})}} />

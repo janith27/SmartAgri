@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
 
-class Cards extends Component {
-    render() {
-        return (
-            <div className='VidDiv'>
+// class Cards extends Component {
+//     render() {
+//         return (
+//             <div className='VidDiv'>
                 
-            </div>
+//             </div>
            
-        );
-    }
-}
+//         );
+//     }
+// }
 
-export default Cards;
+// export default Cards;
