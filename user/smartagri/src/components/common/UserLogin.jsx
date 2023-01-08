@@ -59,9 +59,9 @@ formSubmit = (e)=>{
       {
         return <Navigate to ='/instructordashboard' />
       }
-      else if(this.state.role==1)
+      else if(this.state.role==3)
       {
-        return <Navigate to ='/farmerdashboard' />
+        return <Navigate to ='/supplierdashboard' />
       }
         
     }

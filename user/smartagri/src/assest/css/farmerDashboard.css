@@ -1,0 +1,55 @@
+.mainback {
+    margin-top: 150px;  
+}
+
+.backgroundbox {
+    height: 97%;
+    /* width: 97%; */
+    border-radius: 2rem;
+    background-color: rgb(236, 243, 235);
+    overflow: hidden;
+    
+}
+
+.cardappointment {
+    margin-bottom: 50px;
+    background-color: rgb(225, 127, 240);
+    border-radius: 50%;
+}
+
+.cultivate {
+    margin-bottom: 50px;
+    background-color: rgb(197, 245, 148);
+    border-radius: 50%;
+}
+
+.harvest {
+    margin-bottom: 50px;
+    background-color: rgb(235, 245, 148);
+    border-radius: 50%;
+}
+
+.journelcard {
+    margin-bottom: 10px;
+    background-color: rgb(224, 239, 203);
+    /* border-radius: 50%; */
+    /* width: 97%; */
+}
+.cropdetail{
+    border-radius: 2rem;
+    background-color: rgb(157, 239, 144);
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+.cropform{
+    width: 95%;
+}
+
+.btnmargin{
+    margin-bottom: 50px;
+}
+
+.cropformdivision{
+    margin-top: 70px;
+}

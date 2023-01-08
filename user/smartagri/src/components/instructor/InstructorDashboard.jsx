@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
-import SideBar from '../common/SideBar';
-import MainDash from '../common/MainDash';
-import RightSide from '../common/RightSide';
+import React, { Component, Fragment } from 'react'
+import { Col, Row } from 'react-bootstrap'
+import JournelView from '../farmer/DashboardComponent/JournelView'
+import InsAppointment from './DashboardComponent/InsAppointment';
+import InsEssentialView from './DashboardComponent/InsEssentialView';
 
 
 
 class InstructorDashboard extends Component {
     render() {
         return (
-            <div className='instruct'>
-                <div className='instructGlass'>
-                    <SideBar />
-                    <MainDash />
-                    <RightSide />
-                </div>
-
-                </div>
+            <Fragment>
+        <div className='mainback backgroundbox'>
+        <Row>
+          <Col lg={3} md={4} sm={12} xs={12}>
+            <InsAppointment />
+          </Col>
+          <Col lg={6} md={4} sm={12} xs={12}>
+            < InsEssentialView />
+          </Col>
+          <Col lg={3} md={4} sm={12} xs={12}>
+            <JournelView />
+          </Col>
+        </Row>
+        </div>
+      </Fragment>
                 
             
         );

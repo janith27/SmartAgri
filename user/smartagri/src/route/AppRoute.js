@@ -22,6 +22,7 @@ import InstructorChatPage from '../pages/InstructorChatPage';
 import FarmerNotificationPage from '../pages/FarmerNotificationPage';
 import InstructorNotificationPage from '../pages/InstructorNotificationPage';
 import FarmerShopPage from '../pages/FarmerShopPage';
+import SupplierHomePage from '../pages/SupplierHomePage';
 
 
 
@@ -62,6 +63,7 @@ class AppRoute extends Component {
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage />} />
           <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
+          <Route exact path="/supplierdashboard" element={< SupplierHomePage />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />
           <Route exact path="/instructornotification" element={< InstructorNotificationPage />} />
