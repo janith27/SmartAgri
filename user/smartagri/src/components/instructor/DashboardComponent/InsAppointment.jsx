@@ -1,5 +1,6 @@
 import React, { Component,Fragment } from 'react'
-import { Col, Row,Card } from 'react-bootstrap'
+import { Col, Row,Card, Button } from 'react-bootstrap'
+import {Link} from "react-router-dom"
 
 class InsAppointment extends Component {
   render() {
@@ -7,7 +8,7 @@ class InsAppointment extends Component {
         <Fragment>
             <div className='appoinmentback'>
         <div className='d-flex justify-content-center'>
-        <h1>Appointment</h1>
+        <h1> Recent Appointment</h1>
         </div>
         <Card border="primary" style={{ width: '18rem' }} className="journelcard ">
           <Card.Body>
@@ -16,6 +17,7 @@ class InsAppointment extends Component {
             <Card.Text>Date: </Card.Text>
             <Card.Text>Time: </Card.Text>
             <Card.Text>Venue: </Card.Text>
+            <Card.Text>Contact: </Card.Text>
             <Card.Text>About: </Card.Text> 
               
           </Card.Body>
@@ -28,11 +30,12 @@ class InsAppointment extends Component {
             <Card.Text>Date: </Card.Text>
             <Card.Text>Time: </Card.Text>
             <Card.Text>Venue: </Card.Text>
+            <Card.Text>Contact: </Card.Text>
             <Card.Text>About: </Card.Text> 
               
           </Card.Body>
         </Card>
-
+            <Link to="/" className="h4 btn"><Button variant="primary">Show More</Button></Link>
         </div>
          
       </Fragment>

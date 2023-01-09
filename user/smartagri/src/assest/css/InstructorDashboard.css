@@ -16,6 +16,10 @@
     grid-template-columns: 11rem auto 20rem;
 }
 
+.contain{
+    margin-top: 90px;
+}
+
 @media screen and (max-width:1200px){
 
     .instructGlass{
