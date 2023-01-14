@@ -1,0 +1,12 @@
+.appointmentcard{
+    margin-bottom: 10px;
+    background-color: rgb(218, 240, 185);
+    border-radius: 30px;
+    max-width: 90%;
+}
+.centercard{
+    align-items: center;
+}
+.title{
+    text-align: center;
+}

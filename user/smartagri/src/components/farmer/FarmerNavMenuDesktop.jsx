@@ -29,7 +29,7 @@ class FarmerNavMenuDesktop extends Component {
                                 <Link to="/">
                                     <img className="nav-logo" src={Logo}/>
                                 </Link>
-                                <h1>{name}</h1>
+                                <h5>{name}</h5>
                                 <div>
                                     <Link to="/farmerdashboard" className="h4 btn"><Button variant="outline-success">Dashboard</Button></Link>
                                     <Link to="/farmerchat" className="h4 btn"><Button variant="outline-success">Chat</Button></Link>

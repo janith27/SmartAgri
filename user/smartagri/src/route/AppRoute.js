@@ -12,7 +12,7 @@ import FarmerHomePage from '../pages/FarmerHomePage';
 import InnstructorHomePage from '../pages/InstructorHomePage';
 import Appoinment from '../pages/Appoinment'
 import AddJournal from '../pages/AddJournal';
-import InstructorNotification from '../components/instructor/InstructorNotification';
+// import InstructorNotification from '../components/instructor/InstructorNotification';
 import axios from 'axios' 
 import AppURL from '../api/AppURL';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
@@ -23,6 +23,7 @@ import FarmerNotificationPage from '../pages/FarmerNotificationPage';
 import InstructorNotificationPage from '../pages/InstructorNotificationPage';
 import FarmerShopPage from '../pages/FarmerShopPage';
 import SupplierHomePage from '../pages/SupplierHomePage';
+import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 
 
 
@@ -73,7 +74,7 @@ class AppRoute extends Component {
           <Route exact path="/farmerchat" element={< FarmerChatPage />} />
           <Route exact path="/farmershop" element={< FarmerShopPage />} />
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
-
+          <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage />} />
 
         </Routes>
       </Fragment>

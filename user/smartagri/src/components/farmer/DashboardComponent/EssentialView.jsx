@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Row } from 'react-bootstrap'
+import {Link} from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Supply from '../../home/Supply';
@@ -16,7 +17,7 @@ class EssentialView extends Component {
                         <Card.Text>
                          You have an appointment
                         </Card.Text>
-                        <Button variant="primary">Create Appointment</Button>
+                        <Link to="/farmerappointmentcreate" className="h4 btn"><Button variant="primary">Create Appointment</Button></Link>
                     </Card.Body>
                     
                 </Card>
