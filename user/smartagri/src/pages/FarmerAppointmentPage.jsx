@@ -1,4 +1,6 @@
+// import axios from 'axios'
 import React, { Component, Fragment } from 'react'
+// import AppURL from '../api/AppURL'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import AppointmentCreate from '../components/farmer/Appointment/AppointmentCreate'
@@ -7,9 +9,24 @@ import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
 
 class FarmerAppointmentPage extends Component {
 
+
+    // constructor(){
+    //   super();
+    //   this.state ={
+    //     InsData:[]
+    //   }
+    // }
+
     componentDidMount(){
         window.scroll(0,0)
-      }
+
+        // axios.get(AppURL.InstructorData("giriulla")).then(response =>{
+        //     this.setState({InsData:response.data});
+        // }).catch(error=>{
+
+        // });
+
+    }
 
   render() {
     return (

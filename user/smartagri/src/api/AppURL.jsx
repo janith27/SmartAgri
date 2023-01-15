@@ -13,6 +13,10 @@ class AppURL {
     static SupplierRegister = this.BaseURL+"/sregister"
     static InstructorRegister = this.BaseURL+"/insregister"
     static ProductData = this.BaseURL+"/productlist"
+
+    static InstructorData(keycity){
+        return this.BaseURL+"/instructordetails/"+keycity;
+   }
 }
 
 export default AppURL

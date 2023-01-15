@@ -62,4 +62,4 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 
 
 // Instructor Details Route
-Route::get('/instructordetails/{city}',[InstructorDetailsController::class,'InstructorDetail']);
+Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);

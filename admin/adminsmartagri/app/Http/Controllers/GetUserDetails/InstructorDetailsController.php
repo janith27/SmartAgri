@@ -10,8 +10,8 @@ class InstructorDetailsController extends Controller
 {
     public function InstructorDetail(Request $request){
         
-        $city = $request->city;
-        $sugustins = Instructor::where('city',$city)->get();
+        $keycity = $request->keycity;
+        $sugustins = Instructor::where('city',$keycity)->get();
         return $sugustins;
 
         // $result = Instructor::all();
