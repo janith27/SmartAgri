@@ -10,6 +10,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
+use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -63,3 +64,6 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 
 // Instructor Details Route
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
+
+//Farmer Details Route
+Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);

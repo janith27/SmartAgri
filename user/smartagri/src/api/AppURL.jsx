@@ -16,7 +16,11 @@ class AppURL {
 
     static InstructorData(keycity){
         return this.BaseURL+"/instructordetails/"+keycity;
-   }
+    }
+
+    static FarmerData(keyemail){
+        return this.BaseURL+"/farmerdetails/"+keyemail;
+    }
 }
 
 export default AppURL

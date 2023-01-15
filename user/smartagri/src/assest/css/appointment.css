@@ -3,10 +3,35 @@
     background-color: rgb(218, 240, 185);
     border-radius: 30px;
     max-width: 90%;
+    transform: scale(1);
 }
+
+.appointmentcard:hover{
+    transform: scale(1.02);
+}
+
+
 .centercard{
     align-items: center;
 }
 .title{
     text-align: center;
+}
+
+
+.appintmentimage-box {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 100% !important;
+}
+.appintmentimage-box img {
+    width: 150px !important;
+    transition: all 0.3s;
+    display: block;
+    height: 200px !important;
+    transform: scale(1);
+}
+.appintmentimage-box:hover img {
+    transform: scale(1.1);
 }

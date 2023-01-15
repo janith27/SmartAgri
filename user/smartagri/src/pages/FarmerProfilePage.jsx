@@ -3,22 +3,27 @@ import React, { Component, Fragment } from 'react'
 // import AppURL from '../api/AppURL'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
-import AppointmentCreate from '../components/farmer/Appointment/AppointmentCreate'
 import FarmerNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
 import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
+import FarmerPrifile from '../components/farmer/FarmerPrifile'
 
-class FarmerAppointmentPage extends Component {
+class FarmerProfilePage extends Component {
+
+    componentDidMount(){
+        
+        window.scroll(0,0)
+    
+    }
 
   render() {
 
     const User = this.props.user;
     
-
     return (
-      <Fragment>
+        <Fragment>
         
         <div className="Desktop">
-          <FarmerNavMenuDesktop user={User}/>
+          <FarmerNavMenuDesktop />
           
         </div>
 
@@ -27,7 +32,7 @@ class FarmerAppointmentPage extends Component {
         </div>
         
         
-        <AppointmentCreate user={User} />
+        <FarmerPrifile user={User} />
 
         <div className="Desktop">
           <FooterDesktop />
@@ -44,4 +49,4 @@ class FarmerAppointmentPage extends Component {
   }
 }
 
-export default FarmerAppointmentPage
+export default FarmerProfilePage

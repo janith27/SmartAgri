@@ -14,9 +14,6 @@ class InstructorDetailsController extends Controller
         $sugustins = Instructor::where('city',$keycity)->get();
         return $sugustins;
 
-        // $result = Instructor::all();
-
-        // return $result;
     }
     // END Method
 }
