@@ -1,4 +1,4 @@
-import './SearchItem.css'
+// import './SearchItem.css'
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';

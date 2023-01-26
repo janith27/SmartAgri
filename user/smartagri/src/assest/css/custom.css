@@ -17,6 +17,8 @@
 @import "farmerDashboard";
 @import "insAppointment";
 @import "appointment";
+@import "JournelViews";
+@import "SearchItem";
 
 /* body{
     background-color: rgb(247, 247, 247);
