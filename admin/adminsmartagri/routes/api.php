@@ -9,7 +9,7 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
-use App\Http\Controllers\JournalController;
+// use App\Http\Controllers\JournalController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
