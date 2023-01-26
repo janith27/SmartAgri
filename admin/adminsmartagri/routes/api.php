@@ -64,3 +64,10 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 
 Route::post('/addjournal',[JournalController::class, 'addjournal']);
 Route::post('/addjournals',[JournalController::class, 'index']);
+
+// Instructor Details Route
+Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
+
+//Farmer Details Route
+Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+

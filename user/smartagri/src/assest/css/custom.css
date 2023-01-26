@@ -16,6 +16,7 @@
 @import "cartList.css";
 @import "farmerDashboard";
 @import "insAppointment";
+@import "appointment";
 
 /* body{
     background-color: rgb(247, 247, 247);

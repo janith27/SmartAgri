@@ -12,9 +12,8 @@ import FarmerHomePage from '../pages/FarmerHomePage';
 import InnstructorHomePage from '../pages/InstructorHomePage';
 import Appoinment from '../pages/Appoinment'
 import AddJournal from '../pages/AddJournal';
-import InstructorNotification from '../components/instructor/InstructorNotification';
+// import InstructorNotification from '../components/instructor/InstructorNotification';
 import axios from 'axios' 
-import AppURL from '../api/AppURL';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import CartPage from '../pages/CartPage';
 import FarmerChatPage from '../pages/FarmerChatPage';
@@ -23,6 +22,9 @@ import FarmerNotificationPage from '../pages/FarmerNotificationPage';
 import InstructorNotificationPage from '../pages/InstructorNotificationPage';
 import FarmerShopPage from '../pages/FarmerShopPage';
 import SupplierHomePage from '../pages/SupplierHomePage';
+import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
+import AppURL from '../api/AppURL';
+import FarmerProfilePage from '../pages/FarmerProfilePage';
 
 
 
@@ -51,7 +53,6 @@ class AppRoute extends Component {
   render() {
     return (
       <Fragment>
-        
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/registrationchose" element={<RegistrationChosepage /> } />
@@ -73,7 +74,8 @@ class AppRoute extends Component {
           <Route exact path="/farmerchat" element={< FarmerChatPage />} />
           <Route exact path="/farmershop" element={< FarmerShopPage />} />
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
-
+          <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
+          <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
 
         </Routes>
       </Fragment>
