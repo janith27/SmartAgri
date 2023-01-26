@@ -16,6 +16,15 @@ class AppURL {
     static JournalData = this.BaseURL+"/addjournal"
     static JournalDatas = this.BaseURL+"/addjournals"
     
+
+    static InstructorData(keycity){
+        return this.BaseURL+"/instructordetails/"+keycity;
+    }
+
+    static FarmerData(keyemail){
+        return this.BaseURL+"/farmerdetails/"+keyemail;
+    }
+
 }
 
 export default AppURL
