@@ -13,6 +13,9 @@ class AppURL {
     static SupplierRegister = this.BaseURL+"/sregister"
     static InstructorRegister = this.BaseURL+"/insregister"
     static ProductData = this.BaseURL+"/productlist"
+    static JournalData = this.BaseURL+"/addjournal"
+    static JournalDatas = this.BaseURL+"/addjournals"
+    
 
     static InstructorData(keycity){
         return this.BaseURL+"/instructordetails/"+keycity;
@@ -21,6 +24,7 @@ class AppURL {
     static FarmerData(keyemail){
         return this.BaseURL+"/farmerdetails/"+keyemail;
     }
+
 }
 
 export default AppURL

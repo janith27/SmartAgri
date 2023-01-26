@@ -9,12 +9,10 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+// use App\Http\Controllers\JournalController;
+
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
-
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
 
 
 /////////////// User Login API Start ////////////////////////
@@ -62,8 +60,14 @@ Route::get('/productlistbyremark/{remark}',[ProductListController::class,'Produc
 Route::get('/productlistbycategory/{category}',[ProductListController::class,'ProductListByCategory']);
 
 
+//add jouranl route
+
+Route::post('/addjournal',[JournalController::class, 'addjournal']);
+Route::post('/addjournals',[JournalController::class, 'index']);
+
 // Instructor Details Route
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+

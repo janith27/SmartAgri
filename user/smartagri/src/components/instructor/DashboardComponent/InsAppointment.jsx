@@ -1,46 +1,71 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component,Fragment,useState  } from 'react'
 import { Col, Row,Card, Button } from 'react-bootstrap'
 import {Link} from "react-router-dom"
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import Table from 'react-bootstrap/Table';
+import { PieChart, Pie, Legend, Tooltip } from "recharts";
 
-class InsAppointment extends Component {
-  render() {
-    return (
+
+
+function InsAppointment () {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const handleDateChange = date => {
+    setSelectedDate(date);
+
+      }
+
+      const data02 = [
+    
+        { name: "Paddy", value: 50 },
+        { name: "Coconut", value: 40 },
+        { name: "Paddy & Coconut", value: 10 }
+      ];
+          
+      return (
+      
         <Fragment>
-            <div className='appoinmentback'>
-        <div className='d-flex justify-content-center'>
-        <h1> Recent Appointment</h1>
-        </div>
-        <Card border="primary" style={{ width: '18rem' }} className="journelcard ">
-          <Card.Body>
+          
+        <div className='appoinmentback'>
             
-            <Card.Title>Farmer Name</Card.Title>
-            <Card.Text>Date: </Card.Text>
-            <Card.Text>Time: </Card.Text>
-            <Card.Text>Venue: </Card.Text>
-            <Card.Text>Contact: </Card.Text>
-            <Card.Text>About: </Card.Text> 
-              
-          </Card.Body>
-        </Card>
+            <div> Check Appoinment</div>
+            <Calendar className="date"onChange={handleDateChange} value={selectedDate} />
 
-        <Card border="primary" style={{ width: '18rem' }} className="journelcard ">
-          <Card.Body>
+            <div className='"graph"'>
+            <Card >
+              <Card.Body>
+                        <Card.Title>Cultivated Crop Diversity</Card.Title>
+                        <Card.Text>
+                          This Graph show how many farmers cultivated on each crop.
+                          <PieChart width={250} height={400}>
+                          <Pie
+                              dataKey="value"
+                              data={data02}
+                              cx={130}
+                              cy={150}
+                              innerRadius={40}
+                              outerRadius={80}
+                              fill="#82ca9d"
+                              label
+                          />
+                      <Tooltip />
+                      </PieChart>
+                        </Card.Text>
+                        
+                    </Card.Body>
+                    
+                </Card>
+            </div>
             
-            <Card.Title>Farmer Name</Card.Title>
-            <Card.Text>Date: </Card.Text>
-            <Card.Text>Time: </Card.Text>
-            <Card.Text>Venue: </Card.Text>
-            <Card.Text>Contact: </Card.Text>
-            <Card.Text>About: </Card.Text> 
-              
-          </Card.Body>
-        </Card>
-            <Link to="/" className="h4 btn"><Button variant="primary">Show More</Button></Link>
+        
+
+         
+            
         </div>
          
       </Fragment>
     )
-  }
+  
 }
 
-export default InsAppointment
+export default InsAppointment;

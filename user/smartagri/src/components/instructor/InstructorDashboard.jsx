@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import JournelView from '../farmer/DashboardComponent/JournelView'
+import JournelViews from './JournelViews'
 import InsAppointment from './DashboardComponent/InsAppointment';
 import InsEssentialView from './DashboardComponent/InsEssentialView';
-
 
 
 class InstructorDashboard extends Component {
@@ -19,7 +18,7 @@ class InstructorDashboard extends Component {
             < InsEssentialView />
           </Col>
           <Col lg={3} md={4} sm={12} xs={12}>
-            <JournelView />
+            <JournelViews />
           </Col>
         </Row>
         </div>
