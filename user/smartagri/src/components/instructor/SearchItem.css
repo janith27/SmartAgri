@@ -1,0 +1,52 @@
+.searchItems {
+    border: 1px solid rgb(78, 74, 74);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 600px;
+    margin-top: 0.5rem;
+    background-color: azure;
+}
+
+
+
+.siTitles{
+    font-size: 18px;
+    align-content: left;
+    font-weight: bold;
+}
+
+.siimportant{
+
+    align-content: left;
+}
+
+.siDec{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 5;
+    font-size: 14px;
+    text-align: justify;
+    
+}
+
+.siFinal{
+    color: #008009;
+    font-weight: bold;
+    align-content: left;
+}
+.siDetails{
+    flex: 1;
+}
+
+.color{
+    background-color: rgb(23, 104, 42);
+    color: azure;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+}

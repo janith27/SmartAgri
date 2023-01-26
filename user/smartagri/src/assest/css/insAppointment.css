@@ -1,6 +1,24 @@
 .appoinmentback{
-    margin-bottom: 50px;
-    border-radius: 2rem;
-    background-color: rgb(157, 239, 144);
+    margin-bottom: 10px;
+    border-radius: 0rem;
+    background-color: rgb(120, 189, 145);
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    height: max-content;
+    font-weight: bold;
     text-align: center;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: fit-content;
+}
+
+.date{
+   margin-top: 5px;
+   margin-bottom: 2rem;
+}
+.tbl{
+    margin-top: 2rem;
+    border-color: black;
+    background-color: rgb(234, 237, 237);
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+use App\Http\Controllers\JournalController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
@@ -57,3 +58,9 @@ Route::get('/productlist',[ProductListController::class,'Productlist']);
 Route::get('/productlistbyremark/{remark}',[ProductListController::class,'ProductListByRemark']);
 
 Route::get('/productlistbycategory/{category}',[ProductListController::class,'ProductListByCategory']);
+
+
+//add jouranl route
+
+Route::post('/addjournal',[JournalController::class, 'addjournal']);
+Route::post('/addjournals',[JournalController::class, 'index']);
