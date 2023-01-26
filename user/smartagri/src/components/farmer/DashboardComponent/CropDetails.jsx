@@ -12,11 +12,10 @@ class CropDetails extends Component {
             
 
                 <h1>Crop details</h1>
-                <p>Crop Name : </p>
                 <br/>
                 <h3>Crop History</h3>
                 <Form className='cropformdivision'>
-                <input className="form-control cropform " type="text" placeholder="Enter Date" />
+                <input className="form-control cropform " type="text" placeholder="Enter Crop Name" />
                 <Form.Control className="form-control cropform" as="textarea" rows={3} placeholder="Enter Your Crop Log"/>
                 <Button id="create" type="submit" className="btnmargin"> Create Log </Button>
                 </Form>
