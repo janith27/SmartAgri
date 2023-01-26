@@ -12,8 +12,9 @@
     width: 97%;
     border-radius: 2rem;
     background-color: rgb(236, 243, 235);
-    overflow: hidden;
+    /* overflow: hidden; */
     grid-template-columns: 11rem auto 20rem;
+    margin-left: 1rem;
 }
 
 .contain{
@@ -34,4 +35,4 @@
     .instructGlass::-webkit-scrollbar{
         display: none;
     }
-}
+} 

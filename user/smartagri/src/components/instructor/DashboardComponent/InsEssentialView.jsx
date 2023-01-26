@@ -1,7 +1,10 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment,useState } from 'react'
 import { PieChart, Pie, Legend, Tooltip } from "recharts";
 import { Container,Row,Col, Form,Button,Label } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
+import SearchItem from '../SearchItem';
+import axios from 'axios';
+import AppURL from '../../../api/AppURL';
 
 // delete follow after dynamic
 const data02 = [
@@ -10,50 +13,56 @@ const data02 = [
     { name: "Coconut", value: 40 },
     { name: "Paddy & Coconut", value: 10 }
   ];
+
+ 
   
-//upto now
 
-class InsEssentialView extends Component {
-  render() {
-    return (
-      <Fragment>  
-      <div>InsEssentialView</div>
-      <Container>
-      <Row>
-        <Col md={12} lg={6} sm={12} xs={12}>
-            <PieChart width={1000} height={400}>
-                <Pie
-                    dataKey="value"
-                    data={data02}
-                    cx={130}
-                    cy={150}
-                    innerRadius={40}
-                    outerRadius={80}
-                    fill="#82ca9d"
-                    label
-                />
-            <Tooltip />
-            </PieChart>
-        </Col>
+const InsEssentialView =()=> {
 
-        <Col md={6} lg={6} sm={12} xs={12}>
-        <Card className="text-center cardappointment contain">
-                    
-                    <Card.Body>
-                        <Card.Title>Cultivated Crop Diversity</Card.Title>
-                        <Card.Text>
-                          his Graph show how many farmers cultivated on each crop.
-                        </Card.Text>
-                    </Card.Body>
-                    
-                </Card>
-        </Col>
-      </Row>
-      </Container>
-
-      </Fragment>
-    )
+  const [data, setData] = useState([]);
+  
+  const handleClick = async () => {
+    const res =await axios.get(AppURL.JournalDatas);
+    console.log(res)
+    // const json = await response.json();
+    // setData(json);
   }
+//   state={
+//     jouranls:[],
+//     loading:true,
+//   }
+
+//  async componentDidMount(){
+//     const res =await axios.get('/api/addjournals');
+//     // console.log(res);
+//     if(res.data.status===200){
+//       this.setState({
+//         journals:res.data.journals,
+//         loading:false,
+//       })
+//     }
+   
+//   }
+  
+    return (
+      <div className='appoinmentback'>
+         <Button variant="warning" className='btnx' onClick={handleClick}>Recent Appoinment</Button>
+
+        {/* <div>Recent Appoinment</div> */}
+
+        { <>
+              {data.map(item=>(
+                  <SearchItem item={item} key={item._id}/>
+              ))}
+              
+              </>}
+      </div>
+      
+      
+            
+           
+    )
+  
 }
 
 export default InsEssentialView
