@@ -1,5 +1,5 @@
 import React,{ Component, Fragment } from 'react'
-import { Col, Row ,Form,Button} from 'react-bootstrap'
+import { Col, Row ,Form,Button,Card} from 'react-bootstrap'
 import axios from 'axios'
 import AppURL from '../../../api/AppURL';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,13 +10,16 @@ class CropDetails extends Component {
   constructor(){
     super();
     this.state={
-
+      CropLog:[],
       email:'janith@gmail.com',
+      // email:this.props.user.email,
       crop:"",
       description:"",
       message:''
     }
   }
+
+
 
   // Farmer Register Form Submit Method 
   formSubmit = (e) => {
@@ -29,12 +32,12 @@ class CropDetails extends Component {
     }
 
     axios.post(AppURL.InputCropLog,data).then(response =>{ 
-
-         this.setState({message:response.data.message})
-
-         toast.success(this.state.message,{
-              position: "top-right"
-         });
+      toast.success("Log Submit Successfully");
+        //  this.setState({message:response.data.message})
+         
+        //  toast.success(this.state.message,{
+        //       position: "top-right"
+        //  });
         document.getElementById("croplogform").reset();
 
     }).catch(error=>{
@@ -44,35 +47,70 @@ class CropDetails extends Component {
          });
     }); 
 
-}
-  
+  }
+
+
+  componentDidMount(){
+
+    axios.get(AppURL.CropLogData("janith@gmail.com")).then(response =>{
+
+      this.setState({CropLog:response.data});       
+
+    }).catch(error=>{
+
+    });
+
+  }
 
   render() {
+    
+
+    // let email;
+    // if(this.props.user){
+    //      email = this.props.user.email;
+    // }
+
+    const HistoryLog = this.state.CropLog;
+    const MyView = HistoryLog.map((HistoryLog,i)=>{
+        return(
+            
+            <Card border="primary" style={{ width: '18rem' }} className="crophistorycard">
+                <Card.Body>
+                    <Row>
+                        <Col xs={4} md={4}><Card.Text>{HistoryLog.date}</Card.Text></Col>
+                        <Col xs={3} md={3}><Card.Text>{HistoryLog.crop}</Card.Text></Col>
+                        <Col xs={5} md={5}><Card.Text>{HistoryLog.description}</Card.Text></Col>
+                    </Row>
+                </Card.Body>
+            </Card>
+            
+        )
+    })
+
     return (
       <Fragment>
         <div className='cropdetail d-flex justify-content-center'>
         <Row>
             <Col>
             
-                <h1>Crop details</h1>
-                <br/>
-                <h3>Crop History</h3>
+              <h1>Crop details</h1>
+              <br/>
+              <h3>Crop History</h3>
+              <Row className="d-flex justify-content-center">
+                  {MyView}
+              </Row>
+              <Form id="croplogform" onSubmit={this.formSubmit} className="onboardForm">
+                <h3>ADD Crop Log</h3>
+                <input className="form-control m-2" type="text" placeholder="Enter Crop" onChange={(e)=>{this.setState({crop:e.target.value})}}/>
+                <Form.Control className="form-control m-2" as="textarea" rows={3} placeholder="Enter Your Log" onChange={(e)=>{this.setState({description:e.target.value})}}/>
+                <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> Submit </Button>
 
-                <Form id="croplogform" onSubmit={this.formSubmit} className="onboardForm">
-    
-            <input className="form-control m-2" type="text" placeholder="Enter Crop" onChange={(e)=>{this.setState({crop:e.target.value})}}/>
-
-
-            <Form.Control className="form-control m-2" as="textarea" rows={3} placeholder="Enter Your Log" onChange={(e)=>{this.setState({description:e.target.value})}}/>
-            <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> Submit </Button>
-
-        </Form>
-
-
+              </Form>
 
             </Col>
         </Row>
         </div>
+        <ToastContainer />
       </Fragment>
     )
   }

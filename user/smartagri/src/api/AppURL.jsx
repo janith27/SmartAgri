@@ -26,6 +26,10 @@ class AppURL {
         return this.BaseURL+"/farmerdetails/"+keyemail;
     }
 
+    static CropLogData(keyemail){
+        return this.BaseURL+"/croplog/"+keyemail;
+    }
+
 }
 
 export default AppURL
