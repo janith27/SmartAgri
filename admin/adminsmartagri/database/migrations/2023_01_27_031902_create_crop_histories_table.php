@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('crop');
             $table->string('description');
-            $table->date('date');
+            $table->String('date');
         });
     }
 

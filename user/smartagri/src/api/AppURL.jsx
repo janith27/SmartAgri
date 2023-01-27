@@ -15,6 +15,7 @@ class AppURL {
     static ProductData = this.BaseURL+"/productlist"
     static JournalData = this.BaseURL+"/addjournal"
     static JournalDatas = this.BaseURL+"/addjournals"
+    static InputCropLog = this.BaseURL+"/inputcroplog"
     
 
     static InstructorData(keycity){

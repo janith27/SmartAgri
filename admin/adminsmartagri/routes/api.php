@@ -9,6 +9,7 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+use App\Http\Controllers\Farmer\CropLogController;
 // use App\Http\Controllers\JournalController;
 
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
@@ -70,4 +71,6 @@ Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'I
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
+Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
 
