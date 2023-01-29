@@ -14,12 +14,11 @@ class FarmerHomePage extends Component {
   render() {
 
     const User = this.props.user;
-
     return (
         <Fragment>
         
         <div className="Desktop">
-          <FarmerNavMenuDesktop user = {User} />
+          <FarmerNavMenuDesktop />
           
         </div>
 
@@ -28,7 +27,7 @@ class FarmerHomePage extends Component {
         </div>
         
         
-        <FarmerDashboard />
+        <FarmerDashboard user = {User}/>
 
         <div className="Desktop">
           <FooterDesktop />

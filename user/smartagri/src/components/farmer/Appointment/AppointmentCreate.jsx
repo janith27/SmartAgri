@@ -10,21 +10,14 @@ class AppointmentCreate extends Component {
         super();
         this.state={
             InsData:[],   
-            FamData:[]            
+            FamData:[],
+            city:"giriulla"           
         }
     }
 
     componentDidMount(){
 
-        // axios.get(AppURL.FarmerData({uemail})).then(response =>{
-
-        //     this.setState({FamData:response.data});         
-
-        // }).catch(error=>{
-
-        // });
-
-        axios.get(AppURL.InstructorData("giriulla")).then(response =>{
+        axios.get(AppURL.InstructorData(this.state.city)).then(response =>{
 
              this.setState({InsData:response.data});         
 

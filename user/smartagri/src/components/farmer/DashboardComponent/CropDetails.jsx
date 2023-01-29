@@ -11,8 +11,7 @@ class CropDetails extends Component {
     super();
     this.state={
       CropLog:[],
-      email:'janith@gmail.com',
-      // email:this.props.user.email,
+      email:"",
       crop:"",
       description:"",
       message:''
@@ -52,7 +51,7 @@ class CropDetails extends Component {
 
   componentDidMount(){
 
-    axios.get(AppURL.CropLogData("janith@gmail.com")).then(response =>{
+    axios.get(AppURL.CropLogData(this.state.email)).then(response =>{
 
       this.setState({CropLog:response.data});       
 
@@ -63,18 +62,15 @@ class CropDetails extends Component {
   }
 
   render() {
+    const myUser=this.props.user;
+    this.state.email=myUser.email;
     
-
-    // let email;
-    // if(this.props.user){
-    //      email = this.props.user.email;
-    // }
-
     const HistoryLog = this.state.CropLog;
     const MyView = HistoryLog.map((HistoryLog,i)=>{
         return(
             
             <Card border="primary" style={{ width: '18rem' }} className="crophistorycard">
+              
                 <Card.Body>
                     <Row>
                         <Col xs={4} md={4}><Card.Text>{HistoryLog.date}</Card.Text></Col>
@@ -94,11 +90,17 @@ class CropDetails extends Component {
             <Col>
             
               <h1>Crop details</h1>
+              {/* {console.log(this.state.email) } */}
+              
               <br/>
               <h3>Crop History</h3>
               <Row className="d-flex justify-content-center">
                   {MyView}
               </Row>
+
+              
+              <Button variant="primary">Change History Log</Button>
+    
               <Form id="croplogform" onSubmit={this.formSubmit} className="onboardForm">
                 <h3>ADD Crop Log</h3>
                 <input className="form-control m-2" type="text" placeholder="Enter Crop" onChange={(e)=>{this.setState({crop:e.target.value})}}/>

@@ -56,7 +56,7 @@
 
 .crophistorycard{
     margin-bottom: 10px;
-    background-color: rgb(218, 240, 185);
+    background-color: rgb(255, 255, 255,0.33);
     border-radius: 30px;
     max-width: 90%;
 }

@@ -5,13 +5,18 @@ import EssentialView from './DashboardComponent/EssentialView'
 import JournelView from './DashboardComponent/JournelView'
 
 class FarmerDashboard extends Component {
+
   render() {
+
+    const myUser=this.props.user;
+
     return (
       <Fragment>
         <div className='mainback backgroundbox'>
+          {/* {console.log(this.props.user) } */}
         <Row>
           <Col lg={3} md={4} sm={12} xs={12}>
-            <CropDetails />
+            <CropDetails user = {myUser}/>
           </Col>
           <Col lg={6} md={4} sm={12} xs={12}>
             <EssentialView />
