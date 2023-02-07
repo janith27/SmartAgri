@@ -34,24 +34,25 @@ class AppointmentCreate extends Component {
  
   render() {
 
-    
 
     let uname;
     if(this.props.user){
         uname= this.props.user.name;
-        this.state.uemail= this.props.user.email;
+        // this.state.uemail= this.props.user.email;
     }
     
-
-    const farmer=this.props.detail;     //farmer detail prop
-    this.state.fData = farmer;
-
-    console.log(this.state.fData);
+    
+    this.state.fData=this.props.famdetail;     
+   
+    // this.props.fumdetails[0].map((item)=>
+    // console.log(item.city)
+    // )
+    // console.log(this.props.famdetail[0].crop);
 
     const InsList = this.state.InsData;
     const MyView = InsList.map((InsList,i)=>{
         return(
-            <Link to="/appointmentform">
+            <Link to={"/appointmentform/"+InsList.email}>
                 <div>
             <Card border="primary" style={{ width: '18rem' }} className="appointmentcard ">
                 <Card.Body>

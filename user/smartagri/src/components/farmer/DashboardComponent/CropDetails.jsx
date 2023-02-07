@@ -20,7 +20,6 @@ class CropDetails extends Component {
 
 
 
-  // Farmer Register Form Submit Method 
   formSubmit = (e) => {
     e.preventDefault();
     const data={

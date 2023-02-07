@@ -71,8 +71,10 @@ Route::post('/addjournals',[JournalController::class, 'index']);
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
 
 // Instructor Details Route key with email
-Route::get('/instructor/{keyemail}',[InstructorDetailsController::class,'InstructorDetailEmail']);
+Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'InstructorDetailEmail']);
 
+//appointment Create
+Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);

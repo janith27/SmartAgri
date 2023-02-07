@@ -16,7 +16,7 @@ class AppURL {
     static JournalData = this.BaseURL+"/addjournal"
     static JournalDatas = this.BaseURL+"/addjournals"
     static InputCropLog = this.BaseURL+"/inputcroplog"
-    
+    static CreateAppointment = this.BaseURL+"/appointmentcreate"
 
     static InstructorData(keycity){
         return this.BaseURL+"/instructordetails/"+keycity;
@@ -31,7 +31,7 @@ class AppURL {
     }
 
     static InstructorDetailEmail(keyemail){
-        return this.BaseURL+"/instructor/"+keyemail;
+        return this.BaseURL+"/appointmentform/"+keyemail;
     }
 
 }

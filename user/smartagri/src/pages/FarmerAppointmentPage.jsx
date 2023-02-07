@@ -1,3 +1,4 @@
+import { CleaningServices } from '@mui/icons-material'
 import axios from 'axios'
 import React, { Component, Fragment } from 'react'
 import AppURL from '../api/AppURL'
@@ -13,7 +14,7 @@ class FarmerAppointmentPage extends Component {
   constructor(){
     super();
     this.state={
-      famData:{}, 
+      famData:[], 
         uemail:""        
     }
 }
@@ -32,12 +33,10 @@ class FarmerAppointmentPage extends Component {
 
 
   render() {
-
     const User = this.props.user;
     this.state.uemail=this.props.user.email;
-    const farmerDetails = this.state.famData;
 
-    // console.log(farmerDetails)
+    
 // console.log(this.state.uemail);
     return (
       <Fragment>
@@ -51,8 +50,8 @@ class FarmerAppointmentPage extends Component {
           <FarmerNavMobile />
         </div>
         
-        
-        <AppointmentCreate user={User} detail={farmerDetails}/>
+        {/* console.log(this.state.famData); */}
+        <AppointmentCreate user={User} famdetail={this.state.famData}/>
 
         <div className="Desktop">
           <FooterDesktop />

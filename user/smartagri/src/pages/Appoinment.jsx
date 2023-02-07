@@ -16,7 +16,7 @@ class Appoinment extends Component {
             <Fragment>
         
         <div className="Desktop">
-          <InstructorNavMenuDesktop user = {User} />
+          <InstructorNavMenuDesktop  />
           
         </div>
 
@@ -26,9 +26,6 @@ class Appoinment extends Component {
         <div>
           
           <InstructorAppoinment />
-          <div>
-           
-          </div>
           
         </div>
         
