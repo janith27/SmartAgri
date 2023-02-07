@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {  Form,Button } from 'react-bootstrap'
-// import './JournelViews.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';

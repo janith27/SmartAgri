@@ -30,6 +30,10 @@ class AppURL {
         return this.BaseURL+"/croplog/"+keyemail;
     }
 
+    static InstructorDetailEmail(keyemail){
+        return this.BaseURL+"/instructor/"+keyemail;
+    }
+
 }
 
 export default AppURL

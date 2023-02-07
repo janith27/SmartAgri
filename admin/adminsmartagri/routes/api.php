@@ -9,8 +9,9 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+use App\Http\Controllers\Farmer\AppointmentController;
 use App\Http\Controllers\Farmer\CropLogController;
-// use App\Http\Controllers\JournalController;
+use App\Http\Controllers\JournalController;
 
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
@@ -66,8 +67,12 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 Route::post('/addjournal',[JournalController::class, 'addjournal']);
 Route::post('/addjournals',[JournalController::class, 'index']);
 
-// Instructor Details Route
+// Instructor Details Route key with city
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
+
+// Instructor Details Route key with email
+Route::get('/instructor/{keyemail}',[InstructorDetailsController::class,'InstructorDetailEmail']);
+
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
