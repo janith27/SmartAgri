@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class SupEssential extends Component {
   render() {
-    return (
-      <div>SupEssential</div>
-    )
+    return <div>SupEssential</div>;
   }
 }
 
-export default SupEssential
+export default SupEssential;

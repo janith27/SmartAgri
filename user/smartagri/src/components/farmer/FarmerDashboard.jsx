@@ -1,35 +1,32 @@
-import React, { Component, Fragment } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import CropDetails from './DashboardComponent/CropDetails'
-import EssentialView from './DashboardComponent/EssentialView'
-import JournelView from './DashboardComponent/JournelView'
+import React, { Component, Fragment } from "react";
+import { Col, Row } from "react-bootstrap";
+import CropDetails from "./DashboardComponent/CropDetails";
+import EssentialView from "./DashboardComponent/EssentialView";
+import JournelView from "./DashboardComponent/JournelView";
 
 class FarmerDashboard extends Component {
-
   render() {
-
-    const myUser=this.props.user;
+    const myUser = this.props.user;
 
     return (
       <Fragment>
-        <div className='mainback backgroundbox'>
+        <div className="mainback backgroundbox">
           {/* {console.log(this.props.user) } */}
-        <Row>
-          <Col lg={3} md={4} sm={12} xs={12}>
-            <CropDetails user = {myUser}/>
-          </Col>
-          <Col lg={6} md={4} sm={12} xs={12}>
-            <EssentialView />
-          </Col>
-          <Col lg={3} md={4} sm={12} xs={12}>
-            <JournelView />
-          </Col>
-        </Row>
+          <Row>
+            <Col lg={3} md={4} sm={12} xs={12}>
+              <CropDetails user={myUser} />
+            </Col>
+            <Col lg={6} md={4} sm={12} xs={12}>
+              <EssentialView />
+            </Col>
+            <Col lg={3} md={4} sm={12} xs={12}>
+              <JournelView />
+            </Col>
+          </Row>
         </div>
       </Fragment>
-      
-    )
+    );
   }
 }
 
-export default FarmerDashboard
+export default FarmerDashboard;

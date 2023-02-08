@@ -1,19 +1,18 @@
 import axios from "axios";
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import AppURL from "../api/AppURL";
 import FooterDesktop from "../components/common/FooterDesktop";
 import FooterMobile from "../components/common/FooterMobile";
 import AppointmentForm from "../components/farmer/Appointment/AppointmentForm";
 import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
 import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function AppointmentformPage() {
+  const [emailData, setEmailData] = useState([]);
 
-    const [emailData, setEmailData] = useState([]);
-
-//   const InsData = [];
+  //   const InsData = [];
   const { keyemail } = useParams();
 
   useEffect(() => {
@@ -22,12 +21,12 @@ function AppointmentformPage() {
     axios
       .get(AppURL.InstructorDetailEmail(keyemail))
       .then((response) => {
-        setEmailData(response.data)
+        setEmailData(response.data);
         // this.setState({ InsData: response.data });
       })
       .catch((error) => {});
   });
-//   const User = this.props.user;
+  //   const User = this.props.user;
   return (
     <Fragment>
       <div className="Desktop">
@@ -48,7 +47,7 @@ function AppointmentformPage() {
         <FooterMobile />
       </div>
     </Fragment>
-  )
+  );
 }
 
-export default AppointmentformPage
+export default AppointmentformPage;

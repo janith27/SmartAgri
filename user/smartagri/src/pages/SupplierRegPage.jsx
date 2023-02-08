@@ -1,44 +1,39 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component, Fragment } from "react";
 
-import FooterDesktop from '../components/common/FooterDesktop'
+import FooterDesktop from "../components/common/FooterDesktop";
 
-import FooterMobile from '../components/common/FooterMobile'
-import ComNev from '../components/common/ComNev'
-import SupplierReg from '../components/supplier/SupplierReg'
+import FooterMobile from "../components/common/FooterMobile";
+import ComNev from "../components/common/ComNev";
+import SupplierReg from "../components/supplier/SupplierReg";
 
 class SupplierRegPage extends Component {
-
-    componentDidMount(){
-        window.scroll(0,0)
-    }
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
 
   render() {
     return (
-        <Fragment>
-        
+      <Fragment>
         <div className="Desktop">
-            <ComNev />
-  
+          <ComNev />
         </div>
 
         <div className="Mobile">
-            <ComNev />
+          <ComNev />
         </div>
 
         <SupplierReg />
 
         <div className="Desktop">
-            <FooterDesktop />
-    
+          <FooterDesktop />
         </div>
 
         <div className="Mobile">
-            <FooterMobile />
+          <FooterMobile />
         </div>
-
-     </Fragment>
-    )
+      </Fragment>
+    );
   }
 }
 
-export default SupplierRegPage
+export default SupplierRegPage;

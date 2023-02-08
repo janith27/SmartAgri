@@ -1,45 +1,39 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component, Fragment } from "react";
 
-import FooterDesktop from '../components/common/FooterDesktop'
+import FooterDesktop from "../components/common/FooterDesktop";
 
-import FooterMobile from '../components/common/FooterMobile'
-import ComNev from '../components/common/ComNev'
-import UserLogin from '../components/common/UserLogin'
-
+import FooterMobile from "../components/common/FooterMobile";
+import ComNev from "../components/common/ComNev";
+import UserLogin from "../components/common/UserLogin";
 
 class UserLoginPage extends Component {
-
-    componentDidMount(){
-        window.scroll(0,0)
-    }
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
 
   render() {
     return (
-        <Fragment>
-        
-            <div className="Desktop">
-                <ComNev />
-          
-            </div>
+      <Fragment>
+        <div className="Desktop">
+          <ComNev />
+        </div>
 
-            <div className="Mobile">
-                <ComNev />
-            </div>
+        <div className="Mobile">
+          <ComNev />
+        </div>
 
-            <UserLogin />
+        <UserLogin />
 
-            <div className="Desktop">
-                <FooterDesktop />
-          
-            </div>
+        <div className="Desktop">
+          <FooterDesktop />
+        </div>
 
-            <div className="Mobile">
-                <FooterMobile />
-            </div>
-        
-        </Fragment>
-    )
+        <div className="Mobile">
+          <FooterMobile />
+        </div>
+      </Fragment>
+    );
   }
 }
 
-export default UserLoginPage
+export default UserLoginPage;
