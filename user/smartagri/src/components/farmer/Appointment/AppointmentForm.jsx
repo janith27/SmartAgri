@@ -10,7 +10,7 @@ class AppointmentForm extends Component {
     super();
     this.state = {
       insData: {},
-      ins: "",
+      ins: "nandani@gmail.com",
       uEmail: "",
       date: "",
       description: "",
@@ -60,8 +60,8 @@ class AppointmentForm extends Component {
 
   render() {
     this.setState.insData = this.props.data;
-    console.log(this.props.data.email);
-    this.state.ins = this.props.data.email;
+    console.log(this.props.data);
+    // this.state.ins = this.props.data.email;
     // this.state.uEmail = this.props.user.email;
     //  console.log(this.state.uEmail);
     //  this.state.insData.map((email)=>

@@ -19,6 +19,7 @@
 @import "appointment";
 @import "JournelViews";
 @import "SearchItem";
+@import "placeHolder";
 
 /* body{
     background-color: rgb(247, 247, 247);

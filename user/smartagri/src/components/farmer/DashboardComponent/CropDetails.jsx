@@ -73,8 +73,11 @@ class CropDetails extends Component {
               <Col xs={3} md={3}>
                 <Card.Text>{HistoryLog.crop}</Card.Text>
               </Col>
-              <Col xs={5} md={5}>
+              <Col xs={4} md={4}>
                 <Card.Text>{HistoryLog.description}</Card.Text>
+              </Col>
+              <Col xs={1} md={1}>
+                <i className="fa fa-trash-alt"></i>
               </Col>
             </Row>
           </Card.Body>
@@ -93,8 +96,6 @@ class CropDetails extends Component {
               <br />
               <h3>Crop History</h3>
               <Row className="d-flex justify-content-center">{MyView}</Row>
-
-              <Button variant="primary">Change History Log</Button>
 
               <Form
                 id="croplogform"

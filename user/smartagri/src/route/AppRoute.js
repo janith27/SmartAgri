@@ -26,6 +26,7 @@ import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 import AppURL from '../api/AppURL';
 import FarmerProfilePage from '../pages/FarmerProfilePage';
 import AppointmentFormPage from '../pages/AppointmentFormPage';
+import PlaceHolder from '../placeHolder/PlaceHolder';
 // import Appoint from '../pages/Appoint';
 
 
@@ -79,6 +80,7 @@ class AppRoute extends Component {
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage />} />
+          <Route exact path="/place" element={< PlaceHolder />} />
 
         </Routes>
       </Fragment>

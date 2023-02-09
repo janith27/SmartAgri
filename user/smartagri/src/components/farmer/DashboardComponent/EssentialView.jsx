@@ -22,7 +22,7 @@ class EssentialView extends Component {
           </Col>
         </Row>
 
-        <Row xs={1} md={2} className="g-4">
+        {/* <Row xs={1} md={2} className="g-4">
           <Col>
             <Card className="text-center cultivate">
               <Card.Body>
@@ -40,7 +40,7 @@ class EssentialView extends Component {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Supply />
         </Row>

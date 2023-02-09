@@ -3,6 +3,7 @@ import { Col, Row, Card } from "react-bootstrap";
 import AppURL from "../../../api/AppURL";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PlaceHolder from "../../../placeHolder/PlaceHolder";
 
 class AppointmentCreate extends Component {
   constructor() {
@@ -12,6 +13,8 @@ class AppointmentCreate extends Component {
       fData: [],
       uemail: "",
       ucity: "giriulla",
+      isLoading: "",
+      mainDiv: "d-none",
     };
   }
 
@@ -20,7 +23,11 @@ class AppointmentCreate extends Component {
     axios
       .get(AppURL.InstructorData(this.state.ucity))
       .then((response) => {
-        this.setState({ InsData: response.data });
+        this.setState({
+          InsData: response.data,
+          isLoading: "d-none",
+          mainDiv: "",
+        });
       })
       .catch((error) => {});
   }
@@ -78,10 +85,13 @@ class AppointmentCreate extends Component {
 
     return (
       <Fragment>
-        <div className="title">
-          <h2>Sugusted Instructors to you {uname}</h2>
+        <PlaceHolder isLoading={this.state.isLoading} />
+        <div className={this.state.mainDiv}>
+          <div className="title">
+            <h2>Sugusted Instructors to you {uname}</h2>
+          </div>
+          <Row className="d-flex justify-content-center">{MyView}</Row>
         </div>
-        <Row className="d-flex justify-content-center">{MyView}</Row>
       </Fragment>
     );
   }
