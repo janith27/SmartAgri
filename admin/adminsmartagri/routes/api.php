@@ -81,3 +81,7 @@ Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDe
 Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
 Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
 
+//add product route
+
+Route::post('/addproduct',[JournalController::class, 'addproduct']);
+// Route::post('/addjournals',[JournalController::class, 'index']);

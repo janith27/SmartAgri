@@ -4,7 +4,6 @@ import FooterDesktop from "../components/common/FooterDesktop";
 
 import FooterMobile from "../components/common/FooterMobile";
 import ComNev from "../components/common/ComNev";
-import UserLogin from "../components/common/UserLogin";
 import ForgetPassword from "../components/common/ForgetPassword";
 
 class ForgetPasswordPage extends Component {

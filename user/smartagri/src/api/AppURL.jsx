@@ -1,4 +1,5 @@
 class AppURL {
+
   static BaseURL = "http://127.0.0.1:8000/api";
   static VisitorDetails = this.BaseURL + "/getvisitor";
   static PostAnyUserMsg = this.BaseURL + "/postanyusermsg";
@@ -14,10 +15,12 @@ class AppURL {
   static JournalDatas = this.BaseURL + "/addjournals";
   static InputCropLog = this.BaseURL + "/inputcroplog";
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
+  static ProductDatas = this.BaseURL+"/addproduct";
 
   static InstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
+
 
   static FarmerData(keyemail) {
     return this.BaseURL + "/farmerdetails/" + keyemail;

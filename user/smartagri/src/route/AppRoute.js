@@ -26,7 +26,6 @@ import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 import AppURL from '../api/AppURL';
 import FarmerProfilePage from '../pages/FarmerProfilePage';
 import AppointmentFormPage from '../pages/AppointmentFormPage';
-import PlaceHolder from '../placeHolder/PlaceHolder';
 // import Appoint from '../pages/Appoint';
 
 
