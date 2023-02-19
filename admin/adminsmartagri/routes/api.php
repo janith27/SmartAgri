@@ -9,12 +9,17 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+
+use App\Http\Controllers\JournalController;
+
+
 use App\Http\Controllers\Farmer\AppointmentController;
 use App\Http\Controllers\Farmer\CropLogController;
 use App\Http\Controllers\JournalController;
 
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
+
 
 
 /////////////// User Login API Start ////////////////////////
