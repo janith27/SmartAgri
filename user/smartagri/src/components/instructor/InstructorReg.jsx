@@ -54,7 +54,7 @@ class InstructorReg extends Component {
     axios
       .post(AppURL.InstructorRegister, data)
       .then((response) => {
-        //for direct access to farmer dashboard my new add
+        //for direct access to innstructor dashboard my new add
         localStorage.setItem("token", response.data.token);
         this.setState({ loggedIn: true });
         //end new edit
@@ -75,7 +75,7 @@ class InstructorReg extends Component {
   };
 
   render() {
-    // new edit for redirect to farmer dashboard
+    // new edit for redirect to instructor dashboard
     if (this.state.loggedIn) {
       return <Navigate to="/instructordashboard" />;
     }
@@ -106,8 +106,7 @@ class InstructorReg extends Component {
                     id="fromreset"
                   >
                     <h4 className="section-title-login">
-                      {" "}
-                      AGRICULTURE INSTRUCTOR REGISTER{" "}
+                      AGRICULTURE INSTRUCTOR REGISTER
                     </h4>
                     {/* <input className="form-control m-2" type="text" placeholder="Enter title" onChange={(e)=>{this.setState({title:e.target.value})}} /> */}
                     <select
@@ -245,17 +244,15 @@ class InstructorReg extends Component {
                       type="submit"
                       className="btn btn-block m-2 site-btn-login"
                     >
-                      {" "}
-                      Register{" "}
+                      Register
                     </Button>
                     <br></br> <br></br>
                     <hr />
                     <p>
-                      {" "}
                       <b> Already Have An Account ? </b>
                       <Link to="/login">
-                        <b> Login </b>{" "}
-                      </Link>{" "}
+                        <b> Login </b>
+                      </Link>
                     </p>
                   </Form>
                 </Col>

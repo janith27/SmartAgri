@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('description',255);
             $table->date('date');
             $table->time('time');
+            $table->string('status',25)->default('Pending');
             $table->timestamps();
         });
     }
