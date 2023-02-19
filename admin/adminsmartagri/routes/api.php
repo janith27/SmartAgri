@@ -75,6 +75,7 @@ Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'In
 
 //appointment Create
 Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
+Route::get('/appointmentview/{keyemail}',[AppointmentController::class,'AppointmentView']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);

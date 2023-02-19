@@ -9,6 +9,14 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+    public function AppointmentView(Request $request){
+
+        $keyemail = $request->keyemail;
+        $sugustins = Appointment::where('farmer_email',$keyemail)->get();
+        return $sugustins;
+
+    }
+    // End Method
     public function CreateAppointment(Request $request){
 
         $farmerEmail= $request->input('farmer_email');

@@ -30,6 +30,10 @@ class AppURL {
     return this.BaseURL + "/croplog/" + keyemail;
   }
 
+  static AppointmentView(keyemail) {
+    return this.BaseURL + "/appointmentview/" + keyemail;
+  }
+
   static InstructorDetailEmail(keyemail) {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }

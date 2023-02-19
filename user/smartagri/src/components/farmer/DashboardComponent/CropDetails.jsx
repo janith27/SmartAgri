@@ -4,6 +4,7 @@ import axios from "axios";
 import AppURL from "../../../api/AppURL";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 class CropDetails extends Component {
   constructor() {
@@ -15,6 +16,14 @@ class CropDetails extends Component {
       description: "",
       message: "",
     };
+  }
+  componentDidMount() {
+    axios
+      .get(AppURL.CropLogData(this.state.email))
+      .then((response) => {
+        this.setState({ CropLog: response.data });
+      })
+      .catch((error) => {});
   }
 
   formSubmit = (e) => {
@@ -36,6 +45,7 @@ class CropDetails extends Component {
         //  });
         document.getElementById("croplogform").reset();
       })
+
       .catch((error) => {
         this.setState({ message: error.response.data.message });
         toast.error(this.state.message, {
@@ -43,15 +53,6 @@ class CropDetails extends Component {
         });
       });
   };
-
-  componentDidMount() {
-    axios
-      .get(AppURL.CropLogData(this.state.email))
-      .then((response) => {
-        this.setState({ CropLog: response.data });
-      })
-      .catch((error) => {});
-  }
 
   render() {
     const myUser = this.props.user;
