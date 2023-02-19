@@ -1,45 +1,39 @@
-import React, { Component,Fragment } from 'react'
+import React, { Component, Fragment } from "react";
 
-import FooterDesktop from '../components/common/FooterDesktop'
+import FooterDesktop from "../components/common/FooterDesktop";
 
-import FooterMobile from '../components/common/FooterMobile'
-import ComNev from '../components/common/ComNev'
-import RegisterChose from '../components/common/RegisterChose'
-
+import FooterMobile from "../components/common/FooterMobile";
+import ComNev from "../components/common/ComNev";
+import RegisterChose from "../components/common/RegisterChose";
 
 export class RegistrationChosepage extends Component {
-
-    componentDidMount(){
-        window.scroll(0,0)
-    }
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
 
   render() {
     return (
-        <Fragment>
-        
+      <Fragment>
         <div className="Desktop">
-            <ComNev />
-      
+          <ComNev />
         </div>
 
         <div className="Mobile">
-            <ComNev />
+          <ComNev />
         </div>
 
         <RegisterChose />
 
         <div className="Desktop">
-            <FooterDesktop />
-      
+          <FooterDesktop />
         </div>
 
         <div className="Mobile">
-            <FooterMobile />
+          <FooterMobile />
         </div>
-    
-    </Fragment>
-    )
+      </Fragment>
+    );
   }
 }
 
-export default RegistrationChosepage
+export default RegistrationChosepage;

@@ -1,48 +1,39 @@
-import React, { Component, Fragment } from 'react'
-import FooterDesktop from '../components/common/FooterDesktop'
-import FooterMobile from '../components/common/FooterMobile'
-import FarmerDashboard from '../components/farmer/FarmerDashboard'
-import FarmerNavMenuDesktop from '../components/farmer/FarmerNavMenuDesktop'
-import FarmerNavMobile from '../components/farmer/FarmerNavMobile'
+import React, { Component, Fragment } from "react";
+import FooterDesktop from "../components/common/FooterDesktop";
+import FooterMobile from "../components/common/FooterMobile";
+import FarmerDashboard from "../components/farmer/FarmerDashboard";
+import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
+import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
 
 class FarmerHomePage extends Component {
-
-  componentDidMount(){
-    window.scroll(0,0)
+  componentDidMount() {
+    window.scroll(0, 0);
   }
 
   render() {
-
-    const User = this.props.user;
-
+    const userData = this.props.user;
     return (
-        <Fragment>
-        
+      <Fragment>
         <div className="Desktop">
-          <FarmerNavMenuDesktop user = {User} />
-          
+          <FarmerNavMenuDesktop />
         </div>
 
         <div className="Mobile">
           <FarmerNavMobile />
         </div>
-        
-        
-        <FarmerDashboard />
+
+        <FarmerDashboard user={userData} />
 
         <div className="Desktop">
           <FooterDesktop />
-          
         </div>
 
         <div className="Mobile">
           <FooterMobile />
         </div>
-        
-        
       </Fragment>
-    )
+    );
   }
 }
 
-export default FarmerHomePage
+export default FarmerHomePage;

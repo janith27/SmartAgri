@@ -12,23 +12,12 @@
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				<li>
-					<a href="javascript:;" class="has-arrow">
+					<a href="{{ url('/dashboard') }}" >
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
-					<ul>
-						<li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Default</a>
-						</li>
-						<li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
-						</li>
-						<li> <a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
-						</li>
-						<li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital Marketing</a>
-						</li>
-						<li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human Resources</a>
-						</li>
-					</ul>
+					
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
@@ -53,6 +42,44 @@
 						</li>
 					</ul>
 				</li>
+
+
+
+
+
+
+
+				<li class="menu-label">USERS</li>
+				<li>
+					<a href="{{ url('/admin/farmerdetails') }}">
+						<div class="parent-icon"><i class='bx bx-user'></i>
+						</div>
+						<div class="menu-title">Farmers</div>
+					</a>
+				</li>
+
+				<li>
+					<a href="{{ url('/admin/instructor') }}">
+						<div class="parent-icon"><i class='bx bx-user'></i>
+						</div>
+						<div class="menu-title">Instructors</div>
+					</a>
+				</li>
+
+				<li>
+					<a href="{{ url('/admin/supplier') }}">
+						<div class="parent-icon"><i class='bx bx-user'></i>
+						</div>
+						<div class="menu-title">Suppliers</div>
+					</a>
+				</li>
+
+				
+
+
+
+
+
 				<li class="menu-label">UI Elements</li>
 				<li>
 					<a href="widgets.html">

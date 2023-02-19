@@ -58,11 +58,17 @@
 												<label for="inputFirstName" class="form-label">Name</label>
 												<input type="text" class="form-control" id="name" placeholder="Jhon" name="name">
 											</div>
+
+											<div class="col-12">
+												<label for="inputCity" class="form-label">City</label>
+												<input type="text" class="form-control" id="city" placeholder="Colombo" name="city">
+											</div>
 											
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email Address</label>
 												<input type="email" class="form-control" id="email" name="email" placeholder="example@user.com">
 											</div>
+											
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">

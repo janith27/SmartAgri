@@ -9,10 +9,17 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
+
 use App\Http\Controllers\JournalController;
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
+
+use App\Http\Controllers\Farmer\AppointmentController;
+use App\Http\Controllers\Farmer\CropLogController;
+use App\Http\Controllers\JournalController;
+
+use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
+use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
+
 
 
 /////////////// User Login API Start ////////////////////////
@@ -65,9 +72,21 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 Route::post('/addjournal',[JournalController::class, 'addjournal']);
 Route::post('/addjournals',[JournalController::class, 'index']);
 
-// Instructor Details Route
+// Instructor Details Route key with city
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
+
+// Instructor Details Route key with email
+Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'InstructorDetailEmail']);
+
+//appointment Create
+Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
+Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
 
+//add product route
+
+Route::post('/addproduct',[JournalController::class, 'addproduct']);
+// Route::post('/addjournals',[JournalController::class, 'index']);

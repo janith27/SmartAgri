@@ -25,6 +25,8 @@ import SupplierHomePage from '../pages/SupplierHomePage';
 import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 import AppURL from '../api/AppURL';
 import FarmerProfilePage from '../pages/FarmerProfilePage';
+import AppointmentFormPage from '../pages/AppointmentFormPage';
+// import Appoint from '../pages/Appoint';
 
 
 
@@ -62,7 +64,7 @@ class AppRoute extends Component {
           <Route exact path="/supplierregpage" element={<SupplierRegPage />} />
           <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
-          <Route exact path="/farmerdashboard" element={< FarmerHomePage />} />
+          <Route exact path="/farmerdashboard" element={< FarmerHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
           <Route exact path="/supplierdashboard" element={< SupplierHomePage />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
@@ -76,7 +78,8 @@ class AppRoute extends Component {
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
-
+          <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
+         
         </Routes>
       </Fragment>
     )

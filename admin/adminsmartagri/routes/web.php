@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,3 +39,14 @@ Route::get('/change/password',[AdminController::class, 'ChangePassword'])->name(
 
 Route::post('/change/password/update',[AdminController::class, 'ChangePasswordUpdate'])->name('change.password.update');
 
+
+// blade view
+Route::get('/admin/farmer',function(){ return view('backend.admin.farmer.farmer'); });
+Route::get('/admin/instructor',function(){ return view('backend.admin.instructor.instructor'); });
+Route::get('/admin/supplier',function(){ return view('backend.admin.supplier.supplier'); });
+
+;
+
+Route::prefix('farmers')->group(function(){
+    Route::get('/admin/farmerdetails',[FarmerDetailsController::class,'adminFarmerDetail'])->name('adminFarmerDetail');
+});

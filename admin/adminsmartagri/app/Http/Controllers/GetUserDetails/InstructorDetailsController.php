@@ -11,8 +11,19 @@ class InstructorDetailsController extends Controller
     public function InstructorDetail(Request $request){
         
         $keycity = $request->keycity;
-        $sugustins = Instructor::where('city',$keycity)->get();
-        return $sugustins;
+        $sugustions = Instructor::where('city',$keycity)->get();
+        return $sugustions;
+
+    }
+    // END Method
+
+
+
+    public function InstructorDetailEmail(Request $request){
+        
+        $keyemail = $request->keyemail;
+        $relatedInstructor = Instructor::where('email',$keyemail)->get();
+        return $relatedInstructor;
 
     }
     // END Method

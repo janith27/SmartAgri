@@ -16,4 +16,14 @@ class FarmerDetailsController extends Controller
 
     }
     // END Method
+
+    //for admin function
+    public function adminFarmerDetail(){
+
+        $farmers = Farmer::latest()->get();
+
+        return view('backend.admin.farmer.farmer',compact('farmers'));
+
+    }
+    
 }

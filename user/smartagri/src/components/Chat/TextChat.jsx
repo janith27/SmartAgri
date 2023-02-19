@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class TextChat extends Component {
   render() {
-    return (
-      <div>TextChat</div>
-    )
+    return <div>TextChat</div>;
   }
 }
 
-export default TextChat
+export default TextChat;
