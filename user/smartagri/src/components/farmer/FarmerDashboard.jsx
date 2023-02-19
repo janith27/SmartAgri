@@ -6,7 +6,7 @@ import JournelView from "./DashboardComponent/JournelView";
 
 class FarmerDashboard extends Component {
   render() {
-    const myUser = this.props.user;
+    const userData = this.props.user;
 
     return (
       <Fragment>
@@ -14,7 +14,7 @@ class FarmerDashboard extends Component {
           {/* {console.log(this.props.user) } */}
           <Row>
             <Col lg={3} md={4} sm={12} xs={12}>
-              <CropDetails user={myUser} />
+              <CropDetails user={userData} />
             </Col>
             <Col lg={6} md={4} sm={12} xs={12}>
               <EssentialView />

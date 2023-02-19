@@ -9,9 +9,8 @@ class AppointmentForm extends Component {
   constructor() {
     super();
     this.state = {
-      insData: {},
-      ins: "nandani@gmail.com",
-      uEmail: "",
+      insEmail: "",
+      fEmail: "",
       date: "",
       description: "",
       time: "",
@@ -21,8 +20,8 @@ class AppointmentForm extends Component {
   formSubmit = (e) => {
     e.preventDefault();
     const data = {
-      farmer_email: this.state.uEmail,
-      instructor_email: this.state.ins,
+      farmer_email: this.state.fEmail,
+      instructor_email: this.state.insEmail,
       date: this.state.date,
       time: this.state.time,
       description: this.state.description,
@@ -31,12 +30,7 @@ class AppointmentForm extends Component {
     axios
       .post(AppURL.CreateAppointment, data)
       .then((response) => {
-        toast.success("Log Submit Successfully");
-        //  this.setState({message:response.data.message})
-
-        //  toast.success(this.state.message,{
-        //       position: "top-right"
-        //  });
+        toast.success("Appointment Submit Successfully");
         document.getElementById("croplogform").reset();
       })
       .catch((error) => {
@@ -47,26 +41,12 @@ class AppointmentForm extends Component {
       });
   };
 
-  componentDidMount() {
-    window.scroll(0, 0);
-    axios
-      .get(AppURL.UserData)
-      .then((response) => {
-        //  this.setUser(response.data)
-        this.setState({ uEmail: response.data.email });
-      })
-      .catch((error) => {});
-  }
-
   render() {
-    this.setState.insData = this.props.data;
-    console.log(this.props.data);
-    // this.state.ins = this.props.data.email;
-    // this.state.uEmail = this.props.user.email;
-    //  console.log(this.state.uEmail);
-    //  this.state.insData.map((email)=>
-    //   console.log(email)
-    //  );
+    this.state.fEmail = this.props.fEmail;
+    // console.log(this.props.fEmail);
+
+    this.state.insEmail = this.props.insEmail;
+    // console.log(this.props.insEmail);
 
     return (
       <Fragment>
@@ -110,8 +90,7 @@ class AppointmentForm extends Component {
                   type="submit"
                   className="btn btn-block m-2 site-btn-login"
                 >
-                  {" "}
-                  Submit{" "}
+                  Submit
                 </Button>
               </Form>
             </Col>

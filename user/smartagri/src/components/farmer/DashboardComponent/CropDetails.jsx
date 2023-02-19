@@ -56,7 +56,7 @@ class CropDetails extends Component {
   render() {
     const myUser = this.props.user;
     this.state.email = myUser.email;
-
+    console.log(myUser.city);
     const HistoryLog = this.state.CropLog;
     const MyView = HistoryLog.map((HistoryLog, i) => {
       return (
@@ -125,8 +125,7 @@ class CropDetails extends Component {
                   type="submit"
                   className="btn btn-block m-2 site-btn-login"
                 >
-                  {" "}
-                  Submit{" "}
+                  Submit
                 </Button>
               </Form>
             </Col>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Supply from "../../home/Supply";
+
 class EssentialView extends Component {
   render() {
     return (

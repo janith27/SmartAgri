@@ -79,9 +79,8 @@ class AppRoute extends Component {
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
-          <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage />} />
-          <Route exact path="/place" element={< PlaceHolder />} />
-
+          <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
+         
         </Routes>
       </Fragment>
     )

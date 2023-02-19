@@ -11,7 +11,7 @@ class FarmerHomePage extends Component {
   }
 
   render() {
-    const User = this.props.user;
+    const userData = this.props.user;
     return (
       <Fragment>
         <div className="Desktop">
@@ -22,7 +22,7 @@ class FarmerHomePage extends Component {
           <FarmerNavMobile />
         </div>
 
-        <FarmerDashboard user={User} />
+        <FarmerDashboard user={userData} />
 
         <div className="Desktop">
           <FooterDesktop />
