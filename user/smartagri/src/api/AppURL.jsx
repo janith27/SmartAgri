@@ -12,7 +12,6 @@ class AppURL {
   static InstructorRegister = this.BaseURL + "/insregister";
   static ProductData = this.BaseURL + "/productlist";
   static JournalData = this.BaseURL + "/addjournal";
-  static JournalDatas = this.BaseURL + "/addjournals";
   static InputCropLog = this.BaseURL + "/inputcroplog";
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
   static ProductDatas = this.BaseURL+"/addproduct";

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,20 +9,29 @@ function JournelViews() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [photo, setPhoto] = useState(null);
+  const [image, setImage] = useState(null);
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+    setImage(imageUrl);
+  };
   const createJournal = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
-    formData.append("photo", photo);
+    console.log(image);
+    formData.append("image", image);
 
-    await axios.post(AppURL.JournalData, formData).then(({ data }) => {
-      console.log("Successfully Added");
-    });
-    navigate("/").catch(({ Response }) => {});
+    await axios
+      .post(AppURL.JournalData, formData)
+      .then(({ data }) => {
+        console.log("Successfully Added");
+      })
+      .then(navigate("/instructordashboard"))
+      .catch(({ Response }) => {});
   };
 
   return (
@@ -49,13 +58,7 @@ function JournelViews() {
             }}
           />
           <Form.Label>Upload Image :</Form.Label>
-          <Form.Control
-            type="file"
-            value={photo}
-            onChange={(event) => {
-              setPhoto(event.target.value);
-            }}
-          />
+          <input type="file" onChange={handleImageChange} />
           <Button className="" type="submit">
             Submit
           </Button>

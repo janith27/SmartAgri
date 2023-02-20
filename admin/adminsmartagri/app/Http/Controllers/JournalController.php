@@ -8,34 +8,22 @@ use Intervention\Image\Facades\Image;
 
 class JournalController extends Controller
 {
-    public function index(){
-        $journals =Journal::all();
-        return response()->json([
-            'status'=> 200,
-            'journals'=>$journals,
-        ]);
-    }
-    public function addjournal(Request $request){
-
-        $journal =new Journal();
-
-         $journal->name=$request->name;
-         $journal->description=$request->description;
-        // if($request->photo!=""){
-        //     $strpos=strpos($request->photo, ';');
-        //       $sub=substr($request->photo,0,$strpos);
-        //       $ex=explode('/',$sub)[1];
-        //       $name= time().".".$ex;
-        //       $img =Image::make($request->photo)->resize(117,100);
-        //       $upload_path = public_path()."/upload/";
-        //       $img->save($upload_path.$name);
-        //       $journal->photo=$name;
-        //   }else{
-        //       $journal->photo="image.png";
-        //   }
-        //   $journal->photo =$name;
-         $journal->save();
+    
+    public function JournalInput(Request $request){
+        
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $image = $request->input('image');
+        date_default_timezone_set("Asia/Colombo");
         
 
+        $result = Journal::insert([
+            'name' => $name,
+            'description'=> $description,
+            'image' => $image,
+        ]);
+
+        return $result;
     }
+    //End Method
 }

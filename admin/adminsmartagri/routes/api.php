@@ -64,8 +64,8 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 
 //add jouranl route
 
-Route::post('/addjournal',[JournalController::class, 'addjournal']);
-Route::post('/addjournals',[JournalController::class, 'index']);
+Route::post('/addjournal',[JournalController::class, 'JournalInput']);
+
 
 // Instructor Details Route key with city
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
@@ -85,4 +85,3 @@ Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);
-// Route::post('/addjournals',[JournalController::class, 'index']);
