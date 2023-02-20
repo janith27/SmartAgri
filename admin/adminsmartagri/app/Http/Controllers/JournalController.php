@@ -26,4 +26,12 @@ class JournalController extends Controller
         return $result;
     }
     //End Method
+
+    public function JournalView(Request $request){
+
+        $result = Journal::all();
+        return $result;
+
+    }
+    // End Method
 }

@@ -12,6 +12,7 @@ class AppURL {
   static InstructorRegister = this.BaseURL + "/insregister";
   static ProductData = this.BaseURL + "/productlist";
   static JournalData = this.BaseURL + "/addjournal";
+  static JournalView = this.BaseURL + "/viewjournal"; 
   static InputCropLog = this.BaseURL + "/inputcroplog";
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
   static ProductDatas = this.BaseURL+"/addproduct";
@@ -27,6 +28,10 @@ class AppURL {
 
   static CropLogData(keyemail) {
     return this.BaseURL + "/croplog/" + keyemail;
+  }
+
+  static DeleteCropLog(keyid) {
+    return this.BaseURL + "/deletecroplog/" + keyid;
   }
 
   static AppointmentView(keyemail) {

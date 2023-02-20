@@ -63,8 +63,8 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 
 
 //add jouranl route
-
 Route::post('/addjournal',[JournalController::class, 'JournalInput']);
+Route::get('/viewjournal',[JournalController::class,'JournalView']);
 
 
 // Instructor Details Route key with city
@@ -79,8 +79,12 @@ Route::get('/appointmentview/{keyemail}',[AppointmentController::class,'Appointm
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
-Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
+
+//crop log Routes
 Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
+Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
+Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
+
 
 //add product route
 

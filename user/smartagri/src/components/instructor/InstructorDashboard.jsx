@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
-import JournelViews from "./JournelViews";
+import AddJournal from "./AddJournal";
 import InsAppointment from "./DashboardComponent/InsAppointment";
 import InsEssentialView from "./DashboardComponent/InsEssentialView";
 
@@ -17,7 +17,7 @@ class InstructorDashboard extends Component {
               <InsEssentialView />
             </Col>
             <Col lg={3} md={4} sm={12} xs={12}>
-              <JournelViews />
+              <AddJournal />
             </Col>
           </Row>
         </div>

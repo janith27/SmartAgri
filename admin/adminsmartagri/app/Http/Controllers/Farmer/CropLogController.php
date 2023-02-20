@@ -35,4 +35,10 @@ class CropLogController extends Controller
         return $result;
     }
     //End Method
+
+    public function DeleteLog(Request $request){
+        $keyid = $request->keyid;
+        $resultDelete=CropHistory::where('id',$keyid)->delete();
+        return $resultDelete;
+    }
 }
