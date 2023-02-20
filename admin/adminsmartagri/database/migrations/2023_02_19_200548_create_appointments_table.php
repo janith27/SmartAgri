@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('journals', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('farmer_email',255);
+            $table->string('instructor_email',255);
+            $table->string('description',255);
+            $table->date('date');
+            $table->time('time');
+            $table->string('status',25)->default('Pending');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('journals');
+        Schema::dropIfExists('appointments');
     }
 };

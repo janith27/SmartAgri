@@ -4,6 +4,7 @@ import axios from "axios";
 import AppURL from "../../../api/AppURL";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Navigate } from "react-router-dom";
 
 class CropDetails extends Component {
   constructor() {
@@ -14,7 +15,17 @@ class CropDetails extends Component {
       crop: "",
       description: "",
       message: "",
+      pageRefreshStatus: false,
     };
+  }
+  componentDidMount() {
+    window.scroll(0, 0);
+    axios
+      .get(AppURL.CropLogData(this.state.email))
+      .then((response) => {
+        this.setState({ CropLog: response.data });
+      })
+      .catch((error) => {});
   }
 
   formSubmit = (e) => {
@@ -34,8 +45,11 @@ class CropDetails extends Component {
         //  toast.success(this.state.message,{
         //       position: "top-right"
         //  });
+        this.state({ pageRefreshStatus: true });
         document.getElementById("croplogform").reset();
+        // window.location.reload(false);
       })
+
       .catch((error) => {
         this.setState({ message: error.response.data.message });
         toast.error(this.state.message, {
@@ -44,19 +58,31 @@ class CropDetails extends Component {
       });
   };
 
-  componentDidMount() {
+  deleteLog = (event) => {
+    let logId = event.target.getAttribute("logId");
+    console.log(logId);
     axios
-      .get(AppURL.CropLogData(this.state.email))
+      .delete(AppURL.DeleteCropLog(logId))
       .then((response) => {
-        this.setState({ CropLog: response.data });
+        console.log(logId);
+        this.state({ pageRefreshStatus: true });
+        toast.success("Log Delete Successfully");
       })
-      .catch((error) => {});
-  }
+      .catch((error) => {
+        toast.success("Log Delete Unsuccessfull");
+      });
+  };
 
+  pageRefresh = () => {
+    if (this.state.pageRefreshStatus === true) {
+      let URL = window.location;
+      return <Navigate to={URL} />;
+    }
+  };
   render() {
     const myUser = this.props.user;
     this.state.email = myUser.email;
-    console.log(myUser.city);
+    // console.log(myUser.city);
     const HistoryLog = this.state.CropLog;
     const MyView = HistoryLog.map((HistoryLog, i) => {
       return (
@@ -77,7 +103,9 @@ class CropDetails extends Component {
                 <Card.Text>{HistoryLog.description}</Card.Text>
               </Col>
               <Col xs={1} md={1}>
-                <i className="fa fa-trash-alt"></i>
+                <Button logId={HistoryLog.id} onClick={this.deleteLog}>
+                  <i className="fa fa-trash-alt"></i>
+                </Button>
               </Col>
             </Row>
           </Card.Body>
@@ -132,6 +160,7 @@ class CropDetails extends Component {
           </Row>
         </div>
         <ToastContainer />
+        {this.pageRefresh()}
       </Fragment>
     );
   }

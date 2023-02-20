@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Col, Row, Form, Button, Card } from "react-bootstrap";
+import { Col, Row, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../../../api/AppURL";
 import { ToastContainer, toast } from "react-toastify";

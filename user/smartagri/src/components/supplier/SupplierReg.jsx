@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Login from "../../assest/images/login.png";
 import axios from "axios";
 import AppURL from "../../api/AppURL";
@@ -54,6 +54,10 @@ class SupplierReg extends Component {
     axios
       .post(AppURL.SupplierRegister, data)
       .then((response) => {
+        //for direct access to supplier dashboard my new add
+        localStorage.setItem("token", response.data.token);
+        this.setState({ loggedIn: true });
+        //end new edit
         this.setState({ message: response.data.message });
 
         toast.success(this.state.message, {
@@ -70,6 +74,11 @@ class SupplierReg extends Component {
   };
 
   render() {
+    // new edit for redirect to supplier dashboard
+    if (this.state.loggedIn) {
+      return <Navigate to="/supplierdashboard" />;
+    }
+    //end new edit
     return (
       <Fragment>
         <Container>
@@ -225,17 +234,15 @@ class SupplierReg extends Component {
                       type="submit"
                       className="btn btn-block m-2 site-btn-login"
                     >
-                      {" "}
-                      Register{" "}
+                      Register
                     </Button>
                     <br></br> <br></br>
                     <hr />
                     <p>
-                      {" "}
                       <b> Already Have An Account ? </b>
                       <Link to="/login">
-                        <b> Login </b>{" "}
-                      </Link>{" "}
+                        <b> Login </b>
+                      </Link>
                     </p>
                   </Form>
                 </Col>
