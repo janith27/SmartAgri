@@ -1,0 +1,90 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+
+  .adminaccordion {
+    background-color: #f8f8f8;
+    color: #444;
+    cursor: pointer;
+    padding: 7px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-align: left;
+    outline: none;
+    font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: 0.4s;
+    overflow: paged-y;
+    box-shadow: 0 0 2px 0 rgba(57, 78, 234, 0.1)
+}
+.active, .adminaccordion:hover {
+    color: #ffffff;
+    font-weight: 400;
+    background-color: #051b35;
+}
+.adminaccordion:after {
+    content: '\276F';
+    color: #c2c2c2;
+    float: right;
+    margin-left: 5px;
+}
+.adminactive:after,hover {
+    color: #ffffff;
+    content: "\276E";
+}
+.adminpanel {
+    padding: 0 10px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.adminaccordionMenuDiv{
+    width: 100%;
+    direction:rtl;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 300 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #e9e9e9 #ffffff;
+}
+
+.adminaccordionMenuDiv::-webkit-scrollbar {
+    width:10px !important;
+}
+
+.adminaccordionMenuDiv::-webkit-scrollbar-thumb {
+    background: #dedede !important;
+}
+
+.adminaccordionMenuDiv::-webkit-scrollbar-thumb:hover {
+    background: #808080 !important;
+}
+
+.adminaccordionMenuDiv::-webkit-scrollbar-track {
+    background: #F4F4F4!important;
+}
+
+
+.adminaccordionMenuDivInside{
+    direction:ltr;
+}
+.adminaccordionMenuIcon{
+    width: 20px;
+    height: auto;
+}
+.adminaccordionItem{
+    color: #444;
+    text-decoration: none;
+}
+.adminaccordionItem:hover{
+    text-decoration: none;
+}

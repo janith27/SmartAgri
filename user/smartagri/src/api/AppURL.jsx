@@ -45,6 +45,14 @@ class AppURL {
   static InstructorDetailEmail(keyemail) {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }
+
+
+  // admin api
+  static FarmerData = this.BaseURL + "/allfarmersdetails";
+  static DeleteFarmer(keyemail) {
+    return this.BaseURL + "/deleteFarmer/" + keyemail;
+  }
+
 }
 
 export default AppURL;

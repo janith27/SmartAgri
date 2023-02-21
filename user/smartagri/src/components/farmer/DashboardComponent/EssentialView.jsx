@@ -50,7 +50,7 @@ class EssentialView extends Component {
   render() {
     const myUser = this.props.user;
     this.state.email = myUser.email;
-    console.log(myUser.city);
+    // console.log(myUser.city);
     const appintData = this.state.appointmentData;
     const MyView = appintData.map((appintData, i) => {
       return (

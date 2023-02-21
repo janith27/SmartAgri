@@ -26,6 +26,7 @@ import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 import AppURL from '../api/AppURL';
 import FarmerProfilePage from '../pages/FarmerProfilePage';
 import AppointmentFormPage from '../pages/AppointmentFormPage';
+import AdminHomePage from '../pages/AdminHomePage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -66,6 +67,7 @@ class AppRoute extends Component {
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
+          <Route exact path="/admindashboard" element={< AdminHomePage />} />
           <Route exact path="/supplierdashboard" element={< SupplierHomePage />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />

@@ -90,3 +90,9 @@ Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);
+
+
+//Admin Routes
+
+Route::get('/allfarmersdetails',[FarmerDetailsController::class,'FarmerAllDetails']);
+Route::delete('/deleteFarmer/{keyemail}',[FarmerDetailsController::class,'FarmerDelete']);

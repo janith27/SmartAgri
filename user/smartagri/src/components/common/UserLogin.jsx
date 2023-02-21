@@ -54,6 +54,8 @@ class UserLogin extends Component {
         return <Navigate to="/instructordashboard" />;
       } else if (this.state.role == 3) {
         return <Navigate to="/supplierdashboard" />;
+      }else if (this.state.role == 0) {
+        return <Navigate to="/admindashboard" />;
       }
     }
 
