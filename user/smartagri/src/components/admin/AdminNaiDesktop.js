@@ -22,7 +22,7 @@ function AdminNaiDesktop() {
                 </Link>
                 
                 <div>
-                  <Link to="/instructordashboard" className="h4 btn">
+                  <Link to="/admindashboard" className="h4 btn">
                     <Button variant="outline-success">Dashboard</Button>
                   </Link>
                   {/* <Link to="/instructornotification" className="h4 btn">

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\AnyUserMsgController;
+use App\Http\Controllers\Admin\GraphController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
@@ -14,8 +15,7 @@ use App\Http\Controllers\Farmer\CropLogController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
-
-
+use App\Http\Controllers\GetUserDetails\SupplierDetailsController;
 
 /////////////// User Login API Start ////////////////////////
 
@@ -93,6 +93,21 @@ Route::post('/addproduct',[JournalController::class, 'addproduct']);
 
 
 //Admin Routes
-
+//farmer Routes
 Route::get('/allfarmersdetails',[FarmerDetailsController::class,'FarmerAllDetails']);
-Route::delete('/deleteFarmer/{keyemail}',[FarmerDetailsController::class,'FarmerDelete']);
+Route::delete('/deletefarmer/{keyemail}',[FarmerDetailsController::class,'FarmerDelete']);
+
+//instructor Routes
+Route::get('/allinstructordetails',[InstructorDetailsController::class,'InstructorAllDetails']);
+Route::delete('/deleteinstructor/{keyemail}',[InstructorDetailsController::class,'InstructorDelete']);
+
+//supplier Routes
+Route::get('/allsupplierdetails',[SupplierDetailsController::class,'SupplierAllDetails']);
+Route::delete('/deletesupplier/{keyemail}',[SupplierDetailsController::class,'SupplierDelete']);
+
+//any user message details
+Route::get('/anyusermessage',[AnyUserMsgController::class,'MessageDetails']);
+Route::delete('/deleteanyusermessage/{keyid}',[AnyUserMsgController::class,'MessageDelete']);
+
+//graph data
+Route::get('/userpiechart',[GraphController::class,'UserPieChart']);

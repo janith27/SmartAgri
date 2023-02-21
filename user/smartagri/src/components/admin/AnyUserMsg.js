@@ -6,27 +6,27 @@ import AppURL from "../../api/AppURL";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function FarmersView() {
-  const [famData, setFamData] = useState();
+function AnyUserMsg() {
+  const [msgData, setMsgData] = useState();
 
   const sendRequest = async () => {
     const res = await axios
-      .get(AppURL.FarmerData)
+      .get(AppURL.AnyUserMessage)
       .catch((err) => console.log(err));
     const data = await res.data;
     // console.log(data);
     return data;
   };
   useEffect(() => {
-    sendRequest().then((data) => setFamData(data));
+    sendRequest().then((data) => setMsgData(data));
   }, []);
-  //   console.log(famData);
+  //   console.log(msgData);
 
   const deleteHandle = (event) => {
-    let logEmail = event.target.getAttribute("logEmail");
-    // console.log(logEmail);
+    let logId = event.target.getAttribute("logId");
+    // console.log(logId);
     axios
-      .delete(AppURL.DeleteFarmer(logEmail))
+      .delete(AppURL.DeleteAnyUserMessage(logId))
       .then((response) => {
         this.state({ pageRefreshStatus: true });
         window.location.reload(true);
@@ -43,40 +43,28 @@ function FarmersView() {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
+              <th>ID</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Title</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Street-1</th>
-              <th>Street-2</th>
-              <th>City</th>
-              <th>Mobile No</th>
-              <th>Crop</th>
-              <th></th>
+              <th>Message</th>
+              <th>Message Date</th>
+              <th>Message Time</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {famData &&
-              famData.map((famData, index) => (
+            {msgData &&
+              msgData.map((msgData, index) => (
                 <tr>
-                  <td>{famData.email}</td>
-                  <td>{famData.title}</td>
-                  <td>{famData.fname}</td>
-                  <td>{famData.lname}</td>
-                  <td>{famData.street1}</td>
-                  <td>{famData.street2}</td>
-                  <td>{famData.city}</td>
-                  <td>{famData.mobileno}</td>
-                  <td>{famData.crop}</td>
-                  <td>
-                    <Button logEmail={famData.email} onClick={editHandle}>
-                      Edit
-                    </Button>
-                  </td>
+                  <td>{msgData.id}</td>
+                  <td>{msgData.name}</td>
+                  <td>{msgData.email}</td>
+                  <td>{msgData.message}</td>
+                  <td>{msgData.msg_date}</td>
+                  <td>{msgData.msg_time}</td>
                   <td>
                     <Button
-                      logEmail={famData.email}
+                      logId={msgData.id}
                       variant="danger"
                       onClick={deleteHandle}
                     >
@@ -92,4 +80,4 @@ function FarmersView() {
   );
 }
 
-export default FarmersView;
+export default AnyUserMsg;

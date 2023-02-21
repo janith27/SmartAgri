@@ -6,27 +6,27 @@ import AppURL from "../../api/AppURL";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function FarmersView() {
-  const [famData, setFamData] = useState();
+function SupplierView() {
+  const [supData, setSupData] = useState();
 
   const sendRequest = async () => {
     const res = await axios
-      .get(AppURL.FarmerData)
+      .get(AppURL.SupplierData)
       .catch((err) => console.log(err));
     const data = await res.data;
     // console.log(data);
     return data;
   };
   useEffect(() => {
-    sendRequest().then((data) => setFamData(data));
+    sendRequest().then((data) => setSupData(data));
   }, []);
-  //   console.log(famData);
+  //   console.log(supData);
 
   const deleteHandle = (event) => {
     let logEmail = event.target.getAttribute("logEmail");
     // console.log(logEmail);
     axios
-      .delete(AppURL.DeleteFarmer(logEmail))
+      .delete(AppURL.DeleteSupplier(logEmail))
       .then((response) => {
         this.state({ pageRefreshStatus: true });
         window.location.reload(true);
@@ -51,32 +51,34 @@ function FarmersView() {
               <th>Street-2</th>
               <th>City</th>
               <th>Mobile No</th>
-              <th>Crop</th>
+              <th>Items</th>
+              <th>Business Reg. No.</th>
               <th></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {famData &&
-              famData.map((famData, index) => (
+            {supData &&
+              supData.map((supData, index) => (
                 <tr>
-                  <td>{famData.email}</td>
-                  <td>{famData.title}</td>
-                  <td>{famData.fname}</td>
-                  <td>{famData.lname}</td>
-                  <td>{famData.street1}</td>
-                  <td>{famData.street2}</td>
-                  <td>{famData.city}</td>
-                  <td>{famData.mobileno}</td>
-                  <td>{famData.crop}</td>
+                  <td>{supData.email}</td>
+                  <td>{supData.title}</td>
+                  <td>{supData.fname}</td>
+                  <td>{supData.lname}</td>
+                  <td>{supData.street1}</td>
+                  <td>{supData.street2}</td>
+                  <td>{supData.city}</td>
+                  <td>{supData.mobileno}</td>
+                  <td>{supData.items}</td>
+                  <td>{supData.bisregnum}</td>
                   <td>
-                    <Button logEmail={famData.email} onClick={editHandle}>
+                    <Button logEmail={supData.email} onClick={editHandle}>
                       Edit
                     </Button>
                   </td>
                   <td>
                     <Button
-                      logEmail={famData.email}
+                      logEmail={supData.email}
                       variant="danger"
                       onClick={deleteHandle}
                     >
@@ -92,4 +94,4 @@ function FarmersView() {
   );
 }
 
-export default FarmersView;
+export default SupplierView;

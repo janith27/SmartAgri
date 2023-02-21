@@ -48,10 +48,31 @@ class AppURL {
 
 
   // admin api
+  //Farmer
   static FarmerData = this.BaseURL + "/allfarmersdetails";
   static DeleteFarmer(keyemail) {
-    return this.BaseURL + "/deleteFarmer/" + keyemail;
+    return this.BaseURL + "/deletefarmer/" + keyemail;
   }
+  //Instructor
+  static InstructorData = this.BaseURL + "/allinstructordetails";
+  static DeleteFarmer(keyemail) {
+    return this.BaseURL + "/deleteinstructor/" + keyemail;
+  }
+
+  //Supplier
+  static SupplierData = this.BaseURL + "/allsupplierdetails";
+  static DeleteSupplier(keyemail) {
+    return this.BaseURL + "/deletesupplier/" + keyemail;
+  }
+
+  //any user message
+  static AnyUserMessage = this.BaseURL + "/anyusermessage";
+  static DeleteAnyUserMessage(keyid) {
+    return this.BaseURL + "/deleteanyusermessage/" + keyid;
+  }
+
+  //Pie Chart Data
+  static UserPieChartData = this.BaseURL + "/userpiechart";
 
 }
 
