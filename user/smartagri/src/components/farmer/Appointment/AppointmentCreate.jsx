@@ -57,9 +57,6 @@ class AppointmentCreate extends Component {
                       Heights Education level: {InsList.edu}
                     </Card.Text>
                   </Col>
-                  {/* <Col xs={2} md={2}>
-                        <Link to="/appointmentform"><Button>Appointment</Button></Link>
-                        </Col> */}
                 </Row>
               </Card.Body>
             </Card>

@@ -34,6 +34,10 @@ class AppURL {
     return this.BaseURL + "/deletecroplog/" + keyid;
   }
 
+  static DeleteAppointment(keyid) {
+    return this.BaseURL + "/deleteappointment/" + keyid;
+  }
+
   static AppointmentView(keyemail) {
     return this.BaseURL + "/appointmentview/" + keyemail;
   }

@@ -35,4 +35,11 @@ class AppointmentController extends Controller
 
         return $result;
     } //End method
+
+
+    public function DeleteAppointment(Request $request){
+        $keyid = $request->keyid;
+        $resultDelete=Appointment::where('id',$keyid)->delete();
+        return $resultDelete;
+    }
 }

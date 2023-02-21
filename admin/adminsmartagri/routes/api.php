@@ -76,6 +76,7 @@ Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'In
 //appointment Create
 Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
 Route::get('/appointmentview/{keyemail}',[AppointmentController::class,'AppointmentView']);
+Route::delete('/deleteappointment/{keyid}',[AppointmentController::class,'DeleteAppointment']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
