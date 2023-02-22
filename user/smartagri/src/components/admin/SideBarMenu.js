@@ -30,6 +30,18 @@ function SideBarMenu() {
               &nbsp; Any User Messages
             </button>
           </Link>
+          <Link to="/adminregisterview">
+            <button className="adminaccordion">
+              <img className="adminaccordionMenuIcon" />
+              &nbsp; Register Admin
+            </button>
+          </Link>
+          <Link to="/adminview">
+            <button className="adminaccordion">
+              <img className="adminaccordionMenuIcon" />
+              &nbsp; Admin Details
+            </button>
+          </Link>
         </div>
       </div>
     </Fragment>

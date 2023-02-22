@@ -43,10 +43,10 @@ function SupplierView() {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Email</th>
               <th>Title</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Email</th>
               <th>Street-1</th>
               <th>Street-2</th>
               <th>City</th>
@@ -61,10 +61,10 @@ function SupplierView() {
             {supData &&
               supData.map((supData, index) => (
                 <tr>
-                  <td>{supData.email}</td>
                   <td>{supData.title}</td>
                   <td>{supData.fname}</td>
                   <td>{supData.lname}</td>
+                  <td>{supData.email}</td>
                   <td>{supData.street1}</td>
                   <td>{supData.street2}</td>
                   <td>{supData.city}</td>

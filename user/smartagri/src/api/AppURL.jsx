@@ -74,6 +74,9 @@ class AppURL {
   //Pie Chart Data
   static UserPieChartData = this.BaseURL + "/userpiechart";
 
+  //Admin Register
+  static AdminRegister = this.BaseURL + "/adminregister";
+
 }
 
 export default AppURL;

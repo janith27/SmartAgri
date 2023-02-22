@@ -43,10 +43,10 @@ function InstructorView() {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Email</th>
               <th>Title</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Email</th>
               <th>Street-1</th>
               <th>Street-2</th>
               <th>City</th>
@@ -61,10 +61,10 @@ function InstructorView() {
             {insData &&
               insData.map((insData, index) => (
                 <tr>
-                  <td>{insData.email}</td>
                   <td>{insData.title}</td>
                   <td>{insData.fname}</td>
                   <td>{insData.lname}</td>
+                  <td>{insData.email}</td>
                   <td>{insData.street1}</td>
                   <td>{insData.street2}</td>
                   <td>{insData.city}</td>

@@ -31,6 +31,8 @@ import FarmerViewPage from '../pages/adminPages/FarmerViewPage';
 import InstructorViewPage from '../pages/adminPages/InstructorViewPage';
 import SupplierViewPage from '../pages/adminPages/SupplierViewPage';
 import AnyUserMsgPage from '../pages/adminPages/AnyUserMsgPage';
+import AdminRegisterPage from '../pages/adminPages/AdminRegisterPage';
+import AdminViewPage from '../pages/adminPages/AdminViewPage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -91,6 +93,8 @@ class AppRoute extends Component {
           <Route exact path="/admininstructorview" element={< InstructorViewPage />} />
           <Route exact path="/adminsupplierview" element={< SupplierViewPage />} />
           <Route exact path="/anyusermsgview" element={< AnyUserMsgPage />} />
+          <Route exact path="/adminregisterview" element={< AdminRegisterPage />} />
+          <Route exact path="/adminview" element={< AdminViewPage />} />
          
         </Routes>
       </Fragment>

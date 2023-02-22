@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
@@ -93,6 +94,10 @@ Route::post('/addproduct',[JournalController::class, 'addproduct']);
 
 
 //Admin Routes
+
+//Admin Register
+Route::post('/adminregister',[AuthController::class, 'AdminRegister']);
+
 //farmer Routes
 Route::get('/allfarmersdetails',[FarmerDetailsController::class,'FarmerAllDetails']);
 Route::delete('/deletefarmer/{keyemail}',[FarmerDetailsController::class,'FarmerDelete']);

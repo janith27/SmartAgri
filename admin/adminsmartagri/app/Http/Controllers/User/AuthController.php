@@ -70,6 +70,35 @@ class AuthController extends Controller
 
     // } // end mehtod
 
+    public function AdminRegister(RegisterRequest $request){
+
+        try{
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role,
+                'city' => $request->city,
+            ]);
+
+            $token = $user->createToken('app')->accessToken;
+
+            return response([
+                'message' => "Registration Successfull",
+                'token' => $token,
+                'user' => $user,
+
+
+            ],200);
+
+            }catch(Exception $exception){
+                return response([
+                    'message' => $exception->getMessage()
+                ],400);
+            }
+    } // end mehtod
+
     public function FarmerRegister(RegisterRequest $request){
 
         try{

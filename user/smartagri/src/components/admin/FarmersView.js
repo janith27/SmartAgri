@@ -43,10 +43,10 @@ function FarmersView() {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Email</th>
               <th>Title</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Email</th>
               <th>Street-1</th>
               <th>Street-2</th>
               <th>City</th>
@@ -60,10 +60,10 @@ function FarmersView() {
             {famData &&
               famData.map((famData, index) => (
                 <tr>
-                  <td>{famData.email}</td>
                   <td>{famData.title}</td>
                   <td>{famData.fname}</td>
                   <td>{famData.lname}</td>
+                  <td>{famData.email}</td>
                   <td>{famData.street1}</td>
                   <td>{famData.street2}</td>
                   <td>{famData.city}</td>
