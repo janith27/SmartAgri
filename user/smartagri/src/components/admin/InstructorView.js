@@ -53,8 +53,9 @@ function InstructorView() {
               <th>Mobile No</th>
               <th>Crop</th>
               <th>Education</th>
-              <th></th>
-              <th></th>
+              <th>Created At</th>
+              <th>Updated At</th>
+              <th colSpan={2}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -71,6 +72,8 @@ function InstructorView() {
                   <td>{insData.mobileno}</td>
                   <td>{insData.crop}</td>
                   <td>{insData.edu}</td>
+                  <td>{insData.created_at}</td>
+                  <td>{insData.updated_at}</td>
                   <td>
                     <Button logEmail={insData.email} onClick={editHandle}>
                       Edit

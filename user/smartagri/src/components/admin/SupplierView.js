@@ -53,8 +53,9 @@ function SupplierView() {
               <th>Mobile No</th>
               <th>Items</th>
               <th>Business Reg. No.</th>
-              <th></th>
-              <th></th>
+              <th>Created At</th>
+              <th>Updated At</th>
+              <th colSpan={2}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -71,6 +72,8 @@ function SupplierView() {
                   <td>{supData.mobileno}</td>
                   <td>{supData.items}</td>
                   <td>{supData.bisregnum}</td>
+                  <td>{supData.created_at}</td>
+                  <td>{supData.updated_at}</td>
                   <td>
                     <Button logEmail={supData.email} onClick={editHandle}>
                       Edit

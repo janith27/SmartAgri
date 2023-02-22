@@ -13,6 +13,7 @@ use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Farmer\AppointmentController;
 use App\Http\Controllers\Farmer\CropLogController;
+use App\Http\Controllers\GetUserDetails\AdminDetailsController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
@@ -97,6 +98,8 @@ Route::post('/addproduct',[JournalController::class, 'addproduct']);
 
 //Admin Register
 Route::post('/adminregister',[AuthController::class, 'AdminRegister']);
+Route::get('/admindetails',[AdminDetailsController::class,'AdminAllDetails']);
+Route::delete('/admindelete/{keyid}',[AdminDetailsController::class,'AdminDelete']);
 
 //farmer Routes
 Route::get('/allfarmersdetails',[FarmerDetailsController::class,'FarmerAllDetails']);

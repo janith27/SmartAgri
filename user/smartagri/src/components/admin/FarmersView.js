@@ -52,8 +52,9 @@ function FarmersView() {
               <th>City</th>
               <th>Mobile No</th>
               <th>Crop</th>
-              <th></th>
-              <th></th>
+              <th>Created At</th>
+              <th>Updated At</th>
+              <th colSpan={2}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -69,6 +70,8 @@ function FarmersView() {
                   <td>{famData.city}</td>
                   <td>{famData.mobileno}</td>
                   <td>{famData.crop}</td>
+                  <td>{famData.created_at}</td>
+                  <td>{famData.updated_at}</td>
                   <td>
                     <Button logEmail={famData.email} onClick={editHandle}>
                       Edit

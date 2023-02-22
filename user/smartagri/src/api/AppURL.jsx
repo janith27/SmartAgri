@@ -76,6 +76,10 @@ class AppURL {
 
   //Admin Register
   static AdminRegister = this.BaseURL + "/adminregister";
+  static AdminData = this.BaseURL + "/admindetails";
+  static AdminDelete(keyid) {
+    return this.BaseURL + "/admindelete/" + keyid;
+  }
 
 }
 
