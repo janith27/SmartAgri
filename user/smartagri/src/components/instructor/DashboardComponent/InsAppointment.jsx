@@ -5,6 +5,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Table from "react-bootstrap/Table";
 import { PieChart, Pie, Legend, Tooltip } from "recharts";
+import EssentialView from "../../farmer/DashboardComponent/EssentialView";
 
 function InsAppointment() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -21,12 +22,10 @@ function InsAppointment() {
   return (
     <Fragment>
       <div className="appoinmentback">
-        <div> Check Appoinment</div>
-        <Calendar
-          className="date"
-          onChange={handleDateChange}
-          value={selectedDate}
-        />
+        <div> Appoinment</div>
+        
+        
+        
 
         <div className='"graph"'>
           <Card>
