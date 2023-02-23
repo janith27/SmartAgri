@@ -17,10 +17,19 @@ class GraphController extends Controller
         $supplierCount = Supplier::count();
         $instructorCount = Instructor::count();
        
-
-        // $result = ['farmerCount'=>$farmerCount,'supplierCount'=>$supplierCount,'instructorCount'=>$instructorCount];
         $result = [$farmerCount,$instructorCount,$supplierCount];
         return $result;
     }
     // END Method
+
+    public function NewUserChart(Request $request){
+        $userData = User::select(\DB::raw("COUNT(*) as count"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(\DB::raw("Month(created_at)"))
+                    ->pluck('count');
+          
+        return $userData;
+    }
+
+
 }

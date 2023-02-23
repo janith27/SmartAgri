@@ -88,3 +88,8 @@
 .adminaccordionItem:hover{
     text-decoration: none;
 }
+.adminViewTitle{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

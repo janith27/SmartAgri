@@ -40,6 +40,7 @@ function SupplierView() {
   return (
     <Fragment>
       <Container>
+      <h3 className="adminViewTitle">Supplier Details</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>

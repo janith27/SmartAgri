@@ -33,6 +33,7 @@ import SupplierViewPage from '../pages/adminPages/SupplierViewPage';
 import AnyUserMsgPage from '../pages/adminPages/AnyUserMsgPage';
 import AdminRegisterPage from '../pages/adminPages/AdminRegisterPage';
 import AdminViewPage from '../pages/adminPages/AdminViewPage';
+import VisitorViewPage from '../pages/adminPages/VisitorViewPage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -95,6 +96,7 @@ class AppRoute extends Component {
           <Route exact path="/anyusermsgview" element={< AnyUserMsgPage />} />
           <Route exact path="/adminregisterview" element={< AdminRegisterPage />} />
           <Route exact path="/adminview" element={< AdminViewPage />} />
+          <Route exact path="/adminvisitorview" element={< VisitorViewPage />} />
          
         </Routes>
       </Fragment>

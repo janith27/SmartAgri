@@ -40,6 +40,7 @@ function AnyUserMsg() {
   return (
     <Fragment>
       <Container>
+      <h3 className="adminViewTitle">Any User Message</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>

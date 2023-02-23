@@ -40,6 +40,7 @@ function AdminView() {
   return (
     <Fragment>
       <Container>
+      <h3 className="adminViewTitle">Admin Details</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>

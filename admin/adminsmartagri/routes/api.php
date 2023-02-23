@@ -82,6 +82,7 @@ Route::delete('/deleteappointment/{keyid}',[AppointmentController::class,'Delete
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+Route::put('/farmerupdate/{keyemail}',[FarmerDetailsController::class,'FarmerUpdate']);
 
 //crop log Routes
 Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
@@ -119,3 +120,7 @@ Route::delete('/deleteanyusermessage/{keyid}',[AnyUserMsgController::class,'Mess
 
 //graph data
 Route::get('/userpiechart',[GraphController::class,'UserPieChart']);
+Route::get('/newuserchart',[GraphController::class,'NewUserChart']);
+
+//get visitor detail
+Route::get('/visitordetails',[VisitorController::class,'VisitorDetails']);

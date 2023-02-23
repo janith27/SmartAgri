@@ -1,17 +1,17 @@
 import React, { Fragment } from "react";
-import PieChart from "./PieChart";
+import AreaChart from "./AreaChart";
 
-function PieCard() {
+function AreaCard() {
   return (
     <Fragment>
       <div className="pieCard">
         <div className="text">
           <h4>Users</h4>
         </div>
-        <PieChart />
+        <AreaChart />
       </div>
     </Fragment>
-  );
+  )
 }
 
-export default PieCard;
+export default AreaCard

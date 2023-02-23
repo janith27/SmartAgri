@@ -17,7 +17,7 @@ class AppURL {
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
   static ProductDatas = this.BaseURL+"/addproduct";
 
-  static InstructorData(keycity) {
+  static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
 
@@ -53,6 +53,10 @@ class AppURL {
   static DeleteFarmer(keyemail) {
     return this.BaseURL + "/deletefarmer/" + keyemail;
   }
+  static UpdateFarmer(keyemail) {
+    return this.BaseURL + "/farmerupdate/" + keyemail;
+  }
+
   //Instructor
   static InstructorData = this.BaseURL + "/allinstructordetails";
   static DeleteFarmer(keyemail) {
@@ -73,6 +77,7 @@ class AppURL {
 
   //Pie Chart Data
   static UserPieChartData = this.BaseURL + "/userpiechart";
+  static UserAreaChartData = this.BaseURL + "/newuserchart";
 
   //Admin Register
   static AdminRegister = this.BaseURL + "/adminregister";
@@ -80,6 +85,9 @@ class AppURL {
   static AdminDelete(keyid) {
     return this.BaseURL + "/admindelete/" + keyid;
   }
+
+  //Get Visitor details
+  static VisitorData = this.BaseURL + "/visitordetails";
 
 }
 

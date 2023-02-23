@@ -42,6 +42,12 @@ function SideBarMenu() {
               &nbsp; Admin Details
             </button>
           </Link>
+          <Link to="/adminvisitorview">
+            <button className="adminaccordion">
+              <img className="adminaccordionMenuIcon" />
+              &nbsp; Visitor details
+            </button>
+          </Link>
         </div>
       </div>
     </Fragment>

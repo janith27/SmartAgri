@@ -40,6 +40,7 @@ function FarmersView() {
   return (
     <Fragment>
       <Container>
+      <h3 className="adminViewTitle">Farmer Details</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>

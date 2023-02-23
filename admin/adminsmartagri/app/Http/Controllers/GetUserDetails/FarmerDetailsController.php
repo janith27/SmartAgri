@@ -44,4 +44,34 @@ class FarmerDetailsController extends Controller
 
     }
     // END Method
+
+    public function FarmerUpdate(Request $request){
+        $title = $request->title;
+        $fname = $request->fname;
+        $lname = $request->lname;
+        $city = $request->city;
+        $street1 = $request->street1;
+        $street2 = $request->street2;
+        $mobileno = $request->mobileno;
+        $crop = $request->crop;
+
+        $keyemail = $request->keyemail;
+        $result = Farmer::where('email',$keyemail)->update([
+                'title' => $title,
+                'fname' => $fname,
+                'lname' => $lname,
+                'street1' => $street1,
+                'street2' => $street2,
+                'mobileno' => $mobileno,
+                'city' => $city,
+                'crop' => $crop,
+
+                ]) && User::where('email',$keyemail)->update([
+                    'name' => $fname,
+                    'city' => $city,
+                ]);
+        return $result;
+
+    }
+    // END Method
 }
