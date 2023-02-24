@@ -65,6 +65,7 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 //add jouranl route
 Route::post('/addjournal',[JournalController::class, 'JournalInput']);
 Route::get('/viewjournal',[JournalController::class,'JournalView']);
+// Route::put('/addjournal/{id}',[JournalController::class, 'JournalInput']);
 
 
 // Instructor Details Route key with city

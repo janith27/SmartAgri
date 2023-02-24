@@ -34,4 +34,15 @@ class JournalController extends Controller
 
     }
     // End Method
+    public function UpdateJournalView(Request $request){
+
+        $journal =new Journal();
+        $journal->name = $request->input('name');
+        $journal->description = $request->input('description');
+        $journal->image = $request->input('image');
+        $journal->save();
+
+        return redirect('/addjournal');
+
+    }
 }
