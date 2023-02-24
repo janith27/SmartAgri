@@ -8,6 +8,7 @@ export class Profile extends Component {
       name = this.props.user.name;
       email = this.props.user.email;
     }
+    console.log(this.props.user)
     return (
         <Fragment>
         <h1> User Profile Page </h1>

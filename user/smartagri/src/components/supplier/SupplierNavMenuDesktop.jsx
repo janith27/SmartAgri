@@ -36,12 +36,16 @@ class SupplierNavMenuDesktop extends Component {
                     <Link to="/" className="h4 btn">
                       <Button variant="outline-success">Chat</Button>
                     </Link>
+                    <Link to="/supplierprofile" className="h4 btn">
+                      <Button variant="outline-success">Profile</Button>
+                    </Link>
                     {/* <Link to="/" className="h4 btn">
                       <Button variant="outline-success">Notifiction</Button>
                     </Link> */}
                     <Link to="/" onClick={this.logout} className="h4 btn">
                       <Button variant="outline-success">Logout</Button>
                     </Link>
+                    
                   </div>
                 </div>
               </Row>

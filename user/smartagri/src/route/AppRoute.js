@@ -35,6 +35,7 @@ import AdminRegisterPage from '../pages/adminPages/AdminRegisterPage';
 import AdminViewPage from '../pages/adminPages/AdminViewPage';
 import VisitorViewPage from '../pages/adminPages/VisitorViewPage';
 import InstructorProfilePage from '../pages/InstructorProfilePage';
+import SupplierProfilePage from '../pages/SupplierProfilePage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -88,6 +89,7 @@ class AppRoute extends Component {
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/instructorprofile" element={< InstructorProfilePage user={this.state.user} setUser={this.setUser} />} />
+          <Route exact path="/supplierprofile" element={< SupplierProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
 
 {/* Admin Routes */}
