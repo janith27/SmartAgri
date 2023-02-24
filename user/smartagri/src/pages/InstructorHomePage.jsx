@@ -11,18 +11,18 @@ class InstructorHomePage extends Component {
   }
 
   render() {
-    const User = this.props.user;
+    const userDetails = this.props.user;
     return (
       <Fragment>
         <div className="Desktop">
-          <InstructorNavMenuDesktop user={User} />
+          <InstructorNavMenuDesktop />
         </div>
 
         <div className="Mobile">
           <InstructorNavMobile />
         </div>
 
-        <InstructorDashboard />
+        <InstructorDashboard user={userDetails}/>
 
         <div className="Desktop">
           <FooterDesktop />

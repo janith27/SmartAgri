@@ -6,14 +6,15 @@ import InsEssentialView from "./DashboardComponent/InsEssentialView";
 
 class InstructorDashboard extends Component {
   render() {
+    const insDetails = this.props.user;
     return (
       <Fragment>
         <div className="mainback backgroundbox">
           <Row>
-            <Col lg={3} md={4} sm={12} xs={12}>
-              <InsAppointment />
+            <Col lg={5} md={4} sm={12} xs={12}>
+              <InsAppointment insData={insDetails} />
             </Col>
-            <Col lg={6} md={4} sm={12} xs={12}>
+            <Col lg={4} md={4} sm={12} xs={12}>
               <InsEssentialView />
             </Col>
             <Col lg={3} md={4} sm={12} xs={12}>

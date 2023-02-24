@@ -15,16 +15,19 @@ class Appointment extends Mailable
     public $farmerEmail;
     public $date;
     public $time;
+    public $description;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($farmerEmail,$date,$time)
+    public function __construct($farmerEmail,$date,$time,$description)
     {
         $this->fname = $farmerEmail;
         $this->date = $date;
         $this->time = $time;
+        $this->description = $description;
+
     }
 
     // /**
@@ -71,6 +74,7 @@ class Appointment extends Mailable
         $fname = $this->fname;
         $date=$this->date;
         $time=$this->time;
-        return $this->from('smartagricsp@gmail.com')->view('mail.appointment',compact('fname','date','time'))->subject('Appointment Shedule');
+        $description=$this->description;
+        return $this->from('smartagricsp@gmail.com')->view('mail.appointment',compact('fname','date','time','description'))->subject('Appointment Shedule');
     }
 }

@@ -75,6 +75,12 @@ Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'I
 // Instructor Details Route key with email
 Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'InstructorDetailEmail']);
 
+//instructor get own appointments
+Route::get('/instructorgetmyappointment/{keyemail}',[AppointmentController::class,'InstructorGetMyAppointment']);
+
+// update appointment status
+Route::put('/appointmentstatusupdate/{keyid}',[AppointmentController::class,'AppointmentStatusUpdate']);
+
 //appointment Create
 Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
 Route::get('/appointmentview/{keyemail}',[AppointmentController::class,'AppointmentView']);

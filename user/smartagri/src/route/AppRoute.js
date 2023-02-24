@@ -34,6 +34,7 @@ import AnyUserMsgPage from '../pages/adminPages/AnyUserMsgPage';
 import AdminRegisterPage from '../pages/adminPages/AdminRegisterPage';
 import AdminViewPage from '../pages/adminPages/AdminViewPage';
 import VisitorViewPage from '../pages/adminPages/VisitorViewPage';
+import InstructorProfilePage from '../pages/InstructorProfilePage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -73,7 +74,7 @@ class AppRoute extends Component {
           <Route exact path="/forgetpassword" element={< ForgetPasswordPage />} />
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage user={this.state.user} setUser={this.setUser}/>} />
-          <Route exact path="/instructordashboard" element={< InnstructorHomePage />} />
+          <Route exact path="/instructordashboard" element={< InnstructorHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/supplierdashboard" element={< SupplierHomePage />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />
@@ -86,6 +87,7 @@ class AppRoute extends Component {
           <Route exact path="/instructorchat" element={< InstructorChatPage />} />
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
+          <Route exact path="/instructorprofile" element={< InstructorProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
 
 {/* Admin Routes */}

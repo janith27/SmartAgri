@@ -38,7 +38,7 @@ class AppointmentController extends Controller
         // return $result;
  
              // Mail Send to User
-             Mail::to($instructorEmail)->send(new MailAppointment($farmerEmail,$date,$time));
+             Mail::to($instructorEmail)->send(new MailAppointment($farmerEmail,$date,$time,$description));
  
              return response([
                 
@@ -52,5 +52,23 @@ class AppointmentController extends Controller
         $keyid = $request->keyid;
         $resultDelete=Appointment::where('id',$keyid)->delete();
         return $resultDelete;
+    }//End method
+
+    public function InstructorGetMyAppointment(Request $request){
+
+        $keyemail = $request->keyemail;
+        $sugustins = Appointment::where('instructor_email',$keyemail)->get();
+        return $sugustins;
+
     }
+    // End Method
+
+    public function AppointmentStatusUpdate(Request $request){
+        $state = "Canceled";
+        $keyid = $request->keyid;
+        $result = Appointment::where('id',$keyid)->update(['status'=>$state]);
+        return $result;
+
+    }
+    // End Method
 }

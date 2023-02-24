@@ -42,6 +42,16 @@ class AppURL {
     return this.BaseURL + "/appointmentview/" + keyemail;
   }
 
+  static InstructorGetMyAppointment(keyemail) {
+    return this.BaseURL + "/instructorgetmyappointment/" + keyemail;
+  }
+
+  static AppointmentStatusUpdate(keyid) {
+    return this.BaseURL + "/appointmentstatusupdate/" + keyid;
+  }
+
+  instructorgetmyappointment
+
   static InstructorDetailEmail(keyemail) {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }

@@ -35,8 +35,11 @@ class InstructorNavMenuDesktop extends Component {
                     <Link to="/instructorchat" className="h4 btn">
                       <Button variant="outline-success">Chat</Button>
                     </Link>
-                    <Link to="/instructornotification" className="h4 btn">
+                    {/* <Link to="/instructornotification" className="h4 btn">
                       <Button variant="outline-success">Notifiction</Button>
+                    </Link> */}
+                    <Link to="/instructorprofile" className="h4 btn">
+                      <Button variant="outline-success">Profile</Button>
                     </Link>
                     <Link to="/" onClick={this.logout} className="h4 btn">
                       <Button variant="outline-success">Logout</Button>

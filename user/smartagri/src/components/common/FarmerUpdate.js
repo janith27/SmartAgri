@@ -82,12 +82,11 @@ function FarmerUpdate() {
       <h4 className="section-title-login"> FARMER Update </h4>
       <select
       name="title"
-      value={title}
       onChange={handleChange}
         className="form-control m-2"
       >
-        <option value="" selected disabled>
-        {title}
+        <option value="" selected disabled defaultValue={{title}}>
+        
         </option >
         
         <option value="Mr">Mr</option>
@@ -141,12 +140,10 @@ function FarmerUpdate() {
       </Row>
       <select
       name="city"
-      value={city}
         onChange={handleChange}
         className="form-control m-2"
       >
-        <option value="" selected disabled>
-        {city}
+        <option value="" selected disabled defaultValue={ {city}}>
         </option>
 
         {Citylist.map((getcity) => (

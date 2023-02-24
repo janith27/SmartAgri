@@ -80,7 +80,7 @@ class EssentialView extends Component {
                   id={appintData.id}
                   onClick={this.deleteLog}
                 >
-                  Cancel
+                  Delete
                 </Button>
               </Col>
             </Row>
