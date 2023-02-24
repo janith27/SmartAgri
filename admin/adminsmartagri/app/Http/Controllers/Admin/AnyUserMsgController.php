@@ -31,4 +31,22 @@ class AnyUserMsgController extends Controller
             return $result;
 
     } //method
+
+    public function MessageDetails(Request $request){
+        
+        
+        $result = AnyUserMsg::all();
+        return $result;
+
+    }
+    // END Method
+
+    public function MessageDelete(Request $request){
+        
+        $keyid = $request->keyid;
+        $result = AnyUserMsg::where('id',$keyid)->delete();
+        return $result;
+
+    }
+    // END Method
 }

@@ -1,42 +1,55 @@
 import React, { Component, Fragment } from "react";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
 import Login from "../../assest/images/login.png";
-import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
-import AppURL from "../../api/AppURL";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AppURL from "../../api/AppURL";
 
-class UserLogin extends Component {
+class AdminRegister extends Component {
   constructor() {
     super();
     this.state = {
+      name: "",
       email: "",
       password: "",
-      role: "",
+      password_confirmation: "",
       message: "",
+      role: "0",
       loggedIn: false,
+      city: "admin",
     };
   }
 
-  //Login Form Submit Method
+  // Farmer Register Form Submit Method
   formSubmit = (e) => {
     e.preventDefault();
     const data = {
+      name: this.state.name,
       email: this.state.email,
       password: this.state.password,
+      password_confirmation: this.state.password_confirmation,
+      city: this.state.city,
+      role: this.state.role,
     };
 
     axios
-      .post(AppURL.UserLogin, data)
+      .post(AppURL.AdminRegister, data)
       .then((response) => {
+        //for direct access to farmer dashboard my new add
         localStorage.setItem("token", response.data.token);
-        // localStorage.setItem('role',response.data.user.role);
         this.setState({ loggedIn: true });
-        this.setState({ role: response.data.user.role });
+        //end new edit
+
+        this.setState({ message: response.data.message });
+
+        toast.success(this.state.message, {
+          position: "top-right",
+        });
+        //  document.getElementById("fromreset").reset();
       })
       .catch((error) => {
-        console.log(error);
         this.setState({ message: error.response.data.message });
         toast.error(this.state.message, {
           position: "top-right",
@@ -45,19 +58,11 @@ class UserLogin extends Component {
   };
 
   render() {
-    // After loging redirect to loging page //
-
+    // new edit for redirect to farmer dashboard
     if (this.state.loggedIn) {
-      if (this.state.role == 1) {
-        return <Navigate to="/farmerdashboard" />;
-      } else if (this.state.role == 2) {
-        return <Navigate to="/instructordashboard" />;
-      } else if (this.state.role == 3) {
-        return <Navigate to="/supplierdashboard" />;
-      }else if (this.state.role == 0) {
-        return <Navigate to="/admindashboard" />;
-      }
+      return <Navigate to="/admindashboard" />;
     }
+    //end new edit
 
     return (
       <Fragment>
@@ -78,16 +83,28 @@ class UserLogin extends Component {
                   sm={12}
                   xs={12}
                 >
-                  <Form className="onboardForm" onSubmit={this.formSubmit}>
-                    <h4 className="section-title-login">User Sign in</h4>
-                    <h6 className="section-sub-title">
-                      Please Enter Your Mobile Number
-                    </h6>
-
+                  <Form
+                    className="onboardForm"
+                    onSubmit={this.formSubmit}
+                    id="fromreset"
+                  >
+                    <h4 className="section-title-login"> ADMIN REGISTER </h4>
+                    <Row>
+                      <Col>
+                        <input
+                          className="form-control m-2"
+                          type="text"
+                          placeholder="Enter Name"
+                          onChange={(e) => {
+                            this.setState({ name: e.target.value });
+                          }}
+                        />
+                      </Col>
+                    </Row>
                     <input
                       className="form-control m-2"
-                      type="text"
-                      placeholder="Enter Email Address"
+                      type="email"
+                      placeholder="Enter Email"
                       onChange={(e) => {
                         this.setState({ email: e.target.value });
                       }}
@@ -95,33 +112,28 @@ class UserLogin extends Component {
                     <input
                       className="form-control m-2"
                       type="password"
-                      placeholder="Enter Your Password"
+                      placeholder="Password"
                       onChange={(e) => {
                         this.setState({ password: e.target.value });
                       }}
                     />
-
+                    <input
+                      className="form-control m-2"
+                      type="password"
+                      placeholder="Confirm Password"
+                      onChange={(e) => {
+                        this.setState({
+                          password_confirmation: e.target.value,
+                        });
+                      }}
+                    />
                     <Button
                       type="submit"
                       className="btn btn-block m-2 site-btn-login"
                     >
-                      Login
+                      Register
                     </Button>
-                    <div class="font-weight-light">
-                      <hr />
-                      <p className="section-sub-title">
-                        Forget My Password? :
-                        <Link to="/forgetpassword" className="h6 btn">
-                          <Button variant="link">Forget Password</Button>
-                        </Link>
-                      </p>
-                      <p className="section-sub-title">
-                        If you not have an account :
-                        <Link to="/registrationchose" className="h6 btn">
-                          <Button variant="link">Create an account</Button>
-                        </Link>
-                      </p>
-                    </div>
+                    <br></br> <br></br>
                   </Form>
                 </Col>
 
@@ -138,4 +150,4 @@ class UserLogin extends Component {
   }
 }
 
-export default UserLogin;
+export default AdminRegister;

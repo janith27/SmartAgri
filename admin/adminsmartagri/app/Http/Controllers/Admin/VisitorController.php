@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Visitor;
+use Carbon\Carbon;
+
 class VisitorController extends Controller
 {
     //
@@ -23,4 +25,13 @@ class VisitorController extends Controller
         return $result;
 
     }//end method
+
+    public function VisitorDetails(Request $request){
+        
+        $result = Visitor::where('visit_date','>=',Carbon::now()->subDays(30))->get();
+        return $result;
+
+    }
+    // END Method
+
 }

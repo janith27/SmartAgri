@@ -26,7 +26,14 @@ import FarmerAppointmentPage from '../pages/FarmerAppointmentPage';
 import AppURL from '../api/AppURL';
 import FarmerProfilePage from '../pages/FarmerProfilePage';
 import AppointmentFormPage from '../pages/AppointmentFormPage';
-import Checkout from '../pages/Checkout';
+import AdminHomePage from '../pages/adminPages/AdminHomePage';
+import FarmerViewPage from '../pages/adminPages/FarmerViewPage';
+import InstructorViewPage from '../pages/adminPages/InstructorViewPage';
+import SupplierViewPage from '../pages/adminPages/SupplierViewPage';
+import AnyUserMsgPage from '../pages/adminPages/AnyUserMsgPage';
+import AdminRegisterPage from '../pages/adminPages/AdminRegisterPage';
+import AdminViewPage from '../pages/adminPages/AdminViewPage';
+import VisitorViewPage from '../pages/adminPages/VisitorViewPage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -80,7 +87,17 @@ class AppRoute extends Component {
           <Route exact path="/farmerappointmentcreate" element={< FarmerAppointmentPage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/farmerprofile" element={< FarmerProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
-          <Route exact path="/checkout" element={< Checkout/>} />
+
+{/* Admin Routes */}
+          <Route exact path="/admindashboard" element={< AdminHomePage />} />
+          <Route exact path="/adminfarmerview" element={< FarmerViewPage />} />
+          <Route exact path="/admininstructorview" element={< InstructorViewPage />} />
+          <Route exact path="/adminsupplierview" element={< SupplierViewPage />} />
+          <Route exact path="/anyusermsgview" element={< AnyUserMsgPage />} />
+          <Route exact path="/adminregisterview" element={< AdminRegisterPage />} />
+          <Route exact path="/adminview" element={< AdminViewPage />} />
+          <Route exact path="/adminvisitorview" element={< VisitorViewPage />} />
+         
         </Routes>
       </Fragment>
     )

@@ -17,7 +17,7 @@ class AppURL {
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
   static ProductDatas = this.BaseURL+"/addproduct";
 
-  static InstructorData(keycity) {
+  static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
 
@@ -34,6 +34,10 @@ class AppURL {
     return this.BaseURL + "/deletecroplog/" + keyid;
   }
 
+  static DeleteAppointment(keyid) {
+    return this.BaseURL + "/deleteappointment/" + keyid;
+  }
+
   static AppointmentView(keyemail) {
     return this.BaseURL + "/appointmentview/" + keyemail;
   }
@@ -41,6 +45,50 @@ class AppURL {
   static InstructorDetailEmail(keyemail) {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }
+
+
+  // admin api
+  //Farmer
+  static FarmerData = this.BaseURL + "/allfarmersdetails";
+  static DeleteFarmer(keyemail) {
+    return this.BaseURL + "/deletefarmer/" + keyemail;
+  }
+  static UpdateFarmer(keyemail) {
+    return this.BaseURL + "/farmerupdate/" + keyemail;
+  }
+
+  //Instructor
+  static InstructorData = this.BaseURL + "/allinstructordetails";
+  static DeleteFarmer(keyemail) {
+    return this.BaseURL + "/deleteinstructor/" + keyemail;
+  }
+
+  //Supplier
+  static SupplierData = this.BaseURL + "/allsupplierdetails";
+  static DeleteSupplier(keyemail) {
+    return this.BaseURL + "/deletesupplier/" + keyemail;
+  }
+
+  //any user message
+  static AnyUserMessage = this.BaseURL + "/anyusermessage";
+  static DeleteAnyUserMessage(keyid) {
+    return this.BaseURL + "/deleteanyusermessage/" + keyid;
+  }
+
+  //Pie Chart Data
+  static UserPieChartData = this.BaseURL + "/userpiechart";
+  static UserAreaChartData = this.BaseURL + "/newuserchart";
+
+  //Admin Register
+  static AdminRegister = this.BaseURL + "/adminregister";
+  static AdminData = this.BaseURL + "/admindetails";
+  static AdminDelete(keyid) {
+    return this.BaseURL + "/admindelete/" + keyid;
+  }
+
+  //Get Visitor details
+  static VisitorData = this.BaseURL + "/visitordetails";
+
 }
 
 export default AppURL;

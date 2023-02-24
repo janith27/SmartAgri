@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Col, Row, Card } from "react-bootstrap";
 import AppURL from "../../../api/AppURL";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 class AppointmentCreate extends Component {
   constructor() {
@@ -16,7 +16,7 @@ class AppointmentCreate extends Component {
   // get instructor
   componentDidMount() {
     axios
-      .get(AppURL.InstructorData(this.state.ucity))
+      .get(AppURL.GetInstructorData(this.state.ucity))
       .then((response) => {
         this.setState({
           InsData: response.data,
@@ -57,9 +57,6 @@ class AppointmentCreate extends Component {
                       Heights Education level: {InsList.edu}
                     </Card.Text>
                   </Col>
-                  {/* <Col xs={2} md={2}>
-                        <Link to="/appointmentform"><Button>Appointment</Button></Link>
-                        </Col> */}
                 </Row>
               </Card.Body>
             </Card>

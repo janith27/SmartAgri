@@ -51,7 +51,7 @@
 
 				<li class="menu-label">USERS</li>
 				<li>
-					<a href="{{ url('/admin/farmerdetails') }}">
+					<a href="{{ url('/admin/farmer') }}">
 						<div class="parent-icon"><i class='bx bx-user'></i>
 						</div>
 						<div class="menu-title">Farmers</div>
