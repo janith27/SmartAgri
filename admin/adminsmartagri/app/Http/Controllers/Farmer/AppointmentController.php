@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Farmer;
-
+use Mail;
 use App\Http\Controllers\Controller;
+use App\Mail\Appointment as MailAppointment;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
-
+use DB;
 
 class AppointmentController extends Controller
 {
@@ -25,7 +26,8 @@ class AppointmentController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
 
-        $result = Appointment::insert([
+        // $result =
+         Appointment::insert([
             'farmer_email' => $farmerEmail,
             'instructor_email' => $instructorEmail,
             'description' => $description,
@@ -33,7 +35,16 @@ class AppointmentController extends Controller
             'time'=> $time
         ]);
 
-        return $result;
+        // return $result;
+ 
+             // Mail Send to User
+             Mail::to($instructorEmail)->send(new MailAppointment($farmerEmail,$date,$time));
+ 
+             return response([
+                
+             ],200);
+ 
+         
     } //End method
 
 
