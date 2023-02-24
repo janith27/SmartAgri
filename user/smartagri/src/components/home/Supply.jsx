@@ -3,6 +3,7 @@ import { Container, Row, Card} from 'react-bootstrap'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 
 
 import ph1 from '../../assest/images/supply/urea.jpg'
@@ -86,7 +87,8 @@ class Supply extends Component {
                         <Card.Body>
                             <p className="product-name-on-card">Urea</p>
                             <p className="product-weight-on-card">50kg</p>
-                            <p className="product-price-on-card">Price:</p> 
+                            <p className="product-price-on-card">Price:</p>
+                            <Link to="/Checkout"><button className='primary'>Buy</button></Link>
                         </Card.Body>
                     </Card>
                 </div>
@@ -96,7 +98,8 @@ class Supply extends Component {
                         <Card.Body>
                             <p className="product-name-on-card">Eppawala Rock Pospate</p>
                             <p className="product-weight-on-card">50kg</p>
-                            <p className="product-price-on-card">Rs.3500.00</p> 
+                            <p className="product-price-on-card">Rs.3500.00</p>
+                            <Link to="/Checkout"><button className='primary'>Buy</button></Link>
                         </Card.Body>
                     </Card>
                 </div>
@@ -107,6 +110,7 @@ class Supply extends Component {
                         <p className="product-name-on-card">Dolamite</p>
                         <p className="product-weight-on-card">50kg</p>
                         <p className="product-price-on-card">Rs.1000.00</p> 
+                        <Link to="/Checkout"><button className='primary'>Buy</button></Link>
                       </Card.Body>
                   </Card>
                 </div>
