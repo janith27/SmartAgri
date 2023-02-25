@@ -1,9 +1,11 @@
 <?php
 
+use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\AnyUserMsgController;
+use App\Http\Controllers\Admin\GraphController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\UserController;
@@ -11,11 +13,11 @@ use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Farmer\AppointmentController;
 use App\Http\Controllers\Farmer\CropLogController;
+use App\Http\Controllers\GetUserDetails\AdminDetailsController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
-
-
+use App\Http\Controllers\GetUserDetails\SupplierDetailsController;
 
 /////////////// User Login API Start ////////////////////////
 
@@ -77,9 +79,11 @@ Route::get('/appointmentform/{keyemail}',[InstructorDetailsController::class,'In
 //appointment Create
 Route::post('/appointmentcreate',[AppointmentController::class,'CreateAppointment']);
 Route::get('/appointmentview/{keyemail}',[AppointmentController::class,'AppointmentView']);
+Route::delete('/deleteappointment/{keyid}',[AppointmentController::class,'DeleteAppointment']);
 
 //Farmer Details Route
 Route::get('/farmerdetails/{keyemail}',[FarmerDetailsController::class,'FarmerDetail']);
+Route::put('/farmerupdate/{keyemail}',[FarmerDetailsController::class,'FarmerUpdate']);
 
 //crop log Routes
 Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
@@ -90,3 +94,34 @@ Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);
+
+
+//Admin Routes
+
+//Admin Register
+Route::post('/adminregister',[AuthController::class, 'AdminRegister']);
+Route::get('/admindetails',[AdminDetailsController::class,'AdminAllDetails']);
+Route::delete('/admindelete/{keyid}',[AdminDetailsController::class,'AdminDelete']);
+
+//farmer Routes
+Route::get('/allfarmersdetails',[FarmerDetailsController::class,'FarmerAllDetails']);
+Route::delete('/deletefarmer/{keyemail}',[FarmerDetailsController::class,'FarmerDelete']);
+
+//instructor Routes
+Route::get('/allinstructordetails',[InstructorDetailsController::class,'InstructorAllDetails']);
+Route::delete('/deleteinstructor/{keyemail}',[InstructorDetailsController::class,'InstructorDelete']);
+
+//supplier Routes
+Route::get('/allsupplierdetails',[SupplierDetailsController::class,'SupplierAllDetails']);
+Route::delete('/deletesupplier/{keyemail}',[SupplierDetailsController::class,'SupplierDelete']);
+
+//any user message details
+Route::get('/anyusermessage',[AnyUserMsgController::class,'MessageDetails']);
+Route::delete('/deleteanyusermessage/{keyid}',[AnyUserMsgController::class,'MessageDelete']);
+
+//graph data
+Route::get('/userpiechart',[GraphController::class,'UserPieChart']);
+Route::get('/newuserchart',[GraphController::class,'NewUserChart']);
+
+//get visitor detail
+Route::get('/visitordetails',[VisitorController::class,'VisitorDetails']);

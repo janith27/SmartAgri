@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Container, Navbar, Row, Button } from "react-bootstrap";
 import Logo from "../../assest/images/smartagrilogo.png";
 import { Link } from "react-router-dom";
-import { FaUserPlus, FaUserCircle } from "react-icons/fa";
 
 class InstructorNavMenuDesktop extends Component {
   logout = () => {

@@ -21,7 +21,7 @@ class ForgetController extends Controller
 
         if (User::where('email',$email)->doesntExist()) {
             return response([
-                'message' => 'Email Invalid'
+                'message' => 'Reset Password Mail send on your email'
             ],401);
         }
 

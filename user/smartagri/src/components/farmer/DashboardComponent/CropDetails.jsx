@@ -7,6 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { Navigate } from "react-router-dom";
 
 class CropDetails extends Component {
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
   constructor() {
     super();
     this.state = {
@@ -19,7 +22,6 @@ class CropDetails extends Component {
     };
   }
   componentDidMount() {
-    window.scroll(0, 0);
     axios
       .get(AppURL.CropLogData(this.state.email))
       .then((response) => {
@@ -39,15 +41,10 @@ class CropDetails extends Component {
     axios
       .post(AppURL.InputCropLog, data)
       .then((response) => {
-        toast.success("Log Submit Successfully");
-        //  this.setState({message:response.data.message})
-
-        //  toast.success(this.state.message,{
-        //       position: "top-right"
-        //  });
+        toast.success("Log Submit Successfully", { position: "top-left" });
         this.state({ pageRefreshStatus: true });
-        document.getElementById("croplogform").reset();
-        // window.location.reload(false);
+        // document.getElementById("croplogform").reset();
+        window.location.reload(true);
       })
 
       .catch((error) => {
@@ -55,6 +52,7 @@ class CropDetails extends Component {
         toast.error(this.state.message, {
           position: "top-right",
         });
+        window.location.reload(true);
       });
   };
 
@@ -64,12 +62,12 @@ class CropDetails extends Component {
     axios
       .delete(AppURL.DeleteCropLog(logId))
       .then((response) => {
-        console.log(logId);
         this.state({ pageRefreshStatus: true });
-        toast.success("Log Delete Successfully");
+        window.location.reload(true);
       })
       .catch((error) => {
-        toast.success("Log Delete Unsuccessfull");
+        toast.error("Unable to Delete", { position: "top-left" });
+        window.location.reload(true);
       });
   };
 
@@ -79,6 +77,7 @@ class CropDetails extends Component {
       return <Navigate to={URL} />;
     }
   };
+
   render() {
     const myUser = this.props.user;
     this.state.email = myUser.email;
@@ -103,8 +102,13 @@ class CropDetails extends Component {
                 <Card.Text>{HistoryLog.description}</Card.Text>
               </Col>
               <Col xs={1} md={1}>
-                <Button logId={HistoryLog.id} onClick={this.deleteLog}>
-                  <i className="fa fa-trash-alt"></i>
+                <Button
+                  variant="danger"
+                  style={{ padding: "1px", fontSize: 15 }}
+                  logId={HistoryLog.id}
+                  onClick={this.deleteLog}
+                >
+                  Delete
                 </Button>
               </Col>
             </Row>
@@ -119,7 +123,6 @@ class CropDetails extends Component {
           <Row>
             <Col>
               <h1>Crop details</h1>
-              {/* {console.log(this.state.email) } */}
 
               <br />
               <h3>Crop History</h3>
