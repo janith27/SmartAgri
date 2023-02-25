@@ -1,105 +1,90 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AppURL from "../../api/AppURL";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import Citylist from "../../components/dropdownlist/Citylist.json";
+import { useParams, useNavigate } from "react-router-dom";
 
 function FarmerUpdate() {
-  const [formData, setFormData] = useState({
-    email: "",
-    message: "",
-    title: "",
-    fname: "",
-    lname: "",
-    street1: "",
-    street2: "",
-    city: "",
-    mobileno: "",
-    crop: "",
-  });
-
-  const {
-    title,
-    fname,
-    lname,
-    street1,
-    street2,
-    city,
-    mobileno,
-    crop,
-  } = formData;
+  const navigate = useNavigate();
+  const famData = useParams().keyemail;
+  const [farmerData, setFarmerData] = useState();
+  const [input, setInput] = useState({});
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setInput((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const fetchDetails = async () => {
+    const res = await axios
+      .get(AppURL.FarmerData(famData))
+      .catch((err) => console.log(err));
+    const [data] = await res.data;
+    console.log(data);
+    return data;
+  };
 
-    try {
-      const res = await axios.put(AppURL.UpdateFarmer, formData);
-      console.log(res.data);
-      setFormData({
-        email: "",
-        message: "",
-        title: "",
-        fname: "",
-        lname: "",
-        street1: "",
-        street2: "",
-        city: "",
-        mobileno: "",
-        crop: "",
+  useEffect(() => {
+    fetchDetails().then((data) => {
+      setFarmerData(data.farmerData);
+      setInput({
+        title: data.farmerData.title,
+        fname: data.farmerData.fname,
+        lname: data.farmerData.lname,
+        street1: data.farmerData.street1,
+        street2: data.farmerData.street2,
+        city: data.farmerData.city,
+        mobileno: data.farmerData.mobileno,
+        crop: data.farmerData.crop,
       });
-    } catch (err) {
-      console.error(err);
-    }
+    });
+  }, [famData]);
+
+  const sendRequest = async () => {
+    const res = await axios
+      .put(AppURL.UpdateFarmer(famData), {
+        title: input.title,
+        fname: input.fname,
+        lname: input.lname,
+        street1: input.street1,
+        street2: input.street2,
+        city: input.city,
+        mobileno: input.mobileno,
+        crop: input.crop,
+      })
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
+  console.log(input);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(input);
+    sendRequest()
+      .then((data) => console.log(data))
+      .then(() => navigate("/adminfarmerview"));
   };
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <div>
-    //     <label htmlFor="name">Name</label>
-    //     <input type="text" name="name" value={name} onChange={handleChange} />
-    //   </div>
-    //   <div>
-    //     <label htmlFor="email">Email</label>
-    //     <input
-    //       type="email"
-    //       name="email"
-    //       value={email}
-    //       onChange={handleChange}
-    //     />
-    //   </div>
-    //   <div>
-    //     <label htmlFor="message">Message</label>
-    //     <textarea name="message" value={message} onChange={handleChange} />
-    //   </div>
-    //   <button type="submit">Update</button>
-    // </form>
-
     <Form className="onboardForm" onSubmit={handleSubmit} id="fromreset">
-      <h4 className="section-title-login"> FARMER Update </h4>
-      <select
-      name="title"
-      onChange={handleChange}
-        className="form-control m-2"
-      >
-        <option value="" selected disabled defaultValue={{title}}>
-        
-        </option >
-        
+      <h4 className="section-title-login"> FARMER UPDATE </h4>
+      <select name="title" onChange={handleChange} className="form-control m-2">
+        <option selected disabled defaultValue={input.title}></option>
+
         <option value="Mr">Mr</option>
         <option value="Miss">Miss</option>
         <option value="Mrs">Mrs</option>
       </select>
-   
+
       <Row>
         <Col>
           <input
             type="text"
             name="fname"
-            value={fname}
+            value={input.fname}
             onChange={handleChange}
           />
         </Col>
@@ -108,7 +93,7 @@ function FarmerUpdate() {
           <input
             type="text"
             name="lname"
-            value={lname}
+            value={input.lname}
             onChange={handleChange}
           />
         </Col>
@@ -116,7 +101,7 @@ function FarmerUpdate() {
       <input
         type="text"
         name="mobileno"
-        value={mobileno}
+        value={input.mobileno}
         onChange={handleChange}
       />
       <Row>
@@ -124,7 +109,7 @@ function FarmerUpdate() {
           <input
             type="text"
             name="street1"
-            value={street1}
+            value={input.street1}
             onChange={handleChange}
           />
         </Col>
@@ -133,18 +118,13 @@ function FarmerUpdate() {
           <input
             type="text"
             name="street2"
-            value={street2}
+            value={input.street2}
             onChange={handleChange}
           />
         </Col>
       </Row>
-      <select
-      name="city"
-        onChange={handleChange}
-        className="form-control m-2"
-      >
-        <option value="" selected disabled defaultValue={ {city}}>
-        </option>
+      <select name="city" onChange={handleChange} className="form-control m-2">
+        <option value="" selected disabled defaultValue={input.city}></option>
 
         {Citylist.map((getcity) => (
           <option value={getcity.value}>{getcity.cname}</option>
@@ -154,15 +134,13 @@ function FarmerUpdate() {
       <input
         type="text"
         name="crop"
-        value={crop}
+        value={input.crop}
         onChange={handleChange}
       />
-      
+
       <Button type="submit" className="btn btn-block m-2 site-btn-login">
-        {" "}
-        Register{" "}
+        Update
       </Button>
-      
     </Form>
   );
 }

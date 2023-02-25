@@ -1,5 +1,4 @@
 class AppURL {
-
   static BaseURL = "http://127.0.0.1:8000/api";
   static VisitorDetails = this.BaseURL + "/getvisitor";
   static PostAnyUserMsg = this.BaseURL + "/postanyusermsg";
@@ -12,15 +11,14 @@ class AppURL {
   static InstructorRegister = this.BaseURL + "/insregister";
   static ProductData = this.BaseURL + "/productlist";
   static JournalData = this.BaseURL + "/addjournal";
-  static JournalView = this.BaseURL + "/viewjournal"; 
+  static JournalView = this.BaseURL + "/viewjournal";
   static InputCropLog = this.BaseURL + "/inputcroplog";
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
-  static ProductDatas = this.BaseURL+"/addproduct";
+  static ProductDatas = this.BaseURL + "/addproduct";
 
   static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
-
 
   static FarmerData(keyemail) {
     return this.BaseURL + "/farmerdetails/" + keyemail;
@@ -50,16 +48,15 @@ class AppURL {
     return this.BaseURL + "/appointmentstatusupdate/" + keyid;
   }
 
-  instructorgetmyappointment
+  instructorgetmyappointment;
 
   static InstructorDetailEmail(keyemail) {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }
 
-
   // admin api
   //Farmer
-  static FarmerData = this.BaseURL + "/allfarmersdetails";
+  static AllFarmerData = this.BaseURL + "/allfarmersdetails";
   static DeleteFarmer(keyemail) {
     return this.BaseURL + "/deletefarmer/" + keyemail;
   }
@@ -98,7 +95,6 @@ class AppURL {
 
   //Get Visitor details
   static VisitorData = this.BaseURL + "/visitordetails";
-
 }
 
 export default AppURL;

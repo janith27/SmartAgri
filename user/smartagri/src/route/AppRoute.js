@@ -36,6 +36,9 @@ import AdminViewPage from '../pages/adminPages/AdminViewPage';
 import VisitorViewPage from '../pages/adminPages/VisitorViewPage';
 import InstructorProfilePage from '../pages/InstructorProfilePage';
 import SupplierProfilePage from '../pages/SupplierProfilePage';
+import AdminFarmerUpdatePage from '../pages/adminPages/AdminFarmerUpdatePage';
+import AdminInstructorUpdatePage from '../pages/adminPages/AdminInstructorUpdatePage';
+import AdminSupplierUpdatePage from '../pages/adminPages/AdminSupplierUpdatePage';
 // import Appoint from '../pages/Appoint';
 
 
@@ -91,6 +94,7 @@ class AppRoute extends Component {
           <Route exact path="/instructorprofile" element={< InstructorProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/supplierprofile" element={< SupplierProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
+          
 
 {/* Admin Routes */}
           <Route exact path="/admindashboard" element={< AdminHomePage />} />
@@ -101,6 +105,9 @@ class AppRoute extends Component {
           <Route exact path="/adminregisterview" element={< AdminRegisterPage />} />
           <Route exact path="/adminview" element={< AdminViewPage />} />
           <Route exact path="/adminvisitorview" element={< VisitorViewPage />} />
+          <Route exact path="/farmerupdate/:keyemail" element={< AdminFarmerUpdatePage />} />
+          <Route exact path="/instructorupdate/:keyemail" element={< AdminInstructorUpdatePage />} />
+          <Route exact path="/supplierupdate/:keyemail" element={< AdminSupplierUpdatePage />} />
          
         </Routes>
       </Fragment>

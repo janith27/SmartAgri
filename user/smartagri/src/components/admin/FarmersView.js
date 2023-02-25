@@ -5,13 +5,14 @@ import axios from "axios";
 import AppURL from "../../api/AppURL";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function FarmersView() {
   const [famData, setFamData] = useState();
 
   const sendRequest = async () => {
     const res = await axios
-      .get(AppURL.FarmerData)
+      .get(AppURL.AllFarmerData)
       .catch((err) => console.log(err));
     const data = await res.data;
     // console.log(data);
@@ -40,7 +41,7 @@ function FarmersView() {
   return (
     <Fragment>
       <Container>
-      <h3 className="adminViewTitle">Farmer Details</h3>
+        <h3 className="adminViewTitle">Farmer Details</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -74,9 +75,11 @@ function FarmersView() {
                   <td>{famData.created_at}</td>
                   <td>{famData.updated_at}</td>
                   <td>
-                    <Button logEmail={famData.email} onClick={editHandle}>
-                      Edit
-                    </Button>
+                    <Link to={"/farmerupdate/" + famData.email}>
+                      <Button logEmail={famData.email} onClick={editHandle}>
+                        Edit
+                      </Button>
+                    </Link>
                   </td>
                   <td>
                     <Button

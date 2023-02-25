@@ -5,6 +5,7 @@ import axios from "axios";
 import AppURL from "../../api/AppURL";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function InstructorView() {
   const [insData, setInsData] = useState();
@@ -40,7 +41,7 @@ function InstructorView() {
   return (
     <Fragment>
       <Container>
-      <h3 className="adminViewTitle">Instructor Details</h3>
+        <h3 className="adminViewTitle">Instructor Details</h3>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -76,9 +77,11 @@ function InstructorView() {
                   <td>{insData.created_at}</td>
                   <td>{insData.updated_at}</td>
                   <td>
-                    <Button logEmail={insData.email} onClick={editHandle}>
-                      Edit
-                    </Button>
+                    <Link to={"/instructorupdate/" + insData.email}>
+                      <Button logEmail={insData.email} onClick={editHandle}>
+                        Edit
+                      </Button>
+                    </Link>
                   </td>
                   <td>
                     <Button
