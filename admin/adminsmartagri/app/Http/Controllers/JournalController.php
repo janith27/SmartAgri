@@ -34,4 +34,10 @@ class JournalController extends Controller
 
     }
     // End Method
+
+    public function JournalDetailView(Request $request){
+        $keyid = $request->keyid;
+        $result = Journal::where('id',$keyid)->get();
+        return $result;
+    }
 }

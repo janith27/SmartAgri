@@ -39,7 +39,8 @@ import SupplierProfilePage from '../pages/SupplierProfilePage';
 import AdminFarmerUpdatePage from '../pages/adminPages/AdminFarmerUpdatePage';
 import AdminInstructorUpdatePage from '../pages/adminPages/AdminInstructorUpdatePage';
 import AdminSupplierUpdatePage from '../pages/adminPages/AdminSupplierUpdatePage';
-// import Appoint from '../pages/Appoint';
+import FarmerJournalviewPage from '../pages/FarmerJournalviewPage';
+import Checkout from '../pages/Checkout';
 
 
 
@@ -79,7 +80,7 @@ class AppRoute extends Component {
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/instructordashboard" element={< InnstructorHomePage user={this.state.user} setUser={this.setUser}/>} />
-          <Route exact path="/supplierdashboard" element={< SupplierHomePage />} />
+          <Route exact path="/supplierdashboard" element={< SupplierHomePage user={this.state.user} />} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />
           <Route exact path="/instructornotification" element={< InstructorNotificationPage />} />
@@ -94,8 +95,9 @@ class AppRoute extends Component {
           <Route exact path="/instructorprofile" element={< InstructorProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/supplierprofile" element={< SupplierProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
+          <Route exact path="/journalview/:id" element={< FarmerJournalviewPage />} />
+          <Route exact path="/checkout" element={< Checkout user={this.state.user.email}/>} />
           
-
 {/* Admin Routes */}
           <Route exact path="/admindashboard" element={< AdminHomePage />} />
           <Route exact path="/adminfarmerview" element={< FarmerViewPage />} />

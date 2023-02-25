@@ -28,7 +28,6 @@ class SupplierNavMenuDesktop extends Component {
                   <Link to="/">
                     <img className="nav-logo" src={Logo} />
                   </Link>
-                  <h1>{name}</h1>
                   <div>
                     <Link to="/" className="h4 btn">
                       <Button variant="outline-success">Dashboard</Button>

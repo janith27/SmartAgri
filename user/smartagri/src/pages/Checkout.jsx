@@ -1,20 +1,17 @@
 import React, { Component, Fragment } from "react";
-import Cart from "../components/Cart/Cart";
+import { useParams } from "react-router-dom";
 import CheckoutOrder from "../components/CheckoutOrder";
 import FooterDesktop from "../components/common/FooterDesktop";
 import FooterMobile from "../components/common/FooterMobile";
 import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
 import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
 
-
-class Checkout extends Component {
-  componentDidMount() {
-    window.scroll(0, 0);
-  }
-
-  render() {
-    return (
-      <Fragment>
+function Checkout({user}) {
+  console.log(user)
+  const uPrice=useParams()
+  return (
+    
+    <Fragment>
         <div className="Desktop">
           <FarmerNavMenuDesktop />
         </div>
@@ -23,7 +20,7 @@ class Checkout extends Component {
           <FarmerNavMobile />
         </div>
 
-        <CheckoutOrder />
+        <CheckoutOrder user={user} unitPrice={uPrice}/>
 
         <div className="Desktop">
           <FooterDesktop />
@@ -33,8 +30,7 @@ class Checkout extends Component {
           <FooterMobile />
         </div>
       </Fragment>
-    );
-  }
+  )
 }
 
-export default Checkout;
+export default Checkout

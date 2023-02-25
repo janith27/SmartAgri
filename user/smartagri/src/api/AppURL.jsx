@@ -14,8 +14,9 @@ class AppURL {
   static JournalView = this.BaseURL + "/viewjournal";
   static InputCropLog = this.BaseURL + "/inputcroplog";
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
-  static ProductDatas = this.BaseURL + "/addproduct";
-
+  static ProductDatas = this.BaseURL + "/addsupply";
+  static PlaceOrder = this.BaseURL + "/placeorder";
+  
   static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
@@ -38,6 +39,11 @@ class AppURL {
 
   static AppointmentView(keyemail) {
     return this.BaseURL + "/appointmentview/" + keyemail;
+  }
+
+
+  static JournalDetailView(keyid) {
+    return this.BaseURL + "/journaldetailview/" + keyid;
   }
 
   static InstructorGetMyAppointment(keyemail) {

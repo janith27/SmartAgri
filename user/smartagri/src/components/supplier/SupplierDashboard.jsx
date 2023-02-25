@@ -6,18 +6,16 @@ import SupEssential from "./DashboardComponent/SupEssential";
 
 class SupplierDashboard extends Component {
   render() {
+    const User = this.props.user;
     return (
       <Fragment>
         <div className="mainback backgroundbox">
           <Row>
-            <Col lg={3} md={4} sm={12} xs={12}>
-              <Orders />
+            <Col lg={5} md={5} sm={12} xs={12}>
+              <Orders user={User}/>
             </Col>
-            <Col lg={6} md={4} sm={12} xs={12}>
+            <Col lg={7} md={7} sm={12} xs={12}>
               <SupEssential />
-            </Col>
-            <Col lg={3} md={4} sm={12} xs={12}>
-              <Myitems />
             </Col>
           </Row>
         </div>

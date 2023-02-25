@@ -18,6 +18,8 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\GetUserDetails\InstructorDetailsController;
 use App\Http\Controllers\GetUserDetails\FarmerDetailsController;
 use App\Http\Controllers\GetUserDetails\SupplierDetailsController;
+use App\Http\Controllers\PlaceOrderController;
+use App\Http\Controllers\SupplyController;
 
 /////////////// User Login API Start ////////////////////////
 
@@ -67,6 +69,7 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 //add jouranl route
 Route::post('/addjournal',[JournalController::class, 'JournalInput']);
 Route::get('/viewjournal',[JournalController::class,'JournalView']);
+Route::get('/journaldetailview/{keyid}',[JournalController::class,'JournalDetailView']);
 
 
 // Instructor Details Route key with city
@@ -95,11 +98,15 @@ Route::post('/inputcroplog',[CropLogController::class,'CropLogInput']);
 Route::get('/croplog/{keyemail}',[CropLogController::class,'FarmerCropLog']);
 Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 
-
+//Add supply
+Route::post('/addsupply',[SupplyController::class, 'SupplyAdd']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);
 
+//Order place
+
+Route::post('/placeorder',[PlaceOrderController::class, 'AddOrder']);
 
 //Admin Routes
 

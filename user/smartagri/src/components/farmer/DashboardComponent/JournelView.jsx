@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card,Button } from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../../../api/AppURL";
+import { Link } from "react-router-dom";
 
 class JournelView extends Component {
   constructor() {
@@ -34,9 +35,16 @@ class JournelView extends Component {
               <Col xs={3} md={3}>
                 <Card.Img src={journalData.image} />
               </Col>
-              <Col xs={9} md={9}>
+              <Col xs={7} md={7}>
                 <Card.Title>{journalData.name}</Card.Title>
                 <Card.Text>{journalData.description}</Card.Text>
+              </Col>
+              <Col xs={2} md={2}>
+              <Link to={"/journalview/" + journalData.id}>
+                      <Button >
+                        View
+                      </Button>
+                    </Link>
               </Col>
             </Row>
           </Card.Body>

@@ -38,9 +38,9 @@ class FarmerMegaMenuMobile extends Component {
           <Link to="/">
             <button className="accordion">Shop</button>
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <button className="accordion">Cart</button>
-          </Link>
+          </Link> */}
           <Link to="/">
             <button className="accordion">Notification</button>
           </Link>

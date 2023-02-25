@@ -16,14 +16,14 @@ class SupplierHomePage extends Component {
     return (
       <Fragment>
         <div className="Desktop">
-          <SupplierNavMenuDesktop user={User} />
+          <SupplierNavMenuDesktop />
         </div>
 
         <div className="Mobile">
           <SupplierNavMobile />
         </div>
 
-        <SupplierDashboard />
+        <SupplierDashboard user={User} />
 
         <div className="Desktop">
           <FooterDesktop />

@@ -32,9 +32,9 @@ class FarmerNavMenuDesktop extends Component {
                     <Link to="/farmerdashboard" className="h4 btn">
                       <Button variant="outline-success">Dashboard</Button>
                     </Link>
-                    <Link to="/farmerchat" className="h4 btn">
+                    {/* <Link to="/farmerchat" className="h4 btn">
                       <Button variant="outline-success">Chat</Button>
-                    </Link>
+                    </Link> */}
                     <Link to="/farmershop" className="h4 btn">
                       <Button variant="success">
                         <FaUserPlus />
