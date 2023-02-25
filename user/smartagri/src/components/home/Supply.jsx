@@ -84,7 +84,7 @@ class Supply extends Component {
           <Card.Body>
             <p className="product-name-on-card">{post.product_name}</p>
             <p className="product-weight-on-card">{post.description}</p>
-            <p className="product-price-on-card">{post.price}</p>
+            <p className="product-price-on-card">Rs.{post.price}.00</p>
           </Card.Body>
         </Card>
       );
