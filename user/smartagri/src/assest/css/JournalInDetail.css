@@ -1,0 +1,172 @@
+.placeContainer{
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+
+.placeWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.gotoweb{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.placeImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+.placeImgWrapper{
+    width: 33%;
+}
+
+.placeTitle{
+    
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.placeAddress{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.placeImg{
+    width: 100%;
+    object-fit: cover;
+}
+
+.placeDetails{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.placeDesc{
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.placeDetailsTexts{
+    flex: 3;
+}
+.placeDetailsPrice{
+    flex: 1;
+    background-color: #ebf3ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: justify;
+}
+
+.placeDetailsPrice>h1{
+    font-size: 18px;
+    color: #555;
+
+}
+
+.placeDetailsPrice>span{
+    font-size: 14px;
+    
+    
+}
+
+.placeDetailsPrice>button{
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    
+}
+
+.slider{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 ,0 , 0, 0.426);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.sliderWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderImg{
+    width: 80%;
+    height: 80vh;
+}
+
+.fa-solid.fa-circle-xmark{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.fa-solid.fa-circle-arrow-left{
+    
+    margin: 20px;
+    font-size: 50px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.fa-solid.fa-circle-arrow-right{
+    margin: 20px;
+    font-size: 50px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.PlaceDistances{
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.PlaceDistancess{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-justify: auto;
+}

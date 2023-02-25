@@ -71,7 +71,7 @@ Route::post('/addjournal',[JournalController::class, 'JournalInput']);
 Route::get('/viewjournal',[JournalController::class,'JournalView']);
 
 Route::get('/journaldetailview/{keyid}',[JournalController::class,'JournalDetailView']);
-
+Route::delete('/deletejournal/{keyid}',[JournalController::class,'DeleteJournal']);
 
 // Instructor Details Route key with city
 Route::get('/instructordetails/{keycity}',[InstructorDetailsController::class,'InstructorDetail']);
@@ -102,6 +102,8 @@ Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 //Add supply
 Route::post('/addsupply',[SupplyController::class, 'SupplyAdd']);
 Route::get('/supplyview',[SupplyController::class, 'AllSupply']);
+Route::get('/mysellingitems/{keyemail}',[SupplyController::class,'MySellingItems']);
+
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);
@@ -109,6 +111,7 @@ Route::post('/addproduct',[JournalController::class, 'addproduct']);
 //Order place
 
 Route::post('/placeorder',[PlaceOrderController::class, 'AddOrder']);
+Route::get('/myorders/{keyemail}',[PlaceOrderController::class,'SupplierOrderView']);
 
 //Admin Routes
 

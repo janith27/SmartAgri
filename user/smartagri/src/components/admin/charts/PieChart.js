@@ -68,7 +68,7 @@ class PieChart extends Component {
         series={this.state.chartData}
         // lables={this.state.lables}
         type="donut"
-        width="400px"
+        width="500px"
       />
     );
   }

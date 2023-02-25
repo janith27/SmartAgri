@@ -11,13 +11,13 @@ class InstructorDashboard extends Component {
       <Fragment>
         <div className="mainback backgroundbox">
           <Row>
-            <Col lg={5} md={4} sm={12} xs={12}>
+            <Col lg={4} md={4} sm={12} xs={12}>
               <InsAppointment insData={insDetails} />
             </Col>
-            <Col lg={4} md={4} sm={12} xs={12}>
+            <Col lg={5} md={5} sm={12} xs={12}>
               <InsEssentialView />
             </Col>
-            <Col lg={3} md={4} sm={12} xs={12}>
+            <Col lg={3} md={3} sm={12} xs={12}>
               <AddJournal />
             </Col>
           </Row>

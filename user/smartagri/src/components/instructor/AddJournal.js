@@ -23,6 +23,7 @@ const AddJournal = () => {
     formData.append("description", description);
     console.log(image);
     formData.append("image", image);
+    
 
     await axios
       .post(AppURL.JournalData, formData)

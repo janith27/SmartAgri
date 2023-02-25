@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
+import { useParams } from "react-router-dom";
+import CheckoutOrder from "../components/CheckoutOrder";
 import FooterDesktop from "../components/common/FooterDesktop";
 import FooterMobile from "../components/common/FooterMobile";
+import CreditCardPayment from "../components/farmer/CreditCardPayment";
 import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
 import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
-import JournalInDetail from "../components/common/JournalInDetail";
-import { useParams } from "react-router-dom";
 
-function FarmerJournalviewPage() {
-  const jId = useParams().id;
+function CreditCardPaymentHomePage({ user }) {
   return (
     <Fragment>
       <div className="Desktop">
@@ -18,7 +18,7 @@ function FarmerJournalviewPage() {
         <FarmerNavMobile />
       </div>
 
-      <JournalInDetail journalId={jId} />
+      <CreditCardPayment uData={user} />
 
       <div className="Desktop">
         <FooterDesktop />
@@ -31,4 +31,4 @@ function FarmerJournalviewPage() {
   );
 }
 
-export default FarmerJournalviewPage;
+export default CreditCardPaymentHomePage;

@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Orders(user) {
   const supEmail = user.user.email;
-  console.log(supEmail);
+  // console.log(supEmail);
   const navigate = useNavigate();
   const [product_name, setProduct_Name] = useState("");
   // const [category, setCategory] = useState("");

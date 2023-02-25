@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-
 import ph1 from "../../assest/images/supply/urea.jpg";
 import AppURL from "../../api/AppURL";
 import axios from "axios";
@@ -78,20 +77,17 @@ class Supply extends Component {
       ],
     };
 
-    const supData = this.state.supplyData;
-    const MyView = supData.map((supData, i) => {
+    const post = this.state.supplyData;
+    const allproducts = post.map((post, idx) => {
       return (
-        
-          <Card className="image-box">
-            <img className="center" src={supData.image} />
-            <Card.Body>
-              <p className="product-name-on-card">{supData.product_name}</p>
-              <p className="product-weight-on-card">{supData.qty}</p>
-              <p className="product-price-on-card">Price: {supData.price}</p>
-              <Link to="/Checkout"><button className='primary'>Buy</button></Link>
-            </Card.Body>
-          </Card>
-        
+        <Card className="image-box">
+          <img className="center" src={post.image} />
+          <Card.Body>
+            <p className="product-name-on-card">{post.product_name}</p>
+            <p className="product-weight-on-card">{post.description}</p>
+            <p className="product-price-on-card">{post.price}</p>
+          </Card.Body>
+        </Card>
       );
     });
 
@@ -112,13 +108,12 @@ class Supply extends Component {
             <p>some of our exclusive supply from suppliers.</p>
           </div>
           <div>
-          <Row>
-            <Slider ref={(c) => (this.slider = c)} {...settings}>
-         
-              {MyView}
-        
-            </Slider>
-          </Row>
+            <Row>
+              <Slider ref={(c) => (this.slider = c)} {...settings}>
+                {allproducts}
+                
+              </Slider>
+            </Row>
           </div>
         </Container>
       </Fragment>

@@ -19,6 +19,11 @@ class AppURL {
 
   static SupplyView = this.BaseURL + "/supplyview";
   
+  static MySupply(keyemail) {
+    return this.BaseURL + "/mysellingitems/" + keyemail;
+  }
+
+  
   static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;
   }
@@ -48,6 +53,10 @@ class AppURL {
     return this.BaseURL + "/journaldetailview/" + keyid;
   }
 
+  static DeleteJournal(keyid) {
+    return this.BaseURL + "/deletejournal/" + keyid;
+  }
+  
   static InstructorGetMyAppointment(keyemail) {
     return this.BaseURL + "/instructorgetmyappointment/" + keyemail;
   }
@@ -62,6 +71,11 @@ class AppURL {
     return this.BaseURL + "/appointmentform/" + keyemail;
   }
 
+  static SupplierGetOrders(keyemail) {
+    return this.BaseURL + "/myorders/" + keyemail;
+  }
+
+ 
   // admin api
   //Farmer
   static AllFarmerData = this.BaseURL + "/allfarmersdetails";

@@ -1,0 +1,65 @@
+.creditcontainer{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    padding: 70px;
+    justify-content: center;
+    align-items: center;
+    
+   
+   
+}
+
+.creditimg{
+    height: 70px;
+    width: 400px;
+}
+
+.creditcontainer form{
+   padding: 20px;
+   width: 700px;
+   background-color: #fff;
+   box-shadow: 0 5px 10px rgba(0,0,0,.1)
+    
+}
+
+.creditrow{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   
+}
+
+.creditcol{
+    flex:1 1 250px;
+    
+     
+}
+
+.credittitle{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:20px;
+    color: #333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+     
+}
+.creditinputBox{
+    margin: 15px 0;
+}
+.creditspan{
+    margin-bottom: 10px;
+    display: block;
+}
+.creditinput{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+}
+

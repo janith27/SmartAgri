@@ -45,4 +45,11 @@ class SupplyController extends Controller
 
     }
     // END Method
+
+    public function MySellingItems(Request $request){
+        $keyemail = $request->keyemail;
+        $result = Supply::where('supplier_email',$keyemail)->get();
+        return $result;
+
+    }
 }

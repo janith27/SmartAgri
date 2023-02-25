@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
-import Myitems from "./DashboardComponent/Myitems";
+import MyOrders from "./DashboardComponent/MyOrders";
 import Orders from "./DashboardComponent/Orders";
 import SupEssential from "./DashboardComponent/SupEssential";
 
@@ -11,12 +11,15 @@ class SupplierDashboard extends Component {
       <Fragment>
         <div className="mainback backgroundbox">
           <Row>
-            <Col lg={5} md={5} sm={12} xs={12}>
+            <Col lg={6} md={6} sm={12} xs={12}>
               <Orders user={User}/>
             </Col>
-            <Col lg={7} md={7} sm={12} xs={12}>
-              <SupEssential />
+            <Col lg={6} md={6} sm={12} xs={12}>
+              {/* <SupEssential user={User} /> */}
             </Col>
+            {/* <Col lg={4} md={4} sm={12} xs={12}>
+              <MyOrders user={User} />
+            </Col> */}
           </Row>
         </div>
       </Fragment>

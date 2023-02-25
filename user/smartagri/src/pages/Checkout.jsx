@@ -6,31 +6,38 @@ import FooterMobile from "../components/common/FooterMobile";
 import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
 import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
 
-function Checkout({user}) {
+function Checkout({ user }) {
   // console.log(user)
-  const uPrice=useParams()
+  const pId = useParams().id;
+  const pPrice = useParams().price;
+  const pName = useParams().pname;
+
   return (
-    
     <Fragment>
-        <div className="Desktop">
-          <FarmerNavMenuDesktop />
-        </div>
+      <div className="Desktop">
+        <FarmerNavMenuDesktop />
+      </div>
 
-        <div className="Mobile">
-          <FarmerNavMobile />
-        </div>
+      <div className="Mobile">
+        <FarmerNavMobile />
+      </div>
 
-        <CheckoutOrder user={user} unitPrice={uPrice}/>
+      <CheckoutOrder
+        user={user}
+        proId={pId}
+        proPrice={pPrice}
+        proName={pName}
+      />
 
-        <div className="Desktop">
-          <FooterDesktop />
-        </div>
+      <div className="Desktop">
+        <FooterDesktop />
+      </div>
 
-        <div className="Mobile">
-          <FooterMobile />
-        </div>
-      </Fragment>
-  )
+      <div className="Mobile">
+        <FooterMobile />
+      </div>
+    </Fragment>
+  );
 }
 
-export default Checkout
+export default Checkout;

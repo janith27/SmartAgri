@@ -41,4 +41,10 @@ class JournalController extends Controller
         return $result;
 
     }
+
+    public function DeleteJournal(Request $request){
+        $keyid = $request->keyid;
+        $resultDelete=Journal::where('id',$keyid)->delete();
+        return $resultDelete;
+    }//End method
 }

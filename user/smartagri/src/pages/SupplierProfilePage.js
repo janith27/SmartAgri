@@ -13,7 +13,7 @@ export class SupplierProfilePage extends Component {
     
       render() {
         const dataUser = this.props.user;
-    console.log(dataUser)
+    // console.log(dataUser)
         return (
           <Fragment>
             <div className="Desktop">

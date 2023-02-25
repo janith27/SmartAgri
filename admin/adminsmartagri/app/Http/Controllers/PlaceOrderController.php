@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderDetails;
 use App\Models\PlaceOrder;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,10 @@ class PlaceOrderController extends Controller
         $image = $request->input('phoneno');
         $remark = $request->input('address');
         $collect =$request->input('collect');
+        $productid =$request->input('productid');
         $totalPrice= $qty * $price;
 
-        $result = PlaceOrder::insert([
+        $result = OrderDetails::insert([
 
             'first_name' => $product_name,
             'email' => $supplier_email,
@@ -29,9 +31,18 @@ class PlaceOrderController extends Controller
             'phoneno' => $image,
             'address' => $remark,
             'collect' => $collect,
+            'productid' => $productid,
 
         ]);
 
         return $result;
+    }
+// End Method
+
+    public function SupplierOrderView(Request $request){
+        $keyemail = $request->keyemail;
+        $result = OrderDetails::join('supplies','productid','=','supplies.id')->where('supplier_email',$keyemail)->get();
+        return $result;
+
     }
 }

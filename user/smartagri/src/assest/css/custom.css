@@ -24,6 +24,8 @@
 @import "ProductSearchItem";
 @import "adminview";
 @import "chartCard";
+@import "CreditCardPayment";
+@import "JournalInDetail";
 
 /* body{
     background-color: rgb(247, 247, 247);

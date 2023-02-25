@@ -41,6 +41,7 @@ import AdminInstructorUpdatePage from '../pages/adminPages/AdminInstructorUpdate
 import AdminSupplierUpdatePage from '../pages/adminPages/AdminSupplierUpdatePage';
 import FarmerJournalviewPage from '../pages/FarmerJournalviewPage';
 import Checkout from '../pages/Checkout';
+import CreditCardPaymentHomePage from "../pages/CreditCardPaymentHomePage";
 
 class AppRoute extends Component {
   constructor() {
@@ -85,7 +86,7 @@ class AppRoute extends Component {
           <Route exact path="/resetpassword" element={< ResetPasswordPage />} />
           <Route exact path="/farmerdashboard" element={< FarmerHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/instructordashboard" element={< InnstructorHomePage user={this.state.user} setUser={this.setUser}/>} />
-          <Route exact path="/supplierdashboard" element={< SupplierHomePage user={this.state.user} />} />
+          <Route exact path="/supplierdashboard" element={< SupplierHomePage user={this.state.user} setUser={this.setUser}/>} />
           <Route exact path="/appoinment" element={< Appoinment />} />
           <Route exact path="/addjournal" element={< AddJournal />} />
           <Route exact path="/instructornotification" element={< InstructorNotificationPage />} />
@@ -101,7 +102,8 @@ class AppRoute extends Component {
           <Route exact path="/supplierprofile" element={< SupplierProfilePage user={this.state.user} setUser={this.setUser} />} />
           <Route exact path="/appointmentform/:keyemail" element={< AppointmentFormPage user={this.state.user.email} />} />
           <Route exact path="/journalview/:id" element={< FarmerJournalviewPage />} />
-          <Route exact path="/checkout" element={< Checkout user={this.state.user.email}/>} />
+          <Route exact path="/checkout/:id/:price/:pname" element={< Checkout user={this.state.user.email}/>} />
+          <Route exact path="/checkoutcomplete/:id/:price/:pname/:qty" element={< CreditCardPaymentHomePage user={this.state.user}/>} />
           
 {/* Admin Routes */}
           <Route exact path="/admindashboard" element={< AdminHomePage />} />

@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-class JournelView extends Component {
+class JournelViewFarmer extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,20 +25,6 @@ class JournelView extends Component {
       .catch((error) => {});
   }
 
-  deleteJournal = (event) => {
-    let logId = event.target.getAttribute("logId");
-    console.log(logId);
-    axios
-      .delete(AppURL.DeleteJournal(logId))
-      .then((response) => {
-        this.state({ pageRefreshStatus: true });
-        window.location.reload(true);
-      })
-      .catch((error) => {
-        toast.error("Unable to Delete", { position: "top-left" });
-        window.location.reload(true);
-      });
-  };
   render() {
     const journalData = this.state.journalDatas;
     const MyView = journalData.map((journalData, i) => {
@@ -65,15 +51,7 @@ class JournelView extends Component {
                       </Button>
                     </Link>
               </Col>
-              <Col xs={2} md={2}>
-              <Button
-                  variant="danger"
-                  logId={journalData.id}
-                  onClick={this.deleteJournal}
-                >
-                  Delete
-                </Button>
-                </Col>
+              
             </Row>
           </Card.Body>
         </Card>
@@ -96,4 +74,4 @@ class JournelView extends Component {
   }
 }
 
-export default JournelView;
+export default JournelViewFarmer;

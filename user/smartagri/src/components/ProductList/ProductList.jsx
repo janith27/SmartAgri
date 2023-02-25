@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../../api/AppURL";
-// import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 export default class ProductList extends Component {
   state = {
@@ -12,9 +13,9 @@ export default class ProductList extends Component {
 
   componentDidMount() {
     axios
-      .get(AppURL.ProductData)
+      .get(AppURL.SupplyView)
       .then((response) => {
-        this.setState({ product: response.ProductData });
+        this.setState({ product: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -23,26 +24,38 @@ export default class ProductList extends Component {
 
   render() {
     const post = this.state.product;
-    const allproducts = this.state.product.map((product, idx) => {
+    const allproducts = post.map((post, idx) => {
       return (
-        <Card className="image-box">
-          <img className="center" src={product.img} />
-          <Card.Body>
-            <p className="product-name-on-card">{product.name}</p>
-            <p className="product-weight-on-card">{product.description}</p>
-            <p className="product-price-on-card">{product.price}</p>
-          </Card.Body>
-        </Card>
+        <Col classname="p-0" x={3} lg={3} md={3} sm={6} xs={6}>
+          <Card className="image-box card w-100">
+            <img className="center" src={post.image} />
+            <Card.Body>
+              <p className="product-name-on-card">{post.product_name}</p>
+              <p className="product-weight-on-card">{post.description}</p>
+              <p className="product-price-on-card">{post.price}</p>
+              <Link
+                to={
+                  "/checkout/" +
+                  post.id +
+                  "/" +
+                  post.price +
+                  "/" +
+                  post.product_name
+                }
+              >
+                <Button variant="primary">BUY NOW</Button>
+              </Link>
+            </Card.Body>
+          </Card>
+        </Col>
       );
     });
 
     return (
       <Fragment>
-        <Row>
-          <Col md={4} lg={3} sm={6} xs={12}>
-            {/* {allproducts} */}
-          </Col>
-        </Row>
+        <Container className="text-center" fluid={true}>
+          <Row>{allproducts}</Row>
+        </Container>
       </Fragment>
     );
   }

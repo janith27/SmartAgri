@@ -17,8 +17,10 @@ export class CheckoutOrder extends Component {
       address: "",
       phoneno: "",
       qty: 0,
-      price: 100,
+      price: 0,
       collect: "",
+      productid: "",
+      productName: "",
     };
   }
 
@@ -35,19 +37,19 @@ export class CheckoutOrder extends Component {
       qty: this.state.qty,
       collect: this.state.collect,
       price: this.state.price,
+      productid: this.state.productid,
     };
 
     axios
       .post(AppURL.PlaceOrder, data)
       .then((response) => {
-        
         this.setState({ message: response.data.message });
         toast.success("Place Order Successfully");
-        document.getElementById("croplogform").reset();
-        
+        document.getElementById("onboardForm").reset();
       })
       .catch((error) => {
         this.setState({ message: error.response.data.message });
+        toast.error("Place Order Error");
         toast.error(this.state.message, {
           position: "top-right",
         });
@@ -56,13 +58,9 @@ export class CheckoutOrder extends Component {
 
   render() {
     this.state.email = this.props.user;
-   
-    // this.state.price=this.props.unitPrice;
-    // new edit for redirect to farmer dashboard
-    if (this.state.loggedIn) {
-      return <Navigate to="/" />;
-    }
-    //end new edit
+    this.state.productid = this.props.proId;
+    this.state.price = this.props.proPrice;
+    this.state.productName = this.props.proName;
 
     return (
       <Fragment>
@@ -71,8 +69,8 @@ export class CheckoutOrder extends Component {
             <Row className="text-center">
               <Col
                 className="d-flex justify-content-center"
-                md={6}
-                lg={6}
+                md={12}
+                lg={12}
                 sm={12}
                 xs={12}
               >
@@ -81,6 +79,12 @@ export class CheckoutOrder extends Component {
                   onSubmit={this.formSubmit}
                   id="fromreset"
                 >
+                  <h3 className="section-title-login">
+                    Product Name : {this.state.productName}{" "}
+                  </h3>
+                  <h3 className="section-title-login">
+                    Product Unit Price :Rs. {this.state.price}.00{" "}
+                  </h3>
                   <h4 className="section-title-login"> Place Order </h4>
                   <select
                     onChange={(e) => {
@@ -154,16 +158,32 @@ export class CheckoutOrder extends Component {
                     <option value="" selected disabled>
                       Collect
                     </option>
-                    <option value="Collect_from_store">Collect from store</option>
-                    <option value="By_Courrier_Service">By Courrier Service</option>
+                    <option value="Collect_from_store">
+                      Collect from store
+                    </option>
+                    <option value="By_Courrier_Service">
+                      By Courrier Service
+                    </option>
                   </select>
-
+                  <Link
+                to={
+                  "/checkoutcomplete/" +
+                  this.state.productid   +
+                  "/" +
+                  this.state.price +
+                  "/" +
+                  this.state.productName +
+                  "/" +
+                  this.state.qty
+                }
+              >
                   <Button
                     type="submit"
                     className="btn btn-block m-2 site-btn-login"
                   >
                     Place Order
                   </Button>
+                  </Link>
                 </Form>
               </Col>
             </Row>
