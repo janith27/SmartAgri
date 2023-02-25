@@ -16,6 +16,8 @@ class AppURL {
   static CreateAppointment = this.BaseURL + "/appointmentcreate";
   static ProductDatas = this.BaseURL + "/addsupply";
   static PlaceOrder = this.BaseURL + "/placeorder";
+
+  static SupplyView = this.BaseURL + "/supplyview";
   
   static GetInstructorData(keycity) {
     return this.BaseURL + "/instructordetails/" + keycity;

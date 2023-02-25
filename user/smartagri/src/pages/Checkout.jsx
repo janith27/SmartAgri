@@ -7,7 +7,7 @@ import FarmerNavMenuDesktop from "../components/farmer/FarmerNavMenuDesktop";
 import FarmerNavMobile from "../components/farmer/FarmerNavMobile";
 
 function Checkout({user}) {
-  console.log(user)
+  // console.log(user)
   const uPrice=useParams()
   return (
     

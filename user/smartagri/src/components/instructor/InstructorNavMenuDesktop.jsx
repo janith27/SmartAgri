@@ -32,9 +32,9 @@ class InstructorNavMenuDesktop extends Component {
                     <Link to="/instructordashboard" className="h4 btn">
                       <Button variant="outline-success">Dashboard</Button>
                     </Link>
-                    <Link to="/instructorchat" className="h4 btn">
+                    {/* <Link to="/instructorchat" className="h4 btn">
                       <Button variant="outline-success">Chat</Button>
-                    </Link>
+                    </Link> */}
                     {/* <Link to="/instructornotification" className="h4 btn">
                       <Button variant="outline-success">Notifiction</Button>
                     </Link> */}

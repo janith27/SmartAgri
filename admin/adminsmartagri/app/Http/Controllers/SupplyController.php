@@ -36,4 +36,13 @@ class SupplyController extends Controller
 
             return $result;
     } // end mehtod
+
+    public function AllSupply(Request $request){
+        
+        
+        $result =Supply::all();
+        return $result;
+
+    }
+    // END Method
 }

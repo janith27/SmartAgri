@@ -16,7 +16,7 @@ export class CheckoutOrder extends Component {
       last_name: "",
       address: "",
       phoneno: "",
-      qty: {},
+      qty: 0,
       price: 100,
       collect: "",
     };
@@ -28,10 +28,10 @@ export class CheckoutOrder extends Component {
     const data = {
       email: this.state.email,
       title: this.state.title,
-      fname: this.state.fname,
-      lname: this.state.lname,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
       address: this.state.address,
-      mobileno: this.state.mobileno,
+      phoneno: this.state.phoneno,
       qty: this.state.qty,
       collect: this.state.collect,
       price: this.state.price,
@@ -42,11 +42,9 @@ export class CheckoutOrder extends Component {
       .then((response) => {
         
         this.setState({ message: response.data.message });
-
-        toast.success(this.state.message, {
-          position: "top-right",
-        });
-        //  document.getElementById("fromreset").reset();
+        toast.success("Place Order Successfully");
+        document.getElementById("croplogform").reset();
+        
       })
       .catch((error) => {
         this.setState({ message: error.response.data.message });
@@ -57,8 +55,9 @@ export class CheckoutOrder extends Component {
   };
 
   render() {
-    this.state.email = this.props.email;
-    this.state.price=this.props.unitPrice;
+    this.state.email = this.props.user;
+   
+    // this.state.price=this.props.unitPrice;
     // new edit for redirect to farmer dashboard
     if (this.state.loggedIn) {
       return <Navigate to="/" />;
@@ -104,7 +103,7 @@ export class CheckoutOrder extends Component {
                         type="text"
                         placeholder="Enter first name"
                         onChange={(e) => {
-                          this.setState({ fname: e.target.value });
+                          this.setState({ first_name: e.target.value });
                         }}
                       />
                     </Col>
@@ -115,7 +114,7 @@ export class CheckoutOrder extends Component {
                         type="text"
                         placeholder="Enter last name"
                         onChange={(e) => {
-                          this.setState({ lname: e.target.value });
+                          this.setState({ last_name: e.target.value });
                         }}
                       />
                     </Col>
@@ -125,13 +124,13 @@ export class CheckoutOrder extends Component {
                     type="text"
                     placeholder="Enter mobile no"
                     onChange={(e) => {
-                      this.setState({ mobileno: e.target.value });
+                      this.setState({ phoneno: e.target.value });
                     }}
                   />
 
                   <input
                     className="form-control m-2"
-                    type="text"
+                    type="number"
                     placeholder="Enter Quantity"
                     onChange={(e) => {
                       this.setState({ qty: e.target.value });

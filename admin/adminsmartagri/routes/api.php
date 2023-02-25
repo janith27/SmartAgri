@@ -100,6 +100,7 @@ Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 
 //Add supply
 Route::post('/addsupply',[SupplyController::class, 'SupplyAdd']);
+Route::get('/supplyview',[SupplyController::class, 'AllSupply']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);

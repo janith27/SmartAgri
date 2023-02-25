@@ -11,9 +11,7 @@ function AdminDashboard() {
         <Col>
         <PieCard />
         </Col>
-        <Col>
-        <AreaCard />
-        </Col>
+        
       </Row>
       
     </Fragment>

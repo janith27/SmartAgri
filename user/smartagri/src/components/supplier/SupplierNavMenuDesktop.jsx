@@ -29,12 +29,12 @@ class SupplierNavMenuDesktop extends Component {
                     <img className="nav-logo" src={Logo} />
                   </Link>
                   <div>
-                    <Link to="/" className="h4 btn">
+                    <Link to="/supplierdashboard" className="h4 btn">
                       <Button variant="outline-success">Dashboard</Button>
                     </Link>
-                    <Link to="/" className="h4 btn">
+                    {/* <Link to="/" className="h4 btn">
                       <Button variant="outline-success">Chat</Button>
-                    </Link>
+                    </Link> */}
                     <Link to="/supplierprofile" className="h4 btn">
                       <Button variant="outline-success">Profile</Button>
                     </Link>
