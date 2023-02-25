@@ -69,6 +69,7 @@ Route::get('/productlistbycategory/{category}',[ProductListController::class,'Pr
 //add jouranl route
 Route::post('/addjournal',[JournalController::class, 'JournalInput']);
 Route::get('/viewjournal',[JournalController::class,'JournalView']);
+
 Route::get('/journaldetailview/{keyid}',[JournalController::class,'JournalDetailView']);
 
 

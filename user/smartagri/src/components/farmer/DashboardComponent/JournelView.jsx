@@ -2,7 +2,9 @@ import React, { Component, Fragment } from "react";
 import { Col, Row, Card,Button } from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../../../api/AppURL";
+
 import { Link } from "react-router-dom";
+
 
 class JournelView extends Component {
   constructor() {
@@ -39,6 +41,7 @@ class JournelView extends Component {
                 <Card.Title>{journalData.name}</Card.Title>
                 <Card.Text>{journalData.description}</Card.Text>
               </Col>
+
               <Col xs={2} md={2}>
               <Link to={"/journalview/" + journalData.id}>
                       <Button >
@@ -46,6 +49,7 @@ class JournelView extends Component {
                       </Button>
                     </Link>
               </Col>
+
             </Row>
           </Card.Body>
         </Card>
@@ -59,6 +63,8 @@ class JournelView extends Component {
             <h1>Journels</h1>
           </Row>
           <Row className="d-flex justify-content-center">{MyView}</Row>
+          
+
           {/* </div> */}
         </Col>
       </Fragment>

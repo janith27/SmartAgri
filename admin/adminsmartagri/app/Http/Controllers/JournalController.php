@@ -39,5 +39,6 @@ class JournalController extends Controller
         $keyid = $request->keyid;
         $result = Journal::where('id',$keyid)->get();
         return $result;
+
     }
 }
