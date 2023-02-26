@@ -158,33 +158,36 @@ export class CheckoutOrder extends Component {
                     <option value="" selected disabled>
                       Collect
                     </option>
-                    <option value="Collect_from_store">
+                    <option value="Collect from store">
                       Collect from store
                     </option>
-                    <option value="By_Courrier_Service">
+                    <option value="By Courrier Service">
                       By Courrier Service
                     </option>
                   </select>
-                  <Link
-                to={
-                  "/checkoutcomplete/" +
-                  this.state.productid   +
-                  "/" +
-                  this.state.price +
-                  "/" +
-                  this.state.productName +
-                  "/" +
-                  this.state.qty
-                }
-              >
+
                   <Button
                     type="submit"
                     className="btn btn-block m-2 site-btn-login"
                   >
                     Place Order
                   </Button>
-                  </Link>
+                  
                 </Form>
+                <Link
+                    to={
+                      "/checkoutcomplete/" +
+                      this.state.productid +
+                      "/" +
+                      this.state.price +
+                      "/" +
+                      this.state.productName +
+                      "/" +
+                      this.state.qty
+                    }
+                  >
+                    <Button>Complete Order</Button>
+                  </Link>
               </Col>
             </Row>
           </Row>

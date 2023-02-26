@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-export class Profile extends Component {
+class Profile extends Component {
   render() {
     let name;
     let email;
@@ -8,7 +8,7 @@ export class Profile extends Component {
       name = this.props.user.name;
       email = this.props.user.email;
     }
-    console.log(this.props.user)
+    // console.log(this.props.user)
     return (
         <Fragment>
         <h1> User Profile Page </h1>

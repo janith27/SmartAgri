@@ -5,67 +5,52 @@ import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 class MyOrders extends Component {
-  componentDidMount() {
-    window.scroll(0, 0);
-  }
   constructor() {
     super();
     this.state = {
-      orderData: {},
-      uData: {},
-      message: "",
+      email: "",
+      itemData: [],
     };
   }
+
   componentDidMount() {
-    axios.get(AppURL.SupplierGetOrders(this.state.uData.email));
-    console
-      .log(this.state.uData.email)
-      .then((response) => {
-        this.setState({ orderData: response.data });
-      })
-      .catch((error) => {});
+    axios.get(AppURL.SupplierGetOrders(this.state.email)).then((res) => {
+      this.setState({ itemData: res.data });
+    }).catch((err)=>{});
   }
   render() {
-    this.state.uData = this.props.user;
-    // console.log(this.state.uData);
-    const orData = this.state.orderData;
-    const MyView = orData.map((orData, i) => {
-      return (
-        <Card
-          border="primary"
-          style={{ width: "18rem" }}
-          className="crophistorycard"
-        >
-          <Card.Body>
-            <Row>
-              <Card.Text>{orData.first_name}</Card.Text>
-              <Card.Text>{orData.last_name}</Card.Text>
-              <Card.Text>{orData.address}</Card.Text>
-              <Card.Text>{orData.collect}</Card.Text>
-              <Card.Text>{orData.email}</Card.Text>
-              <Card.Text>{orData.phoneno}</Card.Text>
-              <Card.Text>{orData.price}</Card.Text>
-              <Card.Text>{orData.qty}</Card.Text>
-              <Card.Text>{orData.productid}</Card.Text>
-            </Row>
-          </Card.Body>
-        </Card>
-      );
-    });
+    this.state.email = this.props.user.email;
+console.log(this.state.itemData)
 
+const iData = this.state.itemData
+const myView = iData.map((iData,i)=>{
+  return (
+    <div>
+      <div className="searchItemsss">
+        <img src={iData.image} alt="" className="siImg" />
+        <div className="siDec">
+          <h4 className="siTitles">{iData.first_name} {iData.last_name}</h4>
+          <span className="siimportant">Product:{iData.product_name}.00</span>
+          <span className="siimportant">Rs.{iData.price}.00</span>
+          <span className="siimportant">Quntity: {iData.qty}</span>
+          <span className="siimportant">Shipping : {iData.address}</span>
+          <span className="siimportant">Tel No : {iData.phoneno}</span>
+          <span className="siimportant">Collect : {iData.collect}</span>
+        </div>
+      </div>
+    </div>
+  );
+
+})
+    
     return (
-      <Fragment>
-        <Row>
-          <Col>
-            <Card className="text-center cardappointment">
-              <Card.Body>
-                <Card.Text>You have an appointment</Card.Text>
-                <Row className="d-flex justify-content-center">{MyView}</Row>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Fragment>
+     <Fragment>
+       <h2>Orders</h2>
+        <div>
+          {myView}
+        </div>
+      
+     </Fragment>
     );
   }
 }
