@@ -56,6 +56,10 @@ class AppURL {
   static DeleteJournal(keyid) {
     return this.BaseURL + "/deletejournal/" + keyid;
   }
+
+  static DeleteItem(keyid) {
+    return this.BaseURL + "/deleteitem/" + keyid;
+  }
   
   static InstructorGetMyAppointment(keyemail) {
     return this.BaseURL + "/instructorgetmyappointment/" + keyemail;

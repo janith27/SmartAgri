@@ -103,7 +103,7 @@ Route::delete('/deletecroplog/{keyid}',[CropLogController::class,'DeleteLog']);
 Route::post('/addsupply',[SupplyController::class, 'SupplyAdd']);
 Route::get('/supplyview',[SupplyController::class, 'AllSupply']);
 Route::get('/mysellingitems/{keyemail}',[SupplyController::class,'MySellingItems']);
-
+Route::delete('/deleteitem/{keyid}',[SupplyController::class,'DeleteItem']);
 //add product route
 
 Route::post('/addproduct',[JournalController::class, 'addproduct']);

@@ -52,4 +52,11 @@ class SupplyController extends Controller
         return $result;
 
     }
+
+
+    public function DeleteItem(Request $request){
+        $keyid = $request->keyid;
+        $resultDelete=Supply::where('id',$keyid)->delete();
+        return $resultDelete;
+    }//End method
 }
